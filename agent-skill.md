@@ -45,6 +45,17 @@ mintable — only redeemed with $THYRK. Site: https://thyrk.fun/
   Divine costs 1,500 $THYRK. Redeem mint: 100 $THYRK = 1 mint, max 3 per
   wallet. Upgrades: 3 Common + 50 $THYRK = 1 Rare; 3 Rare + 100 $THYRK =
   1 Epic; 3 Epic + 200 $THYRK = 1 Legendary.
+- $THYRK feature pages (rules only, NOT live yet): redeem a Divine at
+  /redeem.html, mint with $THYRK at /token-mint.html, upgrades at
+  /upgrade.html, claim $THYRK for reposting at /claim.html. The $THYRK
+  token contract is NOT deployed yet — no $THYRK exists. Do NOT attempt
+  any redeem, token-mint, upgrade or claim call until the site publishes
+  a real $THYRK token contract address. Divine redemption is first come
+  first served (77 max).
+- Official THYRK account on X: https://x.com/thyrk_ (@thyrk_). Repost
+  reward: 20 $THYRK, max 1 per wallet and 1 per X account, budget
+  77,777 $THYRK (max 3,888 wallets). Claims are NOT open yet — the
+  official post to repost has not been published.
 - Marketplace royalty: 5% to the creator (the Agentic Wallet above).
 
 ## Read first

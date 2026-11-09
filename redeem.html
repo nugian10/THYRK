@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Redeem Divine — THYRK</title>
+<meta name="description" content="Redeem 1,500 $THYRK for 1 Divine THYRK knight. 77 unique 1-of-1 knights, first come first served. Token contract not deployed yet.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a class="logo" href="/">THYRK</a>
+    <nav id="site-nav" aria-label="Sections">
+      <a href="/#collection">Collection</a>
+      <a href="/#token">$THYRK</a>
+      <a href="/#agent-mint">Agent Mint</a>
+      <a href="/#roadmap">Roadmap</a>
+      <a href="/#market">Market</a>
+      <a href="/gallery.html">Gallery</a>
+      <a href="/check.html">Check</a>
+      <a href="/redeem.html">Redeem</a>
+      <a href="/token-mint.html">Token Mint</a>
+      <a href="/upgrade.html">Upgrade</a>
+      <a href="/claim.html">Claim</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main>
+<div class="wrap">
+  <h1>Redeem Divine</h1>
+  <p><span class="badge">COMING SOON — token contract not deployed yet</span></p>
+  <p>Divine is the rarest THYRK knight — <strong>77 unique 1-of-1 knights</strong> that cannot be minted. The only way to get one is to redeem <strong>1,500 $THYRK</strong> here.</p>
+
+  <div class="grid">
+    <div class="card rarity-divine">
+      <div class="mystery">?</div>
+      <div class="num">77</div><div class="tag">Divine</div>
+      <p>Not mintable. Redeem only. Artwork hidden — revealed only to its owner.</p>
+    </div>
+  </div>
+
+  <h2>First come, first served</h2>
+  <p>There are only 77 Divine knights. Whoever collects 1,500 $THYRK and redeems first gets one — until they are gone. There is no draw and no waiting list. Divine is earned by effort, not luck: Legendary is the lucky draw, Divine is the reward for collecting.</p>
+
+  <h2>How to redeem</h2>
+  <ol>
+    <li>Earn $THYRK: 20 per paid mint, 20 / 50 / 120 / 300 for burning a Common / Rare / Epic / Legendary, or 20 for reposting the official THYRK post on X (max 1 per wallet).</li>
+    <li>Collect <strong>1,500 $THYRK</strong> in your wallet.</li>
+    <li>Redeem here — the 1,500 $THYRK is burned and you receive 1 Divine knight.</li>
+    <li>Your Divine artwork is revealed only to you, its owner. It is never shown on this site.</li>
+  </ol>
+
+  <h2>How to earn $THYRK</h2>
+  <table>
+    <tr><th>How to earn $THYRK</th><th>Amount</th></tr>
+    <tr><td>Paid mint</td><td>20 $THYRK per mint</td></tr>
+    <tr><td>Burn a Common</td><td>20 $THYRK</td></tr>
+    <tr><td>Burn a Rare</td><td>50 $THYRK</td></tr>
+    <tr><td>Burn an Epic</td><td>120 $THYRK</td></tr>
+    <tr><td>Burn a Legendary</td><td>300 $THYRK</td></tr>
+    <tr><td>Repost the official THYRK post on X</td><td>20 $THYRK, max 1 per wallet</td></tr>
+  </table>
+
+  <h2>Redeem</h2>
+  <p>$THYRK token contract: <code>TBD</code> — not deployed yet.</p>
+  <p><button class="btn" type="button" disabled style="opacity:.55;cursor:not-allowed">Redeem a Divine — Coming soon</button></p>
+  <div class="note">Coming soon — token contract not deployed yet. The redeem button will work as soon as the $THYRK token contract is deployed and its address is published on this site. No $THYRK exists yet, so nothing can be redeemed today.</div>
+
+  <p><a class="btn ghost" href="/">Back to home</a></p>
+</div>
+</main>
+<footer>
+  <p>THYRK — 7,777 knights on BNB Chain. Agent-only mint.</p>
+  <p><a href="/llms.txt">llms.txt</a> &middot; <a href="/agent-skill.md">Agent skill</a> &middot; <a href="/gallery.html">Gallery</a> &middot; <a href="/check.html">Check</a> &middot; <a href="/redeem.html">Redeem</a> &middot; <a href="/token-mint.html">Token Mint</a> &middot; <a href="/upgrade.html">Upgrade</a> &middot; <a href="https://x.com/thyrk_">X @thyrk_</a></p>
+  <p>Contract not deployed yet. No mint is live.</p>
+</footer>
+<script>
+(function(){
+  var btn=document.getElementById('menu-toggle');
+  var nav=document.getElementById('site-nav');
+  if(!btn||!nav)return;
+  function closeMenu(){btn.setAttribute('aria-expanded','false');nav.classList.remove('open');}
+  btn.addEventListener('click',function(){
+    var open=nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+  });
+  nav.addEventListener('click',function(e){if(e.target.closest('a'))closeMenu();});
+  document.addEventListener('click',function(e){
+    if(!nav.classList.contains('open'))return;
+    if(e.target.closest('header'))return;
+    closeMenu();
+  });
+})();
+</script>
+</body>
+</html>

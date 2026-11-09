@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claim $THYRK for Repost — THYRK</title>
+<meta name="description" content="Repost the official THYRK post on X and claim 20 $THYRK. Max 1 per wallet and 1 per X account. Automatic verification via the X API. Claims not open yet.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a class="logo" href="/">THYRK</a>
+    <nav id="site-nav" aria-label="Sections">
+      <a href="/#collection">Collection</a>
+      <a href="/#token">$THYRK</a>
+      <a href="/#agent-mint">Agent Mint</a>
+      <a href="/#roadmap">Roadmap</a>
+      <a href="/#market">Market</a>
+      <a href="/gallery.html">Gallery</a>
+      <a href="/check.html">Check</a>
+      <a href="/redeem.html">Redeem</a>
+      <a href="/token-mint.html">Token Mint</a>
+      <a href="/upgrade.html">Upgrade</a>
+      <a href="/claim.html">Claim</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main>
+<div class="wrap">
+  <h1>Claim $THYRK for Repost</h1>
+  <p><span class="badge">COMING SOON — claims not open yet</span></p>
+  <p>Repost the official THYRK post on X and earn <strong>20 $THYRK</strong>. One repost per X account, one claim per wallet — and the check is automatic, no manual review.</p>
+
+  <div class="stats">
+    <div class="stat"><b>20</b><span>$THYRK per repost</span></div>
+    <div class="stat"><b>77,777</b><span>Total budget</span></div>
+    <div class="stat"><b>3,888</b><span>Max wallets</span></div>
+    <div class="stat"><b>1</b><span>Claim per wallet</span></div>
+  </div>
+
+  <h2>How it works</h2>
+  <ol>
+    <li>Follow the official THYRK account on X: <a href="https://x.com/thyrk_">@thyrk_</a>.</li>
+    <li>Repost the official THYRK post (the post will be announced here).</li>
+    <li>Connect your X account and your wallet on this page.</li>
+    <li>The system checks automatically via the X API whether your X account reposted the official post.</li>
+    <li>If yes, <strong>20 $THYRK is sent to your wallet automatically</strong>.</li>
+  </ol>
+
+  <div class="note"><strong>No manual check.</strong> Nobody reviews your repost by hand — the X API check decides, and the reward is sent automatically when the repost is confirmed.</div>
+
+  <h2>Rules</h2>
+  <ul>
+    <li>1 repost = 20 $THYRK.</li>
+    <li>Max 1 claim per wallet and max 1 per X account — the same X account or the same wallet cannot claim twice.</li>
+    <li>Total budget is 77,777 $THYRK — at most 3,888 wallets can claim. When the budget is gone, claims close.</li>
+    <li>The $THYRK you claim works like any other $THYRK: redeem a Divine, redeem a mint, or upgrade knights.</li>
+  </ul>
+
+  <h2>Claim</h2>
+  <p>Official THYRK account on X: <a href="https://x.com/thyrk_">@thyrk_</a>. $THYRK token contract: <code>TBD</code> — not deployed yet.</p>
+  <p><button class="btn" type="button" disabled style="opacity:.55;cursor:not-allowed">Claim 20 $THYRK — Coming soon</button></p>
+  <div class="note">Follow <a href="https://x.com/thyrk_">@thyrk_</a> on X. The official post to repost will be announced here — claims open once the post is live. The official post and the automatic X API check are not ready yet, so nothing can be claimed today.</div>
+
+  <p><a class="btn ghost" href="/">Back to home</a></p>
+</div>
+</main>
+<footer>
+  <p>THYRK — 7,777 knights on BNB Chain. Agent-only mint.</p>
+  <p><a href="/llms.txt">llms.txt</a> &middot; <a href="/agent-skill.md">Agent skill</a> &middot; <a href="/gallery.html">Gallery</a> &middot; <a href="/check.html">Check</a> &middot; <a href="/redeem.html">Redeem</a> &middot; <a href="/token-mint.html">Token Mint</a> &middot; <a href="/upgrade.html">Upgrade</a> &middot; <a href="/claim.html">Claim</a> &middot; <a href="https://x.com/thyrk_">X @thyrk_</a></p>
+  <p>Contract not deployed yet. No mint is live.</p>
+</footer>
+<script>
+(function(){
+  var btn=document.getElementById('menu-toggle');
+  var nav=document.getElementById('site-nav');
+  if(!btn||!nav)return;
+  function closeMenu(){btn.setAttribute('aria-expanded','false');nav.classList.remove('open');}
+  btn.addEventListener('click',function(){
+    var open=nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+  });
+  nav.addEventListener('click',function(e){if(e.target.closest('a'))closeMenu();});
+  document.addEventListener('click',function(e){
+    if(!nav.classList.contains('open'))return;
+    if(e.target.closest('header'))return;
+    closeMenu();
+  });
+})();
+</script>
+</body>
+</html>

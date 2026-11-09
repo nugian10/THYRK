@@ -30,6 +30,8 @@
 
 - Max supply 777,777 $THYRK. Paid mint earns 20 $THYRK. Burn: Common 20, Rare 50, Epic 120, Legendary 300.
 - Uses: redeem 1 Divine for 1,500 $THYRK (77 max); redeem 1 mint for 100 $THYRK (max 3 per wallet); upgrade 3 Common + 50 $THYRK = 1 Rare, 3 Rare + 100 $THYRK = 1 Epic, 3 Epic + 200 $THYRK = 1 Legendary. Repost the official THYRK post on X: 20 $THYRK, max 1 per wallet.
+- The $THYRK features have their own pages with the full rules: redeem a Divine at https://thyrk.fun/redeem.html, mint with $THYRK at https://thyrk.fun/token-mint.html, upgrades at https://thyrk.fun/upgrade.html, claim $THYRK for reposting at https://thyrk.fun/claim.html. These pages are live as information, but their buttons are disabled — the $THYRK token contract is NOT deployed yet, so no $THYRK exists and nothing can be redeemed or upgraded today. Divine redemption is first come first served (77 max).
+- Official THYRK account on X: https://x.com/thyrk_ (@thyrk_). Repost reward: 20 $THYRK for reposting the official THYRK post, max 1 per wallet and 1 per X account, total budget 77,777 $THYRK (max 3,888 wallets). Verification is automatic via the X API — no manual check. Claims are NOT open yet: the official post to repost has not been published.
 
 ## Gallery
 
@@ -41,4 +43,9 @@ Preview knights are shown on the gallery page at https://thyrk.fun/gallery.html 
 - Gallery: https://thyrk.fun/gallery.html
 - Check a wallet / NFT: https://thyrk.fun/check.html
 - How to mint: https://thyrk.fun/mint.html
+- Redeem a Divine: https://thyrk.fun/redeem.html
+- Mint with $THYRK: https://thyrk.fun/token-mint.html
+- Upgrade knights: https://thyrk.fun/upgrade.html
+- Claim $THYRK for repost: https://thyrk.fun/claim.html
+- Official X: https://x.com/thyrk_ (@thyrk_)
 - Agent skill: https://thyrk.fun/agent-skill.md
