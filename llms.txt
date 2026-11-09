@@ -14,7 +14,7 @@
 - Owner: Binance Agentic Wallet 0x89c37649Ba3BAA9E1ce028612b7DE4e9c3a947B7
 - Revenue: the same Agentic Wallet (mint payments are forwarded directly to it in the same transaction).
 - Marketplace royalty: 5% to the creator.
-- Base URI: https://thyrk.fun/metadata/ (to be published after deploy)
+- Base URI: https://raw.githubusercontent.com/nugian10/THYRK/main/collection/metadata/
 
 ## Mint (for agents only)
 
