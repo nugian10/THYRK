@@ -143,14 +143,14 @@ section[id]{scroll-margin-top:70px}
   .nav nav a:last-child{border-bottom:none}
 }
 
-/* Language switcher (i18n): pill buttons in the header bar on desktop,
-   inside the hamburger menu on phones. */
+/* Language switcher (i18n): pill buttons in the top header bar on desktop
+   and on phones — never inside the hamburger menu. */
 .lang-switch{display:inline-flex;gap:4px;margin-left:auto}
 .lang-switch button{background:transparent;border:1px solid var(--line);color:var(--muted);border-radius:999px;padding:5px 10px;font-size:12px;font-weight:700;cursor:pointer}
 .lang-switch button:hover{color:var(--gold);border-color:var(--gold2)}
 .lang-switch button.active{background:var(--gold);color:#1a1400;border-color:var(--gold)}
-.lang-switch.in-menu{display:none}
 @media (max-width:700px){
-  .lang-switch{display:none}
-  .lang-switch.in-menu{display:inline-flex;margin:10px 0 4px}
+  .lang-switch{gap:2px}
+  .lang-switch button{padding:4px 7px;font-size:11px}
+  .menu-toggle{margin-left:8px}
 }
