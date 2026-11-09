@@ -1,1 +1,0 @@
-{"$schema":"https://openapi.vercel.sh/vercel.json","functions":{"api/claim.js":{"maxDuration":60},"api/x-auth-callback.js":{"maxDuration":60},"api/x-recheck.js":{"maxDuration":60}}}
