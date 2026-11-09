@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mint with $THYRK — THYRK</title>
-<meta name="description" content="Redeem 100 $THYRK for 1 THYRK mint, max 3 per wallet. Earn $THYRK by minting and burning knights. No $THYRK in circulation yet.">
+<meta name="description" content="Redeem 100 $THYRK for 1 THYRK mint, max 3 per wallet. Earn $THYRK by minting and burning knights. Live on BNB Chain.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/style.css">
 </head>
@@ -33,18 +33,22 @@
 <main>
 <div class="wrap">
   <h1>Mint with $THYRK</h1>
-  <p><span class="badge">NOT OPEN YET — NO $THYRK IN CIRCULATION</span></p>
+  <p><span class="badge">LIVE — TOKEN MINT IS OPEN</span></p>
   <p>Spent $THYRK can mint knights too: <strong>100 $THYRK = 1 mint</strong>, up to <strong>3 mints per wallet</strong>. No payment in BNB is needed for these mints — the 100 $THYRK is burned instead.</p>
+
+  <p>$THYRK in circulation: <strong><span data-live="thyrk">0</span> / 777,777</strong> — read live from the token contract.</p>
 
   <h2>How it works</h2>
   <ol>
     <li>Earn $THYRK: 20 per paid mint, 20 / 50 / 120 / 300 for burning a Common / Rare / Epic / Legendary, or 100 for reposting the official THYRK post on X (max 1 per wallet).</li>
     <li>Collect 100 $THYRK for each mint you want to redeem (max 3 per wallet, 300 $THYRK in total).</li>
-    <li>Redeem here — the 100 $THYRK is burned and your agent mints 1 knight for you from the same shuffled deck.</li>
+    <li>Ask your agent to redeem — the 100 $THYRK is burned and your agent mints 1 knight for you from the same shuffled deck.</li>
     <li>The knight can be any rarity, like a normal mint — Common, Rare, Epic or Legendary.</li>
   </ol>
 
   <div class="note"><strong>Redeem mints count toward your 30 mints per wallet.</strong> A wallet can hold at most 30 THYRK knights in total, however they were minted. Minting is still agent-only: your agent makes the mint call for you, and your wallet must hold a SPACE ID Agent ID.</div>
+
+  <div class="note">Token mints draw from the <strong>7,000 paid-mint supply</strong> — never from the 777 free mints. They pay no BNB and earn <strong>no 20 $THYRK bonus</strong> (only paid BNB mints earn the bonus).</div>
 
   <h2>How to earn $THYRK</h2>
   <table>
@@ -59,8 +63,7 @@
 
   <h2>Redeem a mint</h2>
   <p>$THYRK token contract: <a href="https://bscscan.com/address/0x3b8747d067b2ed8565330667128260c2a4954300"><code>0x3b8747d067b2ed8565330667128260c2a4954300</code></a><br>NFT contract: <a href="https://bscscan.com/address/0xeff20913f99fd153da1b27bd96401089d3323bb8"><code>0xeff20913f99fd153da1b27bd96401089d3323bb8</code></a></p>
-  <p><button class="btn" type="button" disabled style="opacity:.55;cursor:not-allowed">Redeem 1 mint (100 $THYRK) — Coming soon</button></p>
-  <div class="note">The button on this page is not connected yet. $THYRK is earned by paid mints and burns — once you hold $THYRK, ask your agent to run this for you (see agent-skill.md).</div>
+  <p>There is no button here — THYRK is agent-only. Ask your agent to run the token mint for you (see <a href="/agent-skill.md">agent-skill.md</a>). Your agent approves 100 $THYRK per mint first, then calls the mint — you receive 1 knight from the same shuffled deck.</p>
 
   <p><a class="btn ghost" href="/">Back to home</a></p>
 </div>
@@ -88,5 +91,6 @@
   });
 })();
 </script>
+<script src="/live-count.js" defer></script>
 </body>
 </html>

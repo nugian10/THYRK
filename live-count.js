@@ -1,8 +1,10 @@
-/* THYRK live counters — totalSupply + freeMintsRemaining, read from the NFT
-   contract with a client-side eth_call to a public BSC RPC.
+/* THYRK live counters — totalSupply + freeMintsRemaining + divineRemaining,
+   read from the NFT contract, and $THYRK totalSupply from the token
+   contract, with client-side eth_call calls to a public BSC RPC.
    Counts only; never shows prices. Fails soft: shows a dash and retries. */
 (function () {
   var NFT = "0xeff20913f99fd153da1b27bd96401089d3323bb8";
+  var TOKEN = "0x3b8747d067b2ed8565330667128260c2a4954300";
   var RPCS = [
     "https://bsc-dataseed.binance.org/",
     "https://bsc-dataseed1.defibit.io/",
@@ -10,6 +12,8 @@
   ];
   var SEL_MINTED = "0x18160ddd"; // totalSupply()
   var SEL_FREE = "0x8868b9ff"; // freeMintsRemaining()
+  var SEL_DIVINE = "0x739f6b19"; // divineRemaining()
+  var SEL_THYRK = "0x18160ddd"; // totalSupply() on the token (18 decimals)
   var REFRESH_MS = 30000;
 
   function callRpc(url, to, data) {
@@ -34,6 +38,8 @@
   function refresh() {
     callFirstRpc(NFT, SEL_MINTED).then(function (v) { setText("minted", v.toString()); }).catch(function () { /* keep dash, retry next round */ });
     callFirstRpc(NFT, SEL_FREE).then(function (v) { setText("free", v.toString()); }).catch(function () { /* keep dash, retry next round */ });
+    callFirstRpc(NFT, SEL_DIVINE).then(function (v) { setText("divine", v.toString()); }).catch(function () { /* keep dash, retry next round */ });
+    callFirstRpc(TOKEN, SEL_THYRK).then(function (v) { setText("thyrk", (v / 1000000000000000000n).toString()); }).catch(function () { /* keep dash, retry next round */ });
   }
   if (document.querySelector("[data-live]")) {
     refresh();
