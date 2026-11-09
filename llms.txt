@@ -24,7 +24,7 @@
 - Max 30 mints per wallet. Bulk mint is allowed: up to 30 knights in one transaction, up to the 30-per-wallet limit.
 - Free mint: the FIRST mint of each wallet is FREE, automatically — 1 per wallet, no total cap. The free mint draws from the full deck, exactly like a paid mint, so it can be any rarity including Legendary. The free mint earns the full 20 $THYRK bonus, same as a paid mint. There is no free-mint argument in the mint call.
 - Mint call: `mint(uint256 quantity)`, selector 0xa0712d68. No other mint arguments.
-- Price ladder per wallet: mint #1 FREE, #2-10: 0.0002 BNB, #11-20: 0.0004 BNB, #21-30: 0.0008 BNB. A full 30-mint batch costs 0.0138 BNB.
+- Price ladder per wallet: mint #1 is FREE, later mints cost more as the wallet's mint count rises.
 - Price: never shown on this site. Read priceFor(wallet) or quoteBulk(wallet, quantity) on the contract to get the exact price. Any overpayment is refunded automatically.
 - The draw is a shuffled deck; each mint draws the next token. Common, Rare and Epic have 5 designs each; Legendary is trait-random; Divine artworks are hidden (shown as "?" on the site) and revealed only to the owner.
 - Full agent instructions: https://thyrk.fun/agent-skill.md
@@ -34,7 +34,7 @@
 
 - Max supply 777,777 $THYRK. Every mint earns 20 $THYRK (free and paid alike). Burn: Common 20, Rare 50, Epic 120, Legendary 300. Divine cannot burn.
 - Uses: redeem 1 Divine for 1,500 $THYRK (77 max); redeem 1 mint for 100 $THYRK (max 3 per wallet, no BNB, no 20 $THYRK bonus); upgrade 3 Common + 50 $THYRK = 1 Rare, 3 Rare + 100 $THYRK = 1 Epic, 3 Epic + 200 $THYRK = 1 Legendary.
-- The $THYRK features have their own pages with the full rules: redeem a Divine at https://thyrk.fun/redeem.html, mint with $THYRK at https://thyrk.fun/token-mint.html, upgrades at https://thyrk.fun/upgrade.html, and burning knights for $THYRK at https://thyrk.fun/burn.html. These pages are live as information, but their buttons are disabled until $THYRK exists — use your agent (see agent-skill.md). Divine redemption is first come first served (77 max).
+- The $THYRK features have their own pages with the full rules: redeem a Divine at https://thyrk.fun/redeem.html, mint with $THYRK at https://thyrk.fun/token-mint.html, upgrades at https://thyrk.fun/upgrade.html, and burning knights for $THYRK at https://thyrk.fun/burn.html. These pages are live: they describe the rules, and each one can also be used manually by connecting a wallet — or use your agent (see agent-skill.md). Divine redemption is first come first served (77 max).
 - Official THYRK account on X: https://x.com/thyrk_ (@thyrk_).
 
 ## Gallery

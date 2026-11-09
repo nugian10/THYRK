@@ -20,8 +20,7 @@ with $THYRK. Site: https://thyrk.fun/
   Do not use any other address as the NFT contract.
 - $THYRK token: 0x3b8747d067b2ed8565330667128260c2a4954300 — DEPLOYED
   (BscScan: https://bscscan.com/address/0x3b8747d067b2ed8565330667128260c2a4954300).
-  $THYRK is earned by mints and burns (100 $THYRK in circulation
-  so far). The new NFT contract has already been set as a minter
+  $THYRK is earned by mints and burns. The new NFT contract has already been set as a minter
   on the token contract (setMinter done) and minting is active
   (mintActive is true).
 - SPACE ID Agent ID registry: 0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F
@@ -43,9 +42,8 @@ with $THYRK. Site: https://thyrk.fun/
   bulk mint in a single transaction. There is no free-mint argument:
   the free mint is AUTOMATIC. Send exactly the quoted total value;
   any overpayment is refunded automatically by the contract.
-- Price ladder per wallet: mint #1 FREE, #2-10: 0.0002 BNB, #11-20:
-  0.0004 BNB, #21-30: 0.0008 BNB. Max 30 mints per wallet, max total
-  0.0138 BNB for a full 30-mint batch (1 free + 29 paid). NEVER
+- Price ladder per wallet: mint #1 is FREE, later mints cost more as
+  the wallet's mint count rises. Max 30 mints per wallet. NEVER
   hardcode a price. Read priceFor(wallet) (selector 0xf12a7add)
   for the next single mint, or quoteBulk(wallet, quantity)
   (selector 0x86c2a4f0) for the exact total of a bulk mint — it
@@ -87,10 +85,10 @@ with $THYRK. Site: https://thyrk.fun/
   ever; upgrade 3 Common + 50 $THYRK = 1 Rare, 3 Rare + 100 $THYRK =
   1 Epic, 3 Epic + 200 $THYRK = 1 Legendary. Upgrade STOPS at
   Legendary — a Legendary can NEVER be upgraded to Divine.
-- $THYRK feature pages (rules only, buttons disabled until $THYRK
-  exists): redeem a Divine at /redeem.html, mint with $THYRK at
+- $THYRK feature pages: redeem a Divine at /redeem.html, mint with $THYRK at
   /token-mint.html, upgrades at /upgrade.html, burn knights at
-  /burn.html.
+  /burn.html. The pages describe the rules and can also be used
+  manually by connecting a wallet — or use your agent.
 - $THYRK is spent via burnFrom, so the wallet must first approve the
   NFT contract to spend its $THYRK: approve() (selector 0x095ea7b3)
   on the token contract, spender = NFT contract, amount = the cost.

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Burn Knights for $THYRK — THYRK</title>
-<meta name="description" content="Burn THYRK knights for $THYRK: Common 20, Rare 50, Epic 120, Legendary 300. Burning is permanent. Opens after the new contract deploys on BNB Chain.">
+<meta name="description" content="Burn THYRK knights for $THYRK: Common 20, Rare 50, Epic 120, Legendary 300. Burning is permanent. Live now on BNB Chain.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/style.css">
 </head>
@@ -35,7 +35,7 @@
   <p><span class="badge">MINT IS LIVE</span></p>
   <p>Burning means destroying a knight to get $THYRK in return. A knight you do not want — a duplicate Common, for example — becomes $THYRK you can spend on a Divine, a token mint, or an upgrade.</p>
 
-  <div class="note">Burning opens with the new contract. $THYRK is created by burning — the first burn mints the first $THYRK. A burned knight also makes room: burning lowers the total supply of knights in existence.</div>
+  <div class="note">Burning is live with the new contract. Burning a knight mints $THYRK to your wallet. A burned knight also makes room: burning lowers the total supply of knights in existence.</div>
 
   <div class="note"><strong>Burning is permanent — the NFT is gone forever.</strong> A burned knight can never be recovered, traded, or unburned. Only burn knights you are sure you do not want to keep.</div>
 
@@ -76,7 +76,18 @@
 
   <h2>Burn</h2>
   <p>$THYRK token contract: <a href="https://bscscan.com/address/0x3b8747d067b2ed8565330667128260c2a4954300"><code>0x3b8747d067b2ed8565330667128260c2a4954300</code></a><br>NFT contract: <a href="https://bscscan.com/address/0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e"><code>0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e</code></a></p>
-  <p>There is no button here — THYRK is agent-only. Ask your agent to run the burn for you (see <a href="/agent-skill.md">agent-skill.md</a>). Your agent calls the burn with the knight you want to give up.</p>
+  <p>Do it yourself below — connect your wallet and burn a knight directly. Or ask your agent to run the burn for you (see <a href="/agent-skill.md">agent-skill.md</a>).</p>
+  <div class="note">
+    <h3 style="margin-top:0">Do it yourself</h3>
+    <p><button class="btn" id="connect-btn" type="button">Connect wallet</button>
+    <span id="wallet-status" data-manual-wallet>Not connected.</span></p>
+    <label for="burn-token-id"><strong>Knight token ID to burn</strong></label>
+    <input id="burn-token-id" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" placeholder="e.g. 2210">
+    <p><button class="btn" id="check-knight-btn" type="button">Check knight</button></p>
+    <p class="status-line" id="burn-check-result" role="status"></p>
+    <p><button class="btn primary" id="burn-btn" type="button" disabled>Burn knight</button></p>
+    <p class="status-line" id="manual-status" role="status"></p>
+  </div>
 
   <p><a class="btn ghost" href="/">Back to home</a></p>
 </div>
@@ -101,6 +112,78 @@
     if(!nav.classList.contains('open'))return;
     if(e.target.closest('header'))return;
     closeMenu();
+  });
+})();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/ethers@6.13.4/dist/ethers.umd.min.js"></script>
+<script src="/manual.js"></script>
+<script>
+/* Burn page — manual flow. Check a knight, then burn it from your wallet. */
+(function () {
+  var M = window.THYRK_MANUAL;
+  var RARITY = ["Common", "Rare", "Epic", "Legendary", "Divine"];
+  var REWARD = [20, 50, 120, 300, 0];
+  var checkedId = null;
+  var checkedOk = false;
+  function $(id) { return document.getElementById(id); }
+  function setStatus(t) { $("manual-status").textContent = t; }
+  function setResultHtml(h) { $("manual-status").innerHTML = h; }
+  if (typeof ethers === "undefined" || !M) {
+    setStatus("The wallet library did not load — check your connection and refresh this page.");
+    return;
+  }
+  $("connect-btn").addEventListener("click", async function () {
+    var a = await M.connect(setStatus);
+    if (a) setStatus("Connected: " + M.shortAddr(a) + ". Check a knight below, then burn it.");
+  });
+  $("check-knight-btn").addEventListener("click", async function () {
+    var v = $("burn-token-id").value.trim();
+    var n = parseInt(v, 10);
+    if (!/^\d+$/.test(v) || n < 1 || n > 7854) {
+      $("burn-check-result").textContent = "Enter a token number from 1 to 7,854.";
+      $("burn-btn").disabled = true;
+      checkedOk = false;
+      return;
+    }
+    $("burn-check-result").textContent = "Checking token #" + n + "…";
+    try {
+      var nft = await M.nftRead();
+      var owner = await nft.ownerOf(n);
+      var r = Number(await nft.rarityOf(n));
+      if (r === 4) {
+        $("burn-check-result").textContent = "Token #" + n + " is Divine — Divine cannot be burned.";
+        $("burn-btn").disabled = true;
+        checkedOk = false;
+        return;
+      }
+      var acct = M.account();
+      var yours = !!acct && owner.toLowerCase() === acct.toLowerCase();
+      $("burn-check-result").textContent = "Token #" + n + ": " + RARITY[r] + ", owner " + M.shortAddr(owner) +
+        (yours ? " (yours)" : " (not yours)") + ". Burning it earns " + REWARD[r] + " $THYRK.";
+      checkedId = n;
+      checkedOk = yours;
+      $("burn-btn").disabled = !checkedOk;
+      if (!yours && !acct) $("burn-check-result").textContent += " Connect your wallet to burn it.";
+    } catch (e) {
+      $("burn-check-result").textContent = "Could not read token #" + n + " — it may not be minted yet, or the chain could not be reached.";
+      $("burn-btn").disabled = true;
+      checkedOk = false;
+    }
+  });
+  $("burn-btn").addEventListener("click", async function () {
+    if (!checkedOk || checkedId === null) return;
+    setStatus("Sending burn for token #" + checkedId + " — confirm it in your wallet. This is permanent.");
+    try {
+      var nft = await M.nftWrite();
+      var tx = await nft.burn(checkedId);
+      setStatus("Transaction sent — waiting for confirmation…");
+      await tx.wait();
+      setResultHtml("Burned ✓ — token #" + checkedId + " is gone and the $THYRK reward is in your wallet. " + M.txAnchor(tx.hash));
+      $("burn-btn").disabled = true;
+      checkedOk = false;
+    } catch (e) {
+      setStatus("Burn failed or was rejected: " + M.errMsg(e));
+    }
   });
 })();
 </script>

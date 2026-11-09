@@ -34,17 +34,17 @@
   <h1>How to Mint</h1>
   <p><span class="badge">✦ <span data-live="status">MINT IS LIVE</span></span></p>
   <p>Minted <strong><span data-live="minted">–</span> / 7,777</strong></p>
-  <p><strong>The new THYRK contract is deployed and mint is LIVE.</strong> When it opens, minting will be <strong>agent-only</strong>. There is no mint button for humans on this site. An AI agent mints for you — and only if your wallet holds a SPACE ID Agent ID.</p>
+  <p><strong>The new THYRK contract is deployed and mint is LIVE.</strong> Minting is <strong>agent-only</strong>. There is no mint button for humans on this site. An AI agent mints for you — and only if your wallet holds a SPACE ID Agent ID.</p>
 
-  <h2>How minting will work</h2>
+  <h2>How minting works</h2>
   <ul>
     <li>You need a wallet on BNB Chain with a <strong>SPACE ID Agent ID</strong> attached to it.</li>
     <li>You need an AI agent that can call contracts for you.</li>
     <li>Your wallet can mint at most <strong>30 THYRK knights</strong> in total.</li>
     <li>Your <strong>first mint per wallet is FREE and automatic</strong> — no choice to make, no separate free-mint step. It applies to 1 mint per wallet, with no total cap on free mints.</li>
     <li>The free mint draws from the <strong>full deck, including Legendary</strong> — a free mint can draw any tier: Common, Rare, Epic or Legendary.</li>
-    <li><strong>Bulk mint:</strong> up to 30 knights in 1 transaction. A 30-mint bulk costs 0.0138 BNB in total (1 free + 29 paid).</li>
-    <li>Price ladder per wallet: <strong>#1 FREE, #2–10 0.0002 BNB, #11–20 0.0004 BNB, #21–30 0.0008 BNB</strong>. The exact price is always read from the contract at mint time and shown in your wallet confirmation before you sign. The price is never shown as a static number on this site.</li>
+    <li><strong>Bulk mint:</strong> up to 30 knights in 1 transaction — 1 free + 29 paid.</li>
+    <li>The price for each mint depends on how many times your wallet has minted. The exact price is always read from the contract at mint time and shown in your wallet confirmation before you sign. The price is never shown as a static number on this site.</li>
     <li>Every mint — free and paid — earns <strong>20 $THYRK</strong>.</li>
   </ul>
 
@@ -66,7 +66,7 @@ Token $THYRK: 0x3b8747d067b2ed8565330667128260c2a4954300.
 SPACE ID Agent ID registry: 0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F.
 Rules: minting is agent-only — the wallet must hold a SPACE ID Agent ID; contract wallets cannot mint; max 30 mints per wallet; supply 7,777.
 Mint: call mint(uint256 quantity), selector 0xa0712d68, 1–30 in one transaction. There is no free-mint argument.
-First mint per wallet is FREE and automatic, and it draws from the full deck including Legendary. Price ladder per wallet: #1 FREE, #2–10 0.0002 BNB, #11–20 0.0004 BNB, #21–30 0.0008 BNB (30 in one transaction = 0.0138 BNB).
+First mint per wallet is FREE and automatic, and it draws from the full deck including Legendary. The price for each mint depends on how many times the wallet has minted — read it from the contract (see below); never hardcode a price.
 Before signing, read quoteBulk(wallet, quantity) from the contract for the exact total price and show it in the wallet confirmation. Each mint earns 20 $THYRK, free mints included.
 After minting, verify on-chain (totalSupply, mintCount) and show the knight: image, name, rarity and traits.
 </pre>

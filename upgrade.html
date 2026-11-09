@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Upgrade Knights — THYRK</title>
-<meta name="description" content="Upgrade THYRK knights: 3 Common + 50 $THYRK = 1 Rare, 3 Rare + 100 $THYRK = 1 Epic, 3 Epic + 200 $THYRK = 1 Legendary. Opens after the new contract deploys on BNB Chain.">
+<meta name="description" content="Upgrade THYRK knights: 3 Common + 50 $THYRK = 1 Rare, 3 Rare + 100 $THYRK = 1 Epic, 3 Epic + 200 $THYRK = 1 Legendary. Live now on BNB Chain.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/style.css">
 </head>
@@ -35,7 +35,7 @@
   <p><span class="badge">MINT IS LIVE</span></p>
   <p>Three knights of one rarity, plus $THYRK, become one knight of the next rarity. Upgrading gives your Common knights a second life — instead of burning them one by one, combine them into something rarer.</p>
 
-  <div class="note">Upgrades open with the new contract. Each upgrade needs $THYRK in your wallet — earn it from mints (20 $THYRK each, free and paid) or by burning a knight.</div>
+  <div class="note">Upgrades are live with the new contract. Each upgrade needs $THYRK in your wallet — earn it from mints (20 $THYRK each, free and paid) or by burning a knight.</div>
 
   <h2>Upgrade recipes</h2>
   <table>
@@ -69,7 +69,23 @@
 
   <h2>Upgrade</h2>
   <p>$THYRK token contract: <a href="https://bscscan.com/address/0x3b8747d067b2ed8565330667128260c2a4954300"><code>0x3b8747d067b2ed8565330667128260c2a4954300</code></a><br>NFT contract: <a href="https://bscscan.com/address/0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e"><code>0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e</code></a></p>
-  <p>There is no button here — THYRK is agent-only. Ask your agent to run the upgrade for you (see <a href="/agent-skill.md">agent-skill.md</a>). Your agent approves the $THYRK cost first, then calls the upgrade with your 3 knights.</p>
+  <p>Do it yourself below — connect your wallet, pick 3 knights of one rarity, approve the $THYRK fee, and upgrade. Or ask your agent to run the upgrade for you (see <a href="/agent-skill.md">agent-skill.md</a>).</p>
+  <div class="note">
+    <h3 style="margin-top:0">Do it yourself</h3>
+    <p><button class="btn" id="connect-btn" type="button">Connect wallet</button>
+    <span id="wallet-status" data-manual-wallet>Not connected.</span></p>
+    <label for="up-token-1"><strong>Knight 1 token ID</strong></label>
+    <input id="up-token-1" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" placeholder="e.g. 2210">
+    <label for="up-token-2"><strong>Knight 2 token ID</strong></label>
+    <input id="up-token-2" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" placeholder="e.g. 456">
+    <label for="up-token-3"><strong>Knight 3 token ID</strong></label>
+    <input id="up-token-3" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" placeholder="e.g. 3854">
+    <p><button class="btn" id="check-upgrade-btn" type="button">Check knights</button></p>
+    <p class="status-line" id="upgrade-check-result" role="status"></p>
+    <p><button class="btn" id="approve-btn" type="button" disabled>Approve $THYRK fee</button>
+    <button class="btn primary" id="upgrade-btn" type="button" disabled>Upgrade</button></p>
+    <p class="status-line" id="manual-status" role="status"></p>
+  </div>
 
   <p><a class="btn ghost" href="/">Back to home</a></p>
 </div>
@@ -94,6 +110,157 @@
     if(!nav.classList.contains('open'))return;
     if(e.target.closest('header'))return;
     closeMenu();
+  });
+})();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/ethers@6.13.4/dist/ethers.umd.min.js"></script>
+<script src="/manual.js"></script>
+<script>
+/* Upgrade page — manual flow. Check 3 knights, approve the fee, upgrade. */
+(function () {
+  var M = window.THYRK_MANUAL;
+  var RARITY = ["Common", "Rare", "Epic", "Legendary", "Divine"];
+  var TARGET = ["Rare", "Epic", "Legendary"];
+  var FEE = [null, null, null]; // $THYRK fee in wei per input tier, set once ethers loads
+  var checked = null; // {ids:[t1,t2,t3], tier:r, fee:wei} after a successful check
+  function $(id) { return document.getElementById(id); }
+  function setStatus(t) { $("manual-status").textContent = t; }
+  function setResultHtml(h) { $("manual-status").innerHTML = h; }
+  if (typeof ethers === "undefined" || !M) {
+    setStatus("The wallet library did not load — check your connection and refresh this page.");
+    return;
+  }
+  FEE = [ethers.parseUnits("50", 18), ethers.parseUnits("100", 18), ethers.parseUnits("200", 18)];
+  function readIds() {
+    var ids = [];
+    for (var i = 1; i <= 3; i++) {
+      var v = $("up-token-" + i).value.trim();
+      var n = parseInt(v, 10);
+      if (!/^\d+$/.test(v) || n < 1 || n > 7777) return null;
+      ids.push(n);
+    }
+    return ids;
+  }
+  $("connect-btn").addEventListener("click", async function () {
+    var a = await M.connect(setStatus);
+    if (a) setStatus("Connected: " + M.shortAddr(a) + ". Enter 3 knights of one rarity, then check them.");
+  });
+  $("check-upgrade-btn").addEventListener("click", async function () {
+    var ids = readIds();
+    if (!ids) {
+      $("upgrade-check-result").textContent = "Enter 3 token numbers from 1 to 7,777 (mintable knights only).";
+      $("approve-btn").disabled = true;
+      $("upgrade-btn").disabled = true;
+      checked = null;
+      return;
+    }
+    if (ids[0] === ids[1] || ids[0] === ids[2] || ids[1] === ids[2]) {
+      $("upgrade-check-result").textContent = "The 3 knights must be 3 different token IDs.";
+      $("approve-btn").disabled = true;
+      $("upgrade-btn").disabled = true;
+      checked = null;
+      return;
+    }
+    $("upgrade-check-result").textContent = "Checking your 3 knights…";
+    try {
+      var nft = await M.nftRead();
+      var acct = M.account();
+      var owners = [];
+      var rarities = [];
+      for (var i = 0; i < 3; i++) {
+        owners.push(await nft.ownerOf(ids[i]));
+        rarities.push(Number(await nft.rarityOf(ids[i])));
+      }
+      if (!acct) {
+        $("upgrade-check-result").textContent = "Token #" + ids[0] + " is " + RARITY[rarities[0]] + ", #" + ids[1] + " is " + RARITY[rarities[1]] + ", #" + ids[2] + " is " + RARITY[rarities[2]] + ". Connect your wallet to check ownership and upgrade.";
+        $("approve-btn").disabled = true;
+        $("upgrade-btn").disabled = true;
+        checked = null;
+        return;
+      }
+      for (var j = 0; j < 3; j++) {
+        if (owners[j].toLowerCase() !== acct.toLowerCase()) {
+          $("upgrade-check-result").textContent = "Token #" + ids[j] + " is not yours (owner " + M.shortAddr(owners[j]) + "). All 3 knights must be in your wallet.";
+          $("approve-btn").disabled = true;
+          $("upgrade-btn").disabled = true;
+          checked = null;
+          return;
+        }
+      }
+      var r = rarities[0];
+      if (rarities[1] !== r || rarities[2] !== r) {
+        $("upgrade-check-result").textContent = "The 3 knights must all be the same rarity — yours are " + RARITY[rarities[0]] + ", " + RARITY[rarities[1]] + " and " + RARITY[rarities[2]] + ".";
+        $("approve-btn").disabled = true;
+        $("upgrade-btn").disabled = true;
+        checked = null;
+        return;
+      }
+      if (r > 2) {
+        $("upgrade-check-result").textContent = "Only Common, Rare and Epic knights can be upgraded — yours are " + RARITY[r] + ". Upgrade stops at Legendary.";
+        $("approve-btn").disabled = true;
+        $("upgrade-btn").disabled = true;
+        checked = null;
+        return;
+      }
+      checked = { ids: ids, tier: r, fee: FEE[r] };
+      var feeWhole = [50, 100, 200][r];
+      $("upgrade-check-result").textContent = "3 " + RARITY[r] + " knights, all yours ✓ — fee " + feeWhole + " $THYRK, you get 1 " + TARGET[r] + ".";
+      var token = await M.tokenRead();
+      var allow = await token.allowance(acct, M.NFT);
+      $("approve-btn").disabled = allow >= FEE[r];
+      $("approve-btn").textContent = "Approve " + feeWhole + " $THYRK fee";
+      $("upgrade-btn").disabled = allow < FEE[r];
+      setStatus(allow >= FEE[r] ? "Ready — you can upgrade." : "Approve the " + feeWhole + " $THYRK fee first, then upgrade.");
+    } catch (e) {
+      $("upgrade-check-result").textContent = "Could not read your knights — one may not be minted yet, or the chain could not be reached.";
+      $("approve-btn").disabled = true;
+      $("upgrade-btn").disabled = true;
+      checked = null;
+    }
+  });
+  $("approve-btn").addEventListener("click", async function () {
+    if (!checked) return;
+    var feeWhole = [50, 100, 200][checked.tier];
+    setStatus("Approving " + feeWhole + " $THYRK — confirm it in your wallet.");
+    try {
+      await M.ensureAllowance(checked.fee, setStatus);
+      setStatus("Approved ✓ — you can now upgrade.");
+      $("approve-btn").disabled = true;
+      $("upgrade-btn").disabled = false;
+    } catch (e) {
+      setStatus("Approval failed or was rejected: " + M.errMsg(e));
+    }
+  });
+  $("upgrade-btn").addEventListener("click", async function () {
+    if (!checked) return;
+    setStatus("Sending upgrade — confirm it in your wallet. The 3 knights and the fee will be burned.");
+    try {
+      var nft = await M.nftWrite();
+      var tx = await nft.upgrade(checked.ids[0], checked.ids[1], checked.ids[2]);
+      setStatus("Transaction sent — waiting for confirmation…");
+      var rc = await tx.wait();
+      var newId = null;
+      try {
+        var iface = new ethers.Interface(M.NFT_ABI);
+        for (var i = 0; i < rc.logs.length; i++) {
+          try {
+            var parsed = iface.parseLog(rc.logs[i]);
+            if (parsed && parsed.name === "Upgraded") { newId = parsed.args.tokenId.toString(); break; }
+          } catch (e) { /* not our event */ }
+        }
+      } catch (e) { /* fall back to text below */ }
+      if (newId) {
+        setResultHtml("Upgraded ✓ — your new " + TARGET[checked.tier] + " knight is token #" + newId +
+          ". Check it on the <a href=\"/check.html\">Check page</a>. " + M.txAnchor(tx.hash));
+      } else {
+        setResultHtml("Upgraded ✓ — your new " + TARGET[checked.tier] + " knight is in your wallet. Check it on the <a href=\"/check.html\">Check page</a>. " + M.txAnchor(tx.hash));
+      }
+      $("upgrade-btn").disabled = true;
+      $("approve-btn").disabled = true;
+      checked = null;
+    } catch (e) {
+      setStatus("Upgrade failed or was rejected: " + M.errMsg(e));
+    }
   });
 })();
 </script>

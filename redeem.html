@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Redeem Divine — THYRK</title>
-<meta name="description" content="Redeem 1,500 $THYRK for 1 Divine THYRK knight. 77 unique 1-of-1 knights, first come first served. Opens after the new contract deploys on BNB Chain.">
+<meta name="description" content="Redeem 1,500 $THYRK for 1 Divine THYRK knight. 77 unique 1-of-1 knights, first come first served. Live now on BNB Chain.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/style.css">
 </head>
@@ -70,7 +70,16 @@
 
   <h2>Redeem</h2>
   <p>$THYRK token contract: <a href="https://bscscan.com/address/0x3b8747d067b2ed8565330667128260c2a4954300"><code>0x3b8747d067b2ed8565330667128260c2a4954300</code></a><br>NFT contract: <a href="https://bscscan.com/address/0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e"><code>0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e</code></a></p>
-  <p>There is no button here — THYRK is agent-only. Ask your agent to run the Divine redeem for you (see <a href="/agent-skill.md">agent-skill.md</a>). Your agent approves 1,500 $THYRK first, then calls the redeem — you receive 1 Divine knight.</p>
+  <p>Do it yourself below — connect your wallet, approve 1,500 $THYRK, and redeem. Or ask your agent to run the Divine redeem for you (see <a href="/agent-skill.md">agent-skill.md</a>).</p>
+  <div class="note">
+    <h3 style="margin-top:0">Do it yourself</h3>
+    <p><button class="btn" id="connect-btn" type="button">Connect wallet</button>
+    <span id="wallet-status" data-manual-wallet>Not connected.</span></p>
+    <p class="status-line" id="redeem-balance" role="status">Connect your wallet to see your $THYRK balance.</p>
+    <p><button class="btn" id="approve-btn" type="button" disabled>Approve 1,500 $THYRK</button>
+    <button class="btn primary" id="redeem-btn" type="button" disabled>Redeem Divine</button></p>
+    <p class="status-line" id="manual-status" role="status"></p>
+  </div>
 
   <p><a class="btn ghost" href="/">Back to home</a></p>
 </div>
@@ -99,5 +108,80 @@
 })();
 </script>
 <script src="/live-count.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/ethers@6.13.4/dist/ethers.umd.min.js"></script>
+<script src="/manual.js"></script>
+<script>
+/* Redeem page — manual flow. Approve 1,500 $THYRK, then redeem a Divine. */
+(function () {
+  var M = window.THYRK_MANUAL;
+  var COST = null; // 1,500 $THYRK in wei, set once ethers is available
+  function $(id) { return document.getElementById(id); }
+  function setStatus(t) { $("manual-status").textContent = t; }
+  function setResultHtml(h) { $("manual-status").innerHTML = h; }
+  if (typeof ethers === "undefined" || !M) {
+    setStatus("The wallet library did not load — check your connection and refresh this page.");
+    return;
+  }
+  COST = ethers.parseUnits("1500", 18);
+  async function refresh() {
+    var acct = M.account();
+    if (!acct) {
+      $("redeem-balance").textContent = "Connect your wallet to see your $THYRK balance.";
+      $("approve-btn").disabled = true;
+      $("redeem-btn").disabled = true;
+      return;
+    }
+    try {
+      var token = await M.tokenRead();
+      var nft = await M.nftRead();
+      var bal = await token.balanceOf(acct);
+      var allow = await token.allowance(acct, M.NFT);
+      var remaining = await nft.divineRemaining();
+      $("redeem-balance").textContent = "Your $THYRK: " + M.fmtThyrk(bal) +
+        " · Approved for the NFT contract: " + M.fmtThyrk(allow) +
+        " · Divine remaining: " + remaining.toString() + " / 77.";
+      var enough = bal >= COST;
+      $("approve-btn").disabled = !enough || allow >= COST;
+      $("redeem-btn").disabled = !enough || allow < COST || remaining === 0n;
+      if (!enough) setStatus("You need 1,500 $THYRK to redeem a Divine — you have " + M.fmtThyrk(bal) + ". Earn it from mints and burns.");
+      else if (allow < COST) setStatus("Approve 1,500 $THYRK first, then redeem.");
+      else setStatus("Ready — you can redeem a Divine.");
+    } catch (e) {
+      $("redeem-balance").textContent = "Could not read your balance — the chain could not be reached. Try again.";
+    }
+  }
+  $("connect-btn").addEventListener("click", async function () {
+    var a = await M.connect(setStatus);
+    if (a) { setStatus("Connected: " + M.shortAddr(a) + "."); await refresh(); }
+  });
+  $("approve-btn").addEventListener("click", async function () {
+    setStatus("Approving 1,500 $THYRK — confirm it in your wallet.");
+    try {
+      await M.ensureAllowance(COST, setStatus);
+      setStatus("Approved ✓ — you can now redeem a Divine.");
+      await refresh();
+    } catch (e) {
+      setStatus("Approval failed or was rejected: " + M.errMsg(e));
+    }
+  });
+  $("redeem-btn").addEventListener("click", async function () {
+    setStatus("Sending redeem — confirm it in your wallet. The 1,500 $THYRK will be burned.");
+    try {
+      var nft = await M.nftWrite();
+      var tx = await nft.redeemDivine();
+      setStatus("Transaction sent — waiting for confirmation…");
+      await tx.wait();
+      var read = await M.nftRead();
+      var minted = await read.divineMinted();
+      var tokenId = 7778 + Number(minted) - 1;
+      setResultHtml("Divine redeemed ✓ — your Divine knight is token #" + tokenId +
+        ". Check it on the <a href=\"/check.html\">Check page</a>. " + M.txAnchor(tx.hash));
+      await refresh();
+    } catch (e) {
+      setStatus("Redeem failed or was rejected: " + M.errMsg(e));
+    }
+  });
+})();
+</script>
 </body>
 </html>

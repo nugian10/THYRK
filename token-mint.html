@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mint with $THYRK — THYRK</title>
-<meta name="description" content="Redeem 100 $THYRK for 1 THYRK mint, max 3 per wallet. Earn $THYRK by minting and burning knights. Opens after the new contract deploys on BNB Chain.">
+<meta name="description" content="Redeem 100 $THYRK for 1 THYRK mint, max 3 per wallet. Earn $THYRK by minting and burning knights. Live now on BNB Chain.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/style.css">
 </head>
@@ -61,7 +61,19 @@
 
   <h2>Redeem a mint</h2>
   <p>$THYRK token contract: <a href="https://bscscan.com/address/0x3b8747d067b2ed8565330667128260c2a4954300"><code>0x3b8747d067b2ed8565330667128260c2a4954300</code></a><br>NFT contract: <a href="https://bscscan.com/address/0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e"><code>0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e</code></a></p>
-  <p>There is no button here — THYRK is agent-only. Ask your agent to run the token mint for you (see <a href="/agent-skill.md">agent-skill.md</a>). Your agent approves 100 $THYRK per mint first, then calls the mint — you receive 1 knight from the same shuffled deck.</p>
+  <p>Do it yourself below — connect your wallet, approve 100 $THYRK per mint, and mint. Or ask your agent to run the token mint for you (see <a href="/agent-skill.md">agent-skill.md</a>).</p>
+  <div class="note">
+    <h3 style="margin-top:0">Do it yourself</h3>
+    <p><button class="btn" id="connect-btn" type="button">Connect wallet</button>
+    <span id="wallet-status" data-manual-wallet>Not connected.</span></p>
+    <p class="status-line" id="tokenmint-info" role="status">Connect your wallet to see your $THYRK balance and token mints used.</p>
+    <label for="tokenmint-qty"><strong>How many mints (1–3)</strong></label>
+    <input id="tokenmint-qty" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" value="1">
+    <p><button class="btn" id="approve-btn" type="button" disabled>Approve $THYRK</button>
+    <button class="btn primary" id="mint-token-btn" type="button" disabled>Mint with $THYRK</button></p>
+    <p class="status-line" id="manual-status" role="status"></p>
+    <p class="status-line" id="agentid-warning" role="status"></p>
+  </div>
 
   <p><a class="btn ghost" href="/">Back to home</a></p>
 </div>
@@ -90,5 +102,102 @@
 })();
 </script>
 <script src="/live-count.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/ethers@6.13.4/dist/ethers.umd.min.js"></script>
+<script src="/manual.js"></script>
+<script>
+/* Token-mint page — manual flow. Approve 100 $THYRK per mint, then mint.
+   NOTE: unlike burn/redeem/upgrade, a token mint DOES require a SPACE ID
+   Agent ID — the contract checks it on-chain, so a wallet without one
+   will see its transaction revert. The page checks and warns first. */
+(function () {
+  var M = window.THYRK_MANUAL;
+  var COST_EACH = null; // 100 $THYRK in wei
+  function $(id) { return document.getElementById(id); }
+  function setStatus(t) { $("manual-status").textContent = t; }
+  function setResultHtml(h) { $("manual-status").innerHTML = h; }
+  if (typeof ethers === "undefined" || !M) {
+    setStatus("The wallet library did not load — check your connection and refresh this page.");
+    return;
+  }
+  COST_EACH = ethers.parseUnits("100", 18);
+  function qty() {
+    var v = $("tokenmint-qty").value.trim();
+    var n = parseInt(v, 10);
+    if (!/^\d+$/.test(v) || n < 1 || n > 3) return 0;
+    return n;
+  }
+  async function refresh() {
+    var acct = M.account();
+    if (!acct) {
+      $("tokenmint-info").textContent = "Connect your wallet to see your $THYRK balance and token mints used.";
+      $("approve-btn").disabled = true;
+      $("mint-token-btn").disabled = true;
+      $("agentid-warning").textContent = "";
+      return;
+    }
+    try {
+      var token = await M.tokenRead();
+      var nft = await M.nftRead();
+      var bal = await token.balanceOf(acct);
+      var allow = await token.allowance(acct, M.NFT);
+      var used = await nft.tokenMints(acct);
+      var hasAgent = await nft.holdsAgentId(acct);
+      var q = qty();
+      var left = 3 - Number(used);
+      $("tokenmint-info").textContent = "Token mints used: " + used.toString() + " / 3 · Your $THYRK: " + M.fmtThyrk(bal) +
+        " · Approved for the NFT contract: " + M.fmtThyrk(allow) + " · Agent ID: " + (hasAgent ? "Yes" : "No") + ".";
+      if (!hasAgent) {
+        $("agentid-warning").textContent = "Your wallet does not hold a SPACE ID Agent ID — the contract requires one for a token mint, so the transaction would revert. Get an Agent ID first, or mint with BNB through an agent instead.";
+      } else {
+        $("agentid-warning").textContent = "";
+      }
+      var need = COST_EACH * BigInt(q || 1);
+      var okQty = q >= 1 && q <= left;
+      $("approve-btn").disabled = !okQty || !hasAgent || bal < need || allow >= need;
+      $("approve-btn").textContent = "Approve " + (100 * (q || 1)) + " $THYRK";
+      $("mint-token-btn").disabled = !okQty || !hasAgent || bal < need || allow < need;
+      if (!okQty) setStatus(left <= 0 ? "You have used all 3 token mints for this wallet." : "Enter a quantity from 1 to 3 (you have " + left + " left).");
+      else if (bal < need) setStatus("You need " + (100 * q) + " $THYRK for " + q + " mint" + (q > 1 ? "s" : "") + " — you have " + M.fmtThyrk(bal) + ".");
+      else if (allow < need) setStatus("Approve " + (100 * q) + " $THYRK first, then mint.");
+      else setStatus("Ready — you can mint " + q + " knight" + (q > 1 ? "s" : "") + " with $THYRK.");
+    } catch (e) {
+      $("tokenmint-info").textContent = "Could not read your wallet state — the chain could not be reached. Try again.";
+    }
+  }
+  $("connect-btn").addEventListener("click", async function () {
+    var a = await M.connect(setStatus);
+    if (a) { setStatus("Connected: " + M.shortAddr(a) + "."); await refresh(); }
+  });
+  $("tokenmint-qty").addEventListener("input", function () { refresh(); });
+  $("approve-btn").addEventListener("click", async function () {
+    var q = qty();
+    if (!q) return;
+    var need = COST_EACH * BigInt(q);
+    setStatus("Approving " + (100 * q) + " $THYRK — confirm it in your wallet.");
+    try {
+      await M.ensureAllowance(need, setStatus);
+      setStatus("Approved ✓ — you can now mint with $THYRK.");
+      await refresh();
+    } catch (e) {
+      setStatus("Approval failed or was rejected: " + M.errMsg(e));
+    }
+  });
+  $("mint-token-btn").addEventListener("click", async function () {
+    var q = qty();
+    if (!q) return;
+    setStatus("Sending token mint for " + q + " knight" + (q > 1 ? "s" : "") + " — confirm it in your wallet. No BNB is sent; " + (100 * q) + " $THYRK will be burned.");
+    try {
+      var nft = await M.nftWrite();
+      var tx = await nft.mintWithToken(q);
+      setStatus("Transaction sent — waiting for confirmation…");
+      await tx.wait();
+      setResultHtml("Minted ✓ — " + q + " knight" + (q > 1 ? "s" : "") + " minted with $THYRK. Check them on the <a href=\"/check.html\">Check page</a>. " + M.txAnchor(tx.hash));
+      await refresh();
+    } catch (e) {
+      setStatus("Token mint failed or was rejected: " + M.errMsg(e));
+    }
+  });
+})();
+</script>
 </body>
 </html>

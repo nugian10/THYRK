@@ -105,7 +105,7 @@
   <div class="note-box info">
     <strong>What changed in the new contract.</strong> First mint per wallet is <strong>automatic and free</strong> (no choice, no flag &mdash; <code>mint(uint256)</code> only);
     a free mint draws from the full deck, <strong>including</strong> Legendary (a free Legendary is a lure — Divine sits above it); every mint, free <strong>and</strong> paid, earns 20 $THYRK.
-    Ladder per wallet: #1 FREE, #2&ndash;10: 0.0002 BNB, #11&ndash;20: 0.0004 BNB, #21&ndash;30: 0.0008 BNB (bulk 30 = 0.0138 BNB), max 30/wallet.
+    Price ladder per wallet: #1 FREE, later mints cost more as the wallet's mint count rises, max 30/wallet. The exact price is read from the contract at mint time.
     Minting starts OFF. Agent-only via SPACE ID Agent ID, enforced on-chain.
   </div>
 
@@ -137,7 +137,7 @@
       <tr><th>5. Deck hash</th><td><code class="mono">0x592a9180d7c57fa9c609176c204e8c4950ee20d7d13c5705c0227516e97e8233</code><br>keccak256 of the 7,777-entry deck (seed 0x544859524b = &ldquo;THYRK&rdquo;), verified off-chain</td></tr>
       <tr><th>6. Rarity bitmap</th><td>61 words (2 bits per token) built from the published deck &mdash; embedded in this page, lets the contract know each token's rarity for free-mint / burn / upgrade rules</td></tr>
       <tr><th>7. $THYRK token</th><td><code class="mono">0x3b8747d067b2ed8565330667128260c2a4954300</code><br>EXISTING $THYRK (ERC-20, cap 777,777) &mdash; reused, <strong>not</strong> redeployed</td></tr>
-      <tr><th>Supply / ladder</th><td>7,777 mintable (Common 4,000, Rare 2,500, Epic 1,000, Legendary 277) + 77 Divine by redeem only. Ladder per wallet: #1 FREE (automatic), #2&ndash;10: 0.0002 BNB, #11&ndash;20: 0.0004 BNB, #21&ndash;30: 0.0008 BNB, max 30/wallet. Mint bonus 20 $THYRK per mint (free and paid). Minting starts OFF.</td></tr>
+      <tr><th>Supply / ladder</th><td>7,777 mintable (Common 4,000, Rare 2,500, Epic 1,000, Legendary 277) + 77 Divine by redeem only. Price ladder per wallet: #1 FREE (automatic), later mints cost more as the wallet's mint count rises, max 30/wallet. Mint bonus 20 $THYRK per mint (free and paid). Minting starts OFF.</td></tr>
     </table>
     <p class="status-line"><strong>Live gas price:</strong> <span id="gas-price">&mdash;</span></p>
     <p class="status-line"><strong>Estimated gas (NFT deploy only):</strong> <span id="gas-estimate">&mdash;</span></p>
@@ -179,7 +179,7 @@
   <section class="step todo" id="step-4">
     <h2>Step 4 &mdash; Set minter on the EXISTING $THYRK token (owner only)</h2>
     <p>The new NFT contract must be allowed to mint $THYRK (mint bonus, burn rewards). This is the owner-only call <code>setMinter(newNftAddress, true)</code> on the <strong>existing</strong> token at <code class="mono">0x3b8747d067b2ed8565330667128260c2a4954300</code>.</p>
-    <div class="warn-box"><strong>Until this is done, every mint, burn and upgrade WILL REVERT</strong> &mdash; the new NFT is not a minter yet. No new token is deployed anywhere on this page.</div>
+    <div class="warn-box"><strong>setMinter is already done for the live contract</strong> (<code class="mono">0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e</code>) &mdash; <code>minters(NFT)</code> reads <code>true</code> and minting is live. This step only matters if you deploy a fresh contract. No new token is deployed anywhere on this page.</div>
     <p><span class="badge2" id="minter-badge">Not checked yet</span></p>
     <p class="status-line"><strong>Token owner (must be My Wallet):</strong> <span id="token-owner-status">&mdash;</span></p>
     <p class="status-line"><strong>minters(new NFT) now:</strong> <span id="minter-now-status">&mdash;</span></p>
@@ -214,7 +214,7 @@
       <tr><td>revenueWallet()</td><td><code class="mono" id="v-revenue">-</code></td><td><code class="mono">0x89c3&hellip;47B7</code> (Agentic)</td><td id="v-revenue-r">-</td></tr>
       <tr><td>royaltyInfo(1, 10000) receiver</td><td><code class="mono" id="v-royalty-addr">-</code></td><td><code class="mono">0x89c3&hellip;47B7</code> (Agentic)</td><td id="v-royalty-addr-r">-</td></tr>
       <tr><td>royaltyInfo(1, 10000) amount</td><td><code class="mono" id="v-royalty-amt">-</code></td><td>500 (5% of 10000)</td><td id="v-royalty-amt-r">-</td></tr>
-      <tr><td>mintActive()</td><td><code class="mono" id="v-mintactive">-</code></td><td>false (off until activation)</td><td id="v-mintactive-r">-</td></tr>
+      <tr><td>mintActive()</td><td><code class="mono" id="v-mintactive">-</code></td><td>true (live since 10 Nov 2026)</td><td id="v-mintactive-r">-</td></tr>
       <tr><td>MAX_SUPPLY</td><td><code class="mono" id="v-maxsupply">-</code></td><td>7777</td><td id="v-maxsupply-r">-</td></tr>
       <tr><td>MAX_PER_WALLET</td><td><code class="mono" id="v-maxwallet">-</code></td><td>30</td><td id="v-maxwallet-r">-</td></tr>
       <tr><td>DIVINE_SUPPLY</td><td><code class="mono" id="v-divine">-</code></td><td>77</td><td id="v-divine-r">-</td></tr>
@@ -229,7 +229,7 @@
   <section class="step todo" id="step-6">
     <h2>Step 6 &mdash; Activate minting (owner only)</h2>
     <p>Turn minting on with <code>setMintActive(true)</code>. One small transaction from the owner wallet.</p>
-    <div class="warn-box"><strong>Only when Bryan says so.</strong> Do <strong>not</strong> activate minting until the launch is approved &mdash; the contract is deployed with minting OFF on purpose.</div>
+    <div class="warn-box"><strong>Minting is already ACTIVE on the live contract</strong> (activated 10 Nov 2026). Use this step only to re-open minting if it was closed in step 7.</div>
     <label for="activate-address"><strong>New NFT contract address</strong></label>
     <input class="addr" id="activate-address" type="text" inputmode="text" autocomplete="off" spellcheck="false" placeholder="0x&hellip; (filled in automatically after step 3)">
     <p class="status-line" id="activate-estimate">Enter the deployed contract address first.</p>
@@ -256,10 +256,10 @@
     <h2>Launch checklist</h2>
     <ol>
       <li><strong>Verify the source on BscScan</strong> &mdash; open the new contract on BscScan &rarr; Contract &rarr; Verify and Publish, compiler 0.8.24, optimizer runs 200, EVM cancun, license MIT.</li>
-      <li><strong>Confirm setMinter</strong> &mdash; on the existing $THYRK token, <code>minters(newNftAddress)</code> must read <code>true</code> (step 4).</li>
+      <li><strong>Confirm setMinter</strong> &mdash; on the existing $THYRK token, <code>minters(newNftAddress)</code> reads <code>true</code> &#10003; (done 10 Nov 2026).</li>
       <li><strong>Confirm the on-chain checks</strong> &mdash; all rows in step 5 must show PASS.</li>
-      <li><strong>Update the site</strong> &mdash; point the site config at the NEW NFT address; keep the previous contract listed as closed (21 mints, final).</li>
-      <li><strong>Announce the launch</strong> on X (@thyrk_) &mdash; only after Bryan lifts the launch hold.</li>
+      <li><strong>Update the site</strong> &mdash; the site now points at the new NFT address (0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e) and shows MINT IS LIVE &#10003; (done 10 Nov 2026).</li>
+      <li><strong>Announce the launch</strong> on X (@thyrk_) &#10003; &mdash; mint opened 10 Nov 2026 ~00:02 WIB.</li>
     </ol>
   </div>
 
@@ -463,12 +463,12 @@
       setText("cost-idr", fmtIdr(deployWei) + " (approx., at Rp " +
         BNB_IDR_REF.toLocaleString("en-US") + " / BNB)");
       setText("estimate-status", "Deploy measured at " +
-        MEASURED_NFT_GAS.toLocaleString("en-US") + " gas ≈ 0.00025 BNB / ≈ Rp 3,000 at 0.05 gwei. " +
+        MEASURED_NFT_GAS.toLocaleString("en-US") + " gas (reference, NFT deploy only). " +
         "setMinter is a separate small transaction afterwards (" +
         MEASURED_SETMINTER_GAS.toLocaleString("en-US") + " gas), activation (setMintActive) " +
         MEASURED_ACTIVATE_GAS.toLocaleString("en-US") + " gas. All three together: " +
         totalGas.toLocaleString("en-US") + " gas ≈ " + fmtBnb(totalWei) + " BNB at the current gas price. " +
-        "Keep ~0.001 BNB in My Wallet to be safe.");
+        "Keep a small amount of BNB in My Wallet to be safe.");
       setStep(2, "done");
       setStep(3, "active");
     } catch (e) {
@@ -682,12 +682,13 @@
       allPass = setCheck("v-royalty-addr", rAddr, rAddr.toLowerCase() === REVENUE.toLowerCase()) && allPass;
       allPass = setCheck("v-royalty-amt", rAmt.toString(), rAmt === 500n) && allPass;
       var active = await c.mintActive();
-      // Expected false right after deploy. If it is already true, that is
-      // not a contract error — it means minting was already activated.
-      var maPass = active === false;
-      setText("v-mintactive", active ? "true (already activated)" : "false");
+      // Minting is live since 10 Nov 2026, so true is the expected
+      // value now. False is not a contract error — it means minting
+      // was closed (step 7) and can be re-opened in step 6.
+      var maPass = active === true;
+      setText("v-mintactive", active ? "true (live)" : "false");
       var maR = $("v-mintactive-r");
-      maR.textContent = maPass ? "PASS ✓" : "NOTE — minting already ON";
+      maR.textContent = maPass ? "PASS ✓" : "NOTE — minting is OFF";
       maR.className = maPass ? "check-pass" : "check-fail";
       var ms = await c.MAX_SUPPLY();
       allPass = setCheck("v-maxsupply", ms.toString(), ms === 7777n) && allPass;
@@ -707,7 +708,7 @@
         setStep(5, "done");
         setStep(6, "active");
       } else if (allPass && !maPass) {
-        setText("verify-status", "All value checks passed; mintActive is already true (minting was already activated in step 6).");
+        setText("verify-status", "All value checks passed; mintActive is false (minting is closed — use step 6 to re-open it).");
         setStep(5, "done");
       } else {
         setText("verify-status", "One or more checks FAILED — do not activate minting. Compare the values above with step 2 and check you entered the right contract address.");
