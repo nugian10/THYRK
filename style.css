@@ -83,6 +83,28 @@ button{cursor:pointer}
 /* Hamburger menu (Zigzoo pattern): inline links on desktop, ☰ button on phones */
 .menu-toggle{display:none}
 .badge.next{background:rgba(255,255,255,.05);color:var(--muted);border-color:var(--line)}
+/* Anchor targets sit below the sticky header */
+section[id]{scroll-margin-top:70px}
+#agent-prompt{scroll-margin-top:76px;border-radius:16px}
+#agent-prompt:target{animation:prompt-glow 2.4s ease-out}
+@keyframes prompt-glow{0%{box-shadow:0 0 0 3px rgba(245,197,66,.9);background:rgba(245,197,66,.08)}100%{box-shadow:0 0 0 0 rgba(245,197,66,0);background:transparent}}
+@media (max-width:480px){
+  .wrap{padding:0 16px}
+  section{padding:36px 0 8px}
+  .hero{padding:48px 16px 32px}
+  .hero p.lead{font-size:16px}
+  h1{font-size:clamp(26px,8vw,58px)}
+  table{font-size:14px}
+  th,td{padding:9px 8px}
+  .stat{min-width:118px;padding:12px 14px}
+  .stat b{font-size:21px}
+  .card{padding:14px}
+  .btn{padding:12px 20px}
+  pre{font-size:12px;padding:12px}
+  .mystery{font-size:90px}
+  .nav{padding:12px 16px}
+  .nav nav a{padding:14px 4px}
+}
 @media (max-width:700px){
   .menu-toggle{display:inline-flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;background:transparent;border:1px solid var(--line);border-radius:10px;cursor:pointer;flex-shrink:0;padding:0;margin-left:auto}
   .menu-toggle span{display:block;height:3px;width:22px;margin:0 auto;background:var(--text);border-radius:2px;transition:transform .15s,opacity .15s}

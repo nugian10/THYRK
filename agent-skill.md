@@ -8,12 +8,18 @@ mintable — only redeemed with $THYRK. Site: https://thyrk.fun/
 
 ## Contracts (BNB Chain, chain id 56)
 
-- THYRK NFT (THYRK): 0x0000000000000000000000000000000000000000 —
-  PLACEHOLDER, NOT DEPLOYED YET. Do NOT attempt any mint transaction
-  until the THYRK site shows a real deployed contract address.
-- $THYRK token: NOT DEPLOYED YET either. No $THYRK exists today. Do NOT
-  attempt any redeem, token-mint, upgrade, burn or claim call until the
-  site publishes a real $THYRK token contract address.
+- THYRK NFT (THYRK): 0xeff20913f99fd153da1b27bd96401089d3323bb8 —
+  DEPLOYED (BscScan: https://bscscan.com/address/0xeff20913f99fd153da1b27bd96401089d3323bb8).
+  Minting IS open: mintActive() is true. You may mint — follow the
+  read-first checklist below.
+- $THYRK token: 0x3b8747d067b2ed8565330667128260c2a4954300 — DEPLOYED
+  (BscScan: https://bscscan.com/address/0x3b8747d067b2ed8565330667128260c2a4954300).
+  No $THYRK is created by deploying — it is earned by
+  paid mints and burns, so check totalSupply() on the token contract
+  before assuming any exists. The NFT contract IS set as a minter
+  (minters(nftAddress) is true), so paid mints, burns and upgrades
+  will work once $THYRK exists. Do NOT attempt any redeem,
+  token-mint, upgrade, burn or claim call until $THYRK exists.
 - SPACE ID Agent ID registry: 0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F
 - Owner: Bryan's My Wallet 0x0262e8e5E4584D8AB840fD950a6E2E0A414d4097
 - Revenue: Binance Agentic Wallet 0x89c37649Ba3BAA9E1ce028612b7DE4e9c3a947B7. Mint payments are forwarded directly
@@ -77,10 +83,10 @@ mintable — only redeemed with $THYRK. Site: https://thyrk.fun/
   Official X: https://x.com/thyrk_ (@thyrk_). Claims are NOT open yet
   — the official post to repost has not been published, and the claim
   system does not exist yet.
-- $THYRK feature pages (rules only, buttons disabled until the token
-  contract is deployed): redeem a Divine at /redeem.html, mint with
-  $THYRK at /token-mint.html, upgrades at /upgrade.html, claim $THYRK
-  for reposting at /claim.html, burn knights at /burn.html.
+- $THYRK feature pages (rules only, buttons disabled until $THYRK
+  exists): redeem a Divine at /redeem.html, mint with $THYRK at
+  /token-mint.html, upgrades at /upgrade.html, claim $THYRK for
+  reposting at /claim.html, burn knights at /burn.html.
 - $THYRK is spent via burnFrom, so the wallet must first approve the
   NFT contract to spend its $THYRK: approve() (selector 0x095ea7b3)
   on the token contract, spender = NFT contract, amount = the cost.
@@ -133,7 +139,8 @@ mintable — only redeemed with $THYRK. Site: https://thyrk.fun/
 Repeat as needed, up to 30 mints per wallet. Do not mint without the
 user's confirmation of the exact price shown in the wallet preview.
 
-## $THYRK flows (only after the token contract is deployed)
+## $THYRK flows (now that the token contract is deployed — but note no
+$THYRK exists until the first paid mints/burns)
 
 - Mint with $THYRK: approve the NFT contract to spend 100 $THYRK per
   mint, then call mintWithToken(quantity) (selector 0xb3eaff8b) with

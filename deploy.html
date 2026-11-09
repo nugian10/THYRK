@@ -184,7 +184,7 @@
   <!-- Step 6 -->
   <section class="step todo" id="step-6">
     <h2>Step 6 &mdash; Activate minting (owner only)</h2>
-    <p>After both contracts are deployed (and verified on BscScan) and the minter is set, turn minting on with <code>setMintActive(true)</code>. This is a second, small transaction from the owner wallet. <strong>Do this only when Bryan lifts the public launch hold and the site is ready to go live.</strong></p>
+    <p>After both contracts are deployed (and verified on BscScan) and the minter is set, turn minting on with <code>setMintActive(true)</code>. This is a second, small transaction from the owner wallet. <strong>Minting is already ON</strong> — setMintActive(true) was confirmed on-chain, so this step is done. Do not run it again.</p>
     <label for="activate-address"><strong>NFT contract address</strong></label>
     <input class="addr" id="activate-address" type="text" inputmode="text" autocomplete="off" spellcheck="false" placeholder="0x… (filled in automatically after deploy)">
     <p class="status-line" id="activate-estimate">Enter the deployed contract address first.</p>
@@ -199,8 +199,8 @@
     <ol>
       <li><strong>Verify the source of BOTH contracts on BscScan</strong> — open each contract on BscScan &rarr; Contract &rarr; Verify and Publish, compiler 0.8.24, optimizer runs 200, license MIT.</li>
       <li><strong>Confirm setMinter</strong> — on the token contract, <code>minters(nftAddress)</code> must read <code>true</code>.</li>
-      <li><strong>Update the site</strong> — replace the <code>0x0000…0000</code> placeholder with the new contract addresses in <code>index.html</code>, <code>llms.txt</code> and <code>agent-skill.md</code>, and flip COMING SOON to live.</li>
-      <li><strong>Announce the launch</strong> on X (@thyrk_) — only after Bryan lifts the public launch hold.</li>
+      <li><strong>Update the site</strong> — done: real contract addresses are published on the site (index.html, llms.txt, agent-skill.md) and it now reads MINT IS LIVE.</li>
+      <li><strong>Announce the launch</strong> on X (@thyrk_) — the public launch hold is lifted.</li>
     </ol>
   </div>
 

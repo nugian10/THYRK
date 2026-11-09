@@ -5,11 +5,12 @@
 ## Site
 
 - Website: https://thyrk.fun/
-- Mint status: COMING SOON — the contract is NOT deployed yet. Minting is not live.
+- Mint status: MINT IS LIVE — agent-only mint is open (mintActive true, totalSupply 0 so far).
 - Total supply: 7,777 mintable NFTs (Common 4,000: 777 free + 3,223 paid; Rare 2,500; Epic 1,000; Legendary 277) plus 77 Divine (not mintable, only redeemed with $THYRK).
 - Blockchain: BNB Smart Chain Mainnet, Chain ID 56
-- Contract: 0x0000000000000000000000000000000000000000 (placeholder — not deployed yet)
-- Contract source: to be verified on BscScan after deploy
+- Contract (THYRK NFT): 0xeff20913f99fd153da1b27bd96401089d3323bb8 — https://bscscan.com/address/0xeff20913f99fd153da1b27bd96401089d3323bb8
+- $THYRK token: 0x3b8747d067b2ed8565330667128260c2a4954300 — https://bscscan.com/address/0x3b8747d067b2ed8565330667128260c2a4954300
+- Contract source: deployed; source verification on BscScan is pending
 - SPACE ID Agent ID registry: 0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F
 - Owner: Bryan's My Wallet 0x0262e8e5E4584D8AB840fD950a6E2E0A414d4097
 - Revenue: Binance Agentic Wallet 0x89c37649Ba3BAA9E1ce028612b7DE4e9c3a947B7 (mint payments are forwarded directly to it in the same transaction).
@@ -30,7 +31,7 @@
 
 - Max supply 777,777 $THYRK. Paid mint earns 20 $THYRK. Burn: Common 20, Rare 50, Epic 120, Legendary 300.
 - Uses: redeem 1 Divine for 1,500 $THYRK (77 max); redeem 1 mint for 100 $THYRK (max 3 per wallet); upgrade 3 Common + 50 $THYRK = 1 Rare, 3 Rare + 100 $THYRK = 1 Epic, 3 Epic + 200 $THYRK = 1 Legendary. Repost the official THYRK post on X: 100 $THYRK, max 1 per wallet.
-- The $THYRK features have their own pages with the full rules: redeem a Divine at https://thyrk.fun/redeem.html, mint with $THYRK at https://thyrk.fun/token-mint.html, upgrades at https://thyrk.fun/upgrade.html, claim $THYRK for reposting at https://thyrk.fun/claim.html, and burning knights for $THYRK at https://thyrk.fun/burn.html. These pages are live as information, but their buttons are disabled — the $THYRK token contract is NOT deployed yet, so no $THYRK exists and nothing can be redeemed or upgraded today. Divine redemption is first come first served (77 max).
+- The $THYRK features have their own pages with the full rules: redeem a Divine at https://thyrk.fun/redeem.html, mint with $THYRK at https://thyrk.fun/token-mint.html, upgrades at https://thyrk.fun/upgrade.html, claim $THYRK for reposting at https://thyrk.fun/claim.html, and burning knights for $THYRK at https://thyrk.fun/burn.html. These pages are live as information, but their buttons are disabled — the buttons are not connected yet, so nothing can be redeemed or upgraded from these pages; use your agent (see agent-skill.md). Divine redemption is first come first served (77 max).
 - Official THYRK account on X: https://x.com/thyrk_ (@thyrk_). Repost reward: 100 $THYRK for reposting the official THYRK post, max 1 per wallet and 1 per X account, total budget 77,777 $THYRK (max 777 wallets). Verification is automatic via the X API — no manual check. Claims are NOT open yet: the official post to repost has not been published.
 
 ## Gallery
