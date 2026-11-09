@@ -70,6 +70,12 @@
       setText("status", t("status.not_open", "MINT NOT YET OPEN"));
     } else {
       refreshMinted();
+      // Optimistic status in the current language: the badge's static
+      // default text is Japanese, so without this the badge stays
+      // Japanese in EN/ZH mode until the RPC below returns (or forever
+      // if it fails). The mintActive() call corrects it if the mint
+      // is actually closed.
+      setText("status", t("status.live", "MINT IS LIVE"));
       callFirstRpc(NFT, SEL_DIVINE).then(function (v) { setText("divine", v.toString()); }).catch(function () { /* keep dash, retry next round */ });
       callFirstRpc(NFT, SEL_ACTIVE).then(function (v) { setText("status", v === 0n ? t("status.not_open", "MINT NOT YET OPEN") : t("status.live", "MINT IS LIVE")); }).catch(function () { /* keep the default text, retry next round */ });
     }
