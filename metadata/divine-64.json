@@ -1,0 +1,31 @@
+{
+  "name": "THYRK Divine #64",
+  "description": "THYRK \u2014 7,777 knight NFTs on BNB Chain. 16-bit pixel art. Divine \u2014 1 of 77, redeemable only with 1,500 $THYRK.",
+  "image": "https://raw.githubusercontent.com/nugian10/THYRK/main/collection/images/divine-064.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Divine"
+    },
+    {
+      "trait_type": "Pose",
+      "value": "crossbow aimed forward, both hands, guard stance"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "heavy steel crossbow, glowing red bolt, bolt case at hip"
+    },
+    {
+      "trait_type": "Helmet",
+      "value": "golden royal crown helmet"
+    },
+    {
+      "trait_type": "Wings",
+      "value": "dark crimson feathered wings"
+    },
+    {
+      "trait_type": "Theme",
+      "value": "crimson royal crossbowman"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "THYRK #6429",
+  "description": "THYRK \u2014 7,777 knight NFTs on BNB Chain. 16-bit pixel art.",
+  "image": "https://raw.githubusercontent.com/nugian10/THYRK/main/collection/images/epic-2.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Epic"
+    },
+    {
+      "trait_type": "Design",
+      "value": "Crimson"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "155 of 200"
+    }
+  ]
+}

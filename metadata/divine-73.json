@@ -1,0 +1,31 @@
+{
+  "name": "THYRK Divine #73",
+  "description": "THYRK \u2014 7,777 knight NFTs on BNB Chain. 16-bit pixel art. Divine \u2014 1 of 77, redeemable only with 1,500 $THYRK.",
+  "image": "https://raw.githubusercontent.com/nugian10/THYRK/main/collection/images/divine-073.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Divine"
+    },
+    {
+      "trait_type": "Pose",
+      "value": "crystal staff planted beside the knight, calm frost-mage stance"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "tall crystal staff, large faceted ice-blue crystal, frost sparkles"
+    },
+    {
+      "trait_type": "Helmet",
+      "value": "slim silver helmet with small crystal crest"
+    },
+    {
+      "trait_type": "Wings",
+      "value": "silver feathered wings"
+    },
+    {
+      "trait_type": "Theme",
+      "value": "ice-blue frost mage"
+    }
+  ]
+}

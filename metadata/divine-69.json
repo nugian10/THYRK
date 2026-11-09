@@ -1,0 +1,31 @@
+{
+  "name": "THYRK Divine #69",
+  "description": "THYRK \u2014 7,777 knight NFTs on BNB Chain. 16-bit pixel art. Divine \u2014 1 of 77, redeemable only with 1,500 $THYRK.",
+  "image": "https://raw.githubusercontent.com/nugian10/THYRK/main/collection/images/divine-069.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Divine"
+    },
+    {
+      "trait_type": "Pose",
+      "value": "mid-throw, one arm extended throwing a glowing dagger"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "dual daggers, one gripped correctly by the handle, one thrown with purple trail"
+    },
+    {
+      "trait_type": "Helmet",
+      "value": "masked helmet, glowing violet eyes only"
+    },
+    {
+      "trait_type": "Wings",
+      "value": "dark grey feathered wings"
+    },
+    {
+      "trait_type": "Theme",
+      "value": "shadow assassin"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "THYRK Divine #71",
+  "description": "THYRK \u2014 7,777 knight NFTs on BNB Chain. 16-bit pixel art. Divine \u2014 1 of 77, redeemable only with 1,500 $THYRK.",
+  "image": "https://raw.githubusercontent.com/nugian10/THYRK/main/collection/images/divine-071.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Divine"
+    },
+    {
+      "trait_type": "Pose",
+      "value": "chakram spinning in raised hand, other hand open guiding it"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "large glowing golden chakram ring, light trails"
+    },
+    {
+      "trait_type": "Helmet",
+      "value": "tall pointed conical helmet with golden tip"
+    },
+    {
+      "trait_type": "Wings",
+      "value": "white feathered wings with silver tips"
+    },
+    {
+      "trait_type": "Theme",
+      "value": "silver-white chakram monk"
+    }
+  ]
+}
