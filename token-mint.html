@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mint with $THYRK — THYRK</title>
-<meta name="description" content="Redeem 100 $THYRK for 1 THYRK mint, max 3 per wallet. Earn $THYRK by minting and burning knights. Live on BNB Chain.">
+<meta name="description" content="Redeem 100 $THYRK for 1 THYRK mint, max 3 per wallet. Earn $THYRK by minting and burning knights. Opens after the new contract deploys on BNB Chain.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/style.css">
 </head>
@@ -23,7 +23,6 @@
       <a href="/redeem.html">Redeem</a>
       <a href="/token-mint.html">Token Mint</a>
       <a href="/upgrade.html">Upgrade</a>
-      <a href="/claim.html">Claim</a>
       <a href="/burn.html">Burn</a>
       <a href="/#faq">FAQ</a>
     </nav>
@@ -33,14 +32,14 @@
 <main>
 <div class="wrap">
   <h1>Mint with $THYRK</h1>
-  <p><span class="badge">LIVE — TOKEN MINT IS OPEN</span></p>
+  <p><span class="badge">NOT YET DEPLOYED — TOKEN MINT OPENS AFTER DEPLOY</span></p>
   <p>Spent $THYRK can mint knights too: <strong>100 $THYRK = 1 mint</strong>, up to <strong>3 mints per wallet</strong>. No payment in BNB is needed for these mints — the 100 $THYRK is burned instead.</p>
 
   <p>$THYRK in circulation: <strong><span data-live="thyrk">0</span> / 777,777</strong> — read live from the token contract.</p>
 
   <h2>How it works</h2>
   <ol>
-    <li>Earn $THYRK: 20 per paid mint, 20 / 50 / 120 / 300 for burning a Common / Rare / Epic / Legendary, or 100 for reposting the official THYRK post on X (max 1 per wallet).</li>
+    <li>Earn $THYRK: 20 per mint (free and paid), 20 / 50 / 120 / 300 for burning a Common / Rare / Epic / Legendary.</li>
     <li>Collect 100 $THYRK for each mint you want to redeem (max 3 per wallet, 300 $THYRK in total).</li>
     <li>Ask your agent to redeem — the 100 $THYRK is burned and your agent mints 1 knight for you from the same shuffled deck.</li>
     <li>The knight can be any rarity, like a normal mint — Common, Rare, Epic or Legendary.</li>
@@ -48,21 +47,20 @@
 
   <div class="note"><strong>Redeem mints count toward your 30 mints per wallet.</strong> A wallet can hold at most 30 THYRK knights in total, however they were minted. Minting is still agent-only: your agent makes the mint call for you, and your wallet must hold a SPACE ID Agent ID.</div>
 
-  <div class="note">Token mints draw from the <strong>7,000 paid-mint supply</strong> — never from the 777 free mints. They pay no BNB and earn <strong>no 20 $THYRK bonus</strong> (only paid BNB mints earn the bonus).</div>
+  <div class="note">Token mints draw from the <strong>full 7,777 deck</strong> — any rarity, including Legendary. They pay no BNB and earn <strong>no 20 $THYRK bonus</strong>.</div>
 
   <h2>How to earn $THYRK</h2>
   <table>
     <tr><th>How to earn $THYRK</th><th>Amount</th></tr>
-    <tr><td>Paid mint</td><td>20 $THYRK per mint</td></tr>
+    <tr><td>Mint (free or paid)</td><td>20 $THYRK per mint</td></tr>
     <tr><td>Burn a Common</td><td>20 $THYRK</td></tr>
     <tr><td>Burn a Rare</td><td>50 $THYRK</td></tr>
     <tr><td>Burn an Epic</td><td>120 $THYRK</td></tr>
     <tr><td>Burn a Legendary</td><td>300 $THYRK</td></tr>
-    <tr><td>Repost the official THYRK post on X</td><td>100 $THYRK, max 1 per wallet</td></tr>
   </table>
 
   <h2>Redeem a mint</h2>
-  <p>$THYRK token contract: <a href="https://bscscan.com/address/0x3b8747d067b2ed8565330667128260c2a4954300"><code>0x3b8747d067b2ed8565330667128260c2a4954300</code></a><br>NFT contract: <a href="https://bscscan.com/address/0xeff20913f99fd153da1b27bd96401089d3323bb8"><code>0xeff20913f99fd153da1b27bd96401089d3323bb8</code></a></p>
+  <p>$THYRK token contract: <a href="https://bscscan.com/address/0x3b8747d067b2ed8565330667128260c2a4954300"><code>0x3b8747d067b2ed8565330667128260c2a4954300</code></a><br>NFT contract: <code>0x0000000000000000000000000000000000000000</code> (not yet deployed — TODO: FILL AFTER DEPLOY)</p>
   <p>There is no button here — THYRK is agent-only. Ask your agent to run the token mint for you (see <a href="/agent-skill.md">agent-skill.md</a>). Your agent approves 100 $THYRK per mint first, then calls the mint — you receive 1 knight from the same shuffled deck.</p>
 
   <p><a class="btn ghost" href="/">Back to home</a></p>
@@ -71,7 +69,7 @@
 <footer>
   <p>THYRK — 7,777 knights on BNB Chain. Agent-only mint.</p>
   <p><a href="/llms.txt">llms.txt</a> &middot; <a href="/agent-skill.md">Agent skill</a> &middot; <a href="/gallery.html">Gallery</a> &middot; <a href="/check.html">Check</a> &middot; <a href="/redeem.html">Redeem</a> &middot; <a href="/token-mint.html">Token Mint</a> &middot; <a href="/upgrade.html">Upgrade</a> &middot; <a href="/burn.html">Burn</a> &middot; <a href="https://x.com/thyrk_">X @thyrk_</a></p>
-  <p>Mint is closed.</p>
+  <p>Mint not yet open — new contract not yet deployed.</p>
 </footer>
 <script>
 (function(){

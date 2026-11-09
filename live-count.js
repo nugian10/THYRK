@@ -1,20 +1,24 @@
-/* THYRK live counters — totalSupply + freeMintsRemaining + divineRemaining,
-   read from the NFT contract, and $THYRK totalSupply from the token
-   contract, with client-side eth_call calls to a public BSC RPC.
-   Also reads mintActive() to label the mint status: MINT CLOSED when
-   false. Minting closed 9 Nov 2026 (21 of 7,777 minted); the counters
-   below keep reading the final on-chain values.
+/* THYRK live counters — totalSupply + divineRemaining, read from the
+   NFT contract, and $THYRK totalSupply from the token contract, with
+   client-side eth_call calls to a public BSC RPC. Also reads
+   mintActive() to label the mint status.
+   The new NFT contract is NOT YET DEPLOYED: NFT is the zero address
+   until the live address is filled in (TODO: FILL AFTER DEPLOY). While
+   it is the zero address, no NFT contract calls are made at all — the
+   counters stay as dashes, the status reads NOT YET DEPLOYED, and
+   nothing retries or spams failed calls. The $THYRK token is already
+   deployed, so its supply keeps reading live.
    Counts only; never shows prices. Fails soft: shows a dash and retries. */
 (function () {
-  var NFT = "0xeff20913f99fd153da1b27bd96401089d3323bb8";
+  var NFT = "0x0000000000000000000000000000000000000000"; // TODO: FILL AFTER DEPLOY
   var TOKEN = "0x3b8747d067b2ed8565330667128260c2a4954300";
+  var NOT_DEPLOYED = /^0x0{40}$/.test(NFT);
   var RPCS = [
     "https://bsc-dataseed.binance.org/",
     "https://bsc-dataseed1.defibit.io/",
     "https://bsc-dataseed1.ninicoin.io/"
   ];
   var SEL_MINTED = "0x18160ddd"; // totalSupply()
-  var SEL_FREE = "0x8868b9ff"; // freeMintsRemaining()
   var SEL_DIVINE = "0x739f6b19"; // divineRemaining()
   var SEL_ACTIVE = "0x25fd90f3"; // mintActive()
   var SEL_THYRK = "0x18160ddd"; // totalSupply() on the token (18 decimals)
@@ -40,10 +44,17 @@
     for (var i = 0; i < els.length; i++) els[i].textContent = value;
   }
   function refresh() {
-    callFirstRpc(NFT, SEL_MINTED).then(function (v) { setText("minted", v.toString()); }).catch(function () { /* keep dash, retry next round */ });
-    callFirstRpc(NFT, SEL_FREE).then(function (v) { setText("free", v.toString()); }).catch(function () { /* keep dash, retry next round */ });
-    callFirstRpc(NFT, SEL_DIVINE).then(function (v) { setText("divine", v.toString()); }).catch(function () { /* keep dash, retry next round */ });
-    callFirstRpc(NFT, SEL_ACTIVE).then(function (v) { setText("status", v === 0n ? "MINT CLOSED" : "MINT IS LIVE"); }).catch(function () { /* keep the default text, retry next round */ });
+    if (NOT_DEPLOYED) {
+      // Contract not deployed yet: show dashes / not-yet-deployed and
+      // make no NFT contract calls at all (no failed-call spam).
+      setText("minted", "–");
+      setText("divine", "–");
+      setText("status", "NOT YET DEPLOYED");
+    } else {
+      callFirstRpc(NFT, SEL_MINTED).then(function (v) { setText("minted", v.toString()); }).catch(function () { /* keep dash, retry next round */ });
+      callFirstRpc(NFT, SEL_DIVINE).then(function (v) { setText("divine", v.toString()); }).catch(function () { /* keep dash, retry next round */ });
+      callFirstRpc(NFT, SEL_ACTIVE).then(function (v) { setText("status", v === 0n ? "MINT NOT YET OPEN" : "MINT OPEN"); }).catch(function () { /* keep the default text, retry next round */ });
+    }
     callFirstRpc(TOKEN, SEL_THYRK).then(function (v) { setText("thyrk", (v / 1000000000000000000n).toString()); }).catch(function () { /* keep dash, retry next round */ });
   }
   if (document.querySelector("[data-live]")) {
