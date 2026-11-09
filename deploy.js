@@ -6,11 +6,11 @@
 //
 // Deploys TWO contracts in order: ThyrkToken first, then
 // ThyrkNFT (which needs the token address). The deployer wallet
-// pays gas ONLY — the owner of both contracts is the Binance
-// Agentic Wallet, passed as a constructor argument. Steps 5–6
-// (setMinter, activate) are owner-only: they can only be signed
-// by the Agentic Wallet, via Bryan's Binance agent. The page
-// offers them when the connected wallet IS the owner, and shows
+// pays gas ONLY — the owner of both contracts is Bryan's My Wallet,
+// passed as a constructor argument, while mint payments and the
+// 5% royalty go to the Binance Agentic Wallet (revenue). Steps 5–6
+// (setMinter, activate) are owner-only: they run in-page when the
+// connected wallet IS the owner (My Wallet), and the page shows
 // the exact manual call otherwise.
 //
 // Requires ethers v6 (UMD build) loaded from CDN before this
@@ -23,8 +23,8 @@
   // contracts/ThyrkToken.sol, contracts/ThyrkNFT.sol,
   // collection/manifest.json, collection/rarity-bitmap.json
   // and scripts/deploy.js — do not change here) ----
-  var OWNER = "0x89c37649Ba3BAA9E1ce028612b7DE4e9c3a947B7"; // Binance Agentic Wallet (owner + revenue)
-  var REVENUE = "0x89c37649Ba3BAA9E1ce028612b7DE4e9c3a947B7"; // same Agentic Wallet
+  var OWNER = "0x0262e8e5E4584D8AB840fD950a6E2E0A414d4097"; // Bryan's My Wallet (owner of BOTH contracts)
+  var REVENUE = "0x89c37649Ba3BAA9E1ce028612b7DE4e9c3a947B7"; // Binance Agentic Wallet (revenue only)
   var REGISTRY = "0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F"; // SPACE ID Agent ID registry
   var BASE_URI = "https://raw.githubusercontent.com/nugian10/THYRK/main/collection/metadata/";
   var DECK_HASH = "0x592a9180d7c57fa9c609176c204e8c4950ee20d7d13c5705c0227516e97e8233"; // seed 0x544859524b
@@ -126,7 +126,7 @@
       if (!accounts || accounts.length === 0) throw new Error("no account returned");
       account = ethers.getAddress(accounts[0]);
       signer = await provider.getSigner();
-      setText("wallet-status", "Connected: " + account + " (pays gas only — owner is the Agentic Wallet)");
+      setText("wallet-status", "Connected: " + account + " (pays gas only — owner is My Wallet)");
       setText("wallet-address", account);
       show("wallet-address-row");
       await checkChain();
@@ -239,7 +239,7 @@
       show("minter-owner-row");
       hide("minter-agent-row");
     } else {
-      badge.textContent = "Owner NOT connected — run via the Binance agent";
+      badge.textContent = "Owner NOT connected — connect My Wallet to run it here";
       badge.className = "badge2 bad";
       hide("minter-owner-row");
       show("minter-agent-row");
@@ -271,7 +271,7 @@
       $("token-address-link").href = bscscanAddr(tokenAddress);
       show("token-deployed-row");
       setText("deploy-token-status", "Deployed ✓ — $THYRK token is live at " + tokenAddress +
-        ". Owner is the Agentic Wallet.");
+        ". Owner is My Wallet.");
       setStep(3, "done");
       setStep(4, "active");
       $("nft-token-address").value = tokenAddress;
@@ -323,7 +323,7 @@
       $("activate-address").value = nftAddress;
       await refreshActivateEstimate();
       updateMinterStep();
-      note("NFT deployed! Next: setMinter (step 5) — owner-only, via the Binance agent if this wallet is not the owner.", "ok");
+      note("NFT deployed! Next: setMinter (step 5) — owner-only, run it here from My Wallet.", "ok");
     } catch (e) {
       btn.disabled = false;
       setText("deploy-nft-status", "Deployment failed or was rejected in your wallet: " +
@@ -337,7 +337,7 @@
   // ---- Step 5: setMinter (owner only) ----
   async function setMinter() {
     if (!isOwner()) {
-      note("Only the owner wallet (Agentic) can call setMinter. Run it via Bryan's Binance agent.", "error");
+      note("Only the owner wallet (My Wallet) can call setMinter. Connect My Wallet to run it here.", "error");
       return;
     }
     if (!tokenAddress || !nftAddress) {
@@ -387,8 +387,8 @@
       return;
     }
     if (!isOwner()) {
-      setText("activate-estimate", "Activation is owner-only: the connected wallet is not the Agentic Wallet. " +
-        "It must be run from the Agentic Wallet via Bryan's Binance agent — setMintActive(true) on " + addr + ".");
+      setText("activate-estimate", "Activation is owner-only: the connected wallet is not My Wallet. " +
+        "Connect My Wallet to run it here — setMintActive(true) on " + addr + ".");
       return;
     }
     try {
@@ -418,7 +418,7 @@
       return;
     }
     if (!isOwner()) {
-      note("Only the owner wallet (Agentic) can activate minting.", "error");
+      note("Only the owner wallet (My Wallet) can activate minting.", "error");
       return;
     }
     var btn = $("activate-btn");

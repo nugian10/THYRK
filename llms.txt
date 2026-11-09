@@ -11,8 +11,8 @@
 - Contract: 0x0000000000000000000000000000000000000000 (placeholder — not deployed yet)
 - Contract source: to be verified on BscScan after deploy
 - SPACE ID Agent ID registry: 0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F
-- Owner: Binance Agentic Wallet 0x89c37649Ba3BAA9E1ce028612b7DE4e9c3a947B7
-- Revenue: the same Agentic Wallet (mint payments are forwarded directly to it in the same transaction).
+- Owner: Bryan's My Wallet 0x0262e8e5E4584D8AB840fD950a6E2E0A414d4097
+- Revenue: Binance Agentic Wallet 0x89c37649Ba3BAA9E1ce028612b7DE4e9c3a947B7 (mint payments are forwarded directly to it in the same transaction).
 - Marketplace royalty: 5% to the creator.
 - Base URI: https://raw.githubusercontent.com/nugian10/THYRK/main/collection/metadata/
 

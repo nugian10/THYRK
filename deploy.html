@@ -87,9 +87,10 @@
   <div class="note-box info">
     <strong>Two contracts, in order.</strong> (1) <strong>ThyrkToken</strong> ($THYRK, ERC-20, cap 777,777) is deployed first.
     (2) <strong>ThyrkNFT</strong> (ERC-721, 7,777 + 77 Divine) is deployed second and needs the token address.
-    The deployer wallet only pays gas &mdash; the <strong>owner of both contracts is the Binance Agentic Wallet</strong>
-    (<code class="mono">0x89c37649Ba3BAA9E1ce028612b7DE4e9c3a947B7</code>), set as a constructor argument.
-    Steps 6–7 (setMinter, activate) are owner-only: they can only be signed by the Agentic Wallet, via Bryan's Binance agent.
+    The deployer wallet only pays gas &mdash; the <strong>owner of both contracts is Bryan's My Wallet</strong>
+    (<code class="mono">0x0262e8e5E4584D8AB840fD950a6E2E0A414d4097</code>), set as a constructor argument,
+    while mint payments go to the Binance Agentic Wallet (revenue).
+    Steps 6–7 (setMinter, activate) are owner-only: connect My Wallet to run them here.
   </div>
 
   <div id="note" class="note-box info hidden" role="status"></div>
@@ -97,7 +98,7 @@
   <!-- Step 1 -->
   <section class="step todo" id="step-1">
     <h2>Step 1 &mdash; Connect your wallet</h2>
-    <p>Connect the browser wallet on <strong>BNB Smart Chain (chain 56)</strong>. This wallet pays gas only &mdash; it does <strong>not</strong> become the owner. If you are on another network, the page will offer to switch.</p>
+    <p>Connect My Wallet (the owner wallet) on <strong>BNB Smart Chain (chain 56)</strong>. This wallet pays gas and becomes the owner of both contracts. If you are on another network, the page will offer to switch.</p>
     <p class="status-line"><strong>Wallet:</strong> <span id="wallet-status">Not connected.</span></p>
     <p class="status-line hidden" id="wallet-address-row"><strong>Address:</strong> <code class="mono" id="wallet-address"></code></p>
     <p class="status-line"><strong>Network:</strong> <span id="chain-status">—</span></p>
@@ -113,8 +114,8 @@
     <h2>Step 2 &mdash; What will be deployed</h2>
     <p>These constructor values are locked. Check them against the contract source before deploying.</p>
     <table class="kv">
-      <tr><th>Owner</th><td><code class="mono">0x89c37649Ba3BAA9E1ce028612b7DE4e9c3a947B7</code><br>Binance Agentic Wallet (owner of BOTH contracts)</td></tr>
-      <tr><th>Revenue wallet</th><td><code class="mono">0x89c37649Ba3BAA9E1ce028612b7DE4e9c3a947B7</code><br>Same Agentic Wallet — mint payments go here directly</td></tr>
+      <tr><th>Owner</th><td><code class="mono">0x0262e8e5E4584D8AB840fD950a6E2E0A414d4097</code><br>Bryan's My Wallet (owner of BOTH contracts)</td></tr>
+      <tr><th>Revenue wallet</th><td><code class="mono">0x89c37649Ba3BAA9E1ce028612b7DE4e9c3a947B7</code><br>Binance Agentic Wallet — mint payments go here directly</td></tr>
       <tr><th>Agent ID registry</th><td><code class="mono">0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F</code><br>SPACE ID (.ai Agent ID) — only Agent ID holders can mint</td></tr>
       <tr><th>Base URI</th><td><code class="mono">https://raw.githubusercontent.com/nugian10/THYRK/main/collection/metadata/</code><br>Metadata folder (tokenURI = baseURI + tokenId + “.json”)</td></tr>
       <tr><th>Deck hash</th><td><code class="mono">0x592a9180d7c57fa9c609176c204e8c4950ee20d7d13c5705c0227516e97e8233</code><br>keccak256 of the 7,777-entry deck (seed 0x544859524b = “THYRK”), verified off-chain</td></tr>
@@ -133,7 +134,7 @@
   <!-- Step 3 -->
   <section class="step todo" id="step-3">
     <h2>Step 3 &mdash; Deploy $THYRK token</h2>
-    <p>First transaction, sent from the connected wallet. Your wallet will show the exact cost &mdash; check it matches the estimate above before you confirm. Owner is set to the Agentic Wallet.</p>
+    <p>First transaction, sent from the connected wallet. Your wallet will show the exact cost &mdash; check it matches the estimate above before you confirm. Owner is set to My Wallet.</p>
     <button class="btn primary" id="deploy-token-btn" type="button" disabled>DEPLOY $THYRK TOKEN</button>
     <p class="status-line" id="deploy-token-status">Waiting for steps 1–2.</p>
     <p class="status-line hidden" id="deploy-token-tx-row"><strong>Transaction:</strong> <a id="deploy-token-tx-link" href="#" target="_blank" rel="noopener"><code class="mono" id="deploy-token-tx"></code></a></p>
@@ -167,16 +168,16 @@
     <p>The NFT contract must be allowed to mint $THYRK (paid-mint bonus, burn rewards). This is the owner-only call <code>setMinter(nftAddress, true)</code> on the token. <strong>Until this is done, paid mints, burns and upgrades will revert.</strong></p>
     <p><span class="badge2" id="minter-badge">Not checked yet</span></p>
     <div id="minter-owner-row" class="hidden">
-      <p class="status-line">Connected wallet is the owner (Agentic). You can run this step here.</p>
+      <p class="status-line">Connected wallet is the owner (My Wallet). You can run this step here.</p>
       <button class="btn primary" id="setminter-btn" type="button" disabled>SET MINTER (NFT)</button>
       <p class="status-line" id="setminter-status">Waiting for deploy.</p>
       <p class="status-line hidden" id="setminter-tx-row"><strong>Transaction:</strong> <a id="setminter-tx-link" href="#" target="_blank" rel="noopener"><code class="mono" id="setminter-tx"></code></a></p>
     </div>
     <div id="minter-agent-row" class="hidden">
-      <p class="status-line">The connected wallet is <strong>not</strong> the owner, so this step cannot be signed here. Run it from the Agentic Wallet via Bryan's Binance agent:</p>
+      <p class="status-line">The connected wallet is <strong>not</strong> the owner, so this step cannot be signed here. Connect My Wallet (the owner) to run it here, or run this call from My Wallet:</p>
       <p class="status-line"><code class="mono" id="minter-call">ThyrkToken.setMinter(nftAddress, true)</code></p>
       <button class="btn ghost small" id="copy-minter-call-btn" type="button">Copy the call</button>
-      <p class="status-line" id="minter-manual-status">After the Binance agent confirms the transaction, minting features will work.</p>
+      <p class="status-line" id="minter-manual-status">After My Wallet confirms the transaction, minting features will work.</p>
     </div>
   </section>
 

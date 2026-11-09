@@ -15,8 +15,8 @@ mintable — only redeemed with $THYRK. Site: https://thyrk.fun/
   attempt any redeem, token-mint, upgrade, burn or claim call until the
   site publishes a real $THYRK token contract address.
 - SPACE ID Agent ID registry: 0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F
-- Owner: Binance Agentic Wallet 0x89c37649Ba3BAA9E1ce028612b7DE4e9c3a947B7
-- Revenue: the same Agentic Wallet. Mint payments are forwarded directly
+- Owner: Bryan's My Wallet 0x0262e8e5E4584D8AB840fD950a6E2E0A414d4097
+- Revenue: Binance Agentic Wallet 0x89c37649Ba3BAA9E1ce028612b7DE4e9c3a947B7. Mint payments are forwarded directly
   to it in the same transaction (they never sit in the contract).
 
 ## Facts
@@ -55,9 +55,9 @@ mintable — only redeemed with $THYRK. Site: https://thyrk.fun/
 - Paid mint earns 20 $THYRK per mint. Token mints draw from the 7,000
   non-free supply, count toward the wallet's 30 max and advance the
   price ladder, but pay no BNB and earn no 20 $THYRK bonus.
-- Marketplace royalty: ERC-2981, 5% to the creator (the Agentic Wallet
-  above). Owner and revenue are the same wallet, so owner actions can
-  only be done from the Agentic Wallet via the user's Binance agent.
+- Marketplace royalty: ERC-2981, 5% to the creator (the Agentic Wallet,
+  the revenue wallet above). Owner actions (setMintActive, setMinter)
+  are done from My Wallet, the owner wallet above.
 - Artwork and metadata are public at
   https://raw.githubusercontent.com/nugian10/THYRK/main/collection/metadata/
   (base URI). rarityOf(tokenId) (selector 0xdd3b5f9a) returns 0 Common,
