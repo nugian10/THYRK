@@ -47,7 +47,7 @@ mintable — only redeemed with $THYRK. Site: https://thyrk.fun/
   1 Epic; 3 Epic + 200 $THYRK = 1 Legendary.
 - $THYRK feature pages (rules only, NOT live yet): redeem a Divine at
   /redeem.html, mint with $THYRK at /token-mint.html, upgrades at
-  /upgrade.html, claim $THYRK for reposting at /claim.html. The $THYRK
+  /upgrade.html, claim $THYRK for reposting at /claim.html, burn knights for $THYRK at /burn.html (Common 20, Rare 50, Epic 120, Legendary 300; burning is permanent). The $THYRK
   token contract is NOT deployed yet — no $THYRK exists. Do NOT attempt
   any redeem, token-mint, upgrade or claim call until the site publishes
   a real $THYRK token contract address. Divine redemption is first come

@@ -34,6 +34,7 @@
       <a href="/token-mint.html">Token Mint</a>
       <a href="/upgrade.html">Upgrade</a>
       <a href="/claim.html">Claim</a>
+      <a href="/burn.html">Burn</a>
       <a href="#faq">FAQ</a>
     </nav>
     <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -107,10 +108,10 @@
   <table>
     <tr><th>How to earn $THYRK</th><th>Amount</th></tr>
     <tr><td>Paid mint</td><td>20 $THYRK per mint</td></tr>
-    <tr><td>Burn a Common</td><td>20 $THYRK</td></tr>
-    <tr><td>Burn a Rare</td><td>50 $THYRK</td></tr>
-    <tr><td>Burn an Epic</td><td>120 $THYRK</td></tr>
-    <tr><td>Burn a Legendary</td><td>300 $THYRK</td></tr>
+    <tr><td><a href="/burn.html">Burn a Common</a></td><td>20 $THYRK</td></tr>
+    <tr><td><a href="/burn.html">Burn a Rare</a></td><td>50 $THYRK</td></tr>
+    <tr><td><a href="/burn.html">Burn an Epic</a></td><td>120 $THYRK</td></tr>
+    <tr><td><a href="/burn.html">Burn a Legendary</a></td><td>300 $THYRK</td></tr>
     <tr><td><a href="/claim.html">Repost the official THYRK post on X</a></td><td>100 $THYRK, max 1 per wallet</td></tr>
   </table>
   <br>
@@ -132,9 +133,9 @@
     <div class="step"><b class="n">1</b><h3>Read the skill</h3><p>Your AI agent reads this site and <a href="/agent-skill.md">agent-skill.md</a>.</p></div>
     <div class="step"><b class="n">2</b><h3>Check eligibility</h3><p>The agent checks the contract: mint is open, the wallet holds a SPACE ID Agent ID, and the wallet is below 30 mints.</p></div>
     <div class="step"><b class="n">3</b><h3>See the price</h3><p>The agent reads the exact price for your next mint from the contract and shows it in your wallet confirmation before you sign. The price is never shown on this site.</p></div>
-    <div class="step"><b class="n">4</b><h3>Mint &amp; verify</h3><p>After you confirm, the agent mints. Payment goes directly to the revenue wallet. The agent verifies the mint on-chain and shows you your knight.</p></div>
+    <div class="step"><b class="n">4</b><h3>Mint &amp; verify</h3><p>After you confirm, the agent mints. The agent verifies the mint on-chain and shows you your knight.</p></div>
   </div>
-  <div class="note"><strong>Don&rsquo;t have an AI agent yet?</strong> You need a wallet with a SPACE ID Agent ID and an AI agent that can call contracts for you — for example the Binance Agentic Wallet agent. Humans cannot mint from this site directly.</div>
+  <div class="note"><strong>Don&rsquo;t have an AI agent yet?</strong> You need a wallet with a SPACE ID Agent ID and an AI agent that can call contracts for you. Humans cannot mint from this site directly.</div>
   <h3>Agent prompt</h3>
   <p>Copy this short prompt to your agent:</p>
   <pre>Read https://thyrk.fun/agent-skill.md and follow it exactly to mint THYRK on BNB Chain. Check the contract is deployed and mint is open first. Confirm the wallet holds a SPACE ID Agent ID. Read the exact price from the contract and show it in the wallet confirmation before signing. Mint only after I confirm. Verify the mint on-chain afterwards.</pre>
@@ -157,8 +158,6 @@
     <tr><td>Token standard</td><td>ERC-721</td></tr>
     <tr><td>Contract</td><td><code>0x0000000000000000000000000000000000000000</code> — TBD, not deployed yet</td></tr>
     <tr><td>Mint status</td><td>COMING SOON</td></tr>
-    <tr><td>Owner</td><td>Binance Agentic Wallet <code>0x89c37649Ba3BAA9E1ce028612b7DE4e9c3a947B7</code></td></tr>
-    <tr><td>Revenue</td><td>Same Agentic Wallet — mint payments go directly to it</td></tr>
     <tr><td>Marketplace royalty</td><td>5% to the creator</td></tr>
     <tr><td>Agent gate</td><td>SPACE ID Agent ID, checked on-chain</td></tr>
     <tr><td>Artwork</td><td>16-bit pixel art only</td></tr>
@@ -192,7 +191,6 @@
   <details><summary>Can I mint more than one at a time?</summary><p>Yes. Bulk minting lets you mint several knights in one transaction, up to 30 mints per wallet in total.</p></details>
   <details><summary>What is Divine?</summary><p>Divine is a special rarity of 77 unique 1-of-1 knights. It cannot be minted. You redeem it with 1,500 $THYRK. Its artwork is hidden on this site and revealed only to its owner.</p></details>
   <details><summary>What is $THYRK for?</summary><p>Three clear uses: redeem a Divine (1,500), redeem a mint (100, max 3 per wallet), and upgrade knights (3 Common + 50, 3 Rare + 100, 3 Epic + 200). You earn it from paid mints, from burning knights, and from reposting the official THYRK post on X.</p></details>
-  <details><summary>Where does the mint payment go?</summary><p>Directly to the revenue wallet (the Binance Agentic Wallet) in the same transaction. It is never held in the contract.</p></details>
   <details><summary>Is mint live yet?</summary><p>No. The contract is not deployed yet. This site is live first; minting opens after the contract is deployed and verified.</p></details>
 </section>
 </div>
@@ -200,7 +198,7 @@
 
 <footer>
   <p><strong style="color:var(--gold)">THYRK</strong> — 7,777 knights on BNB Chain. Agent-only mint.</p>
-  <p><a href="/llms.txt">llms.txt</a> &middot; <a href="/agent-skill.md">Agent skill</a> &middot; <a href="/gallery.html">Gallery</a> &middot; <a href="/check.html">Check</a> &middot; <a href="#roadmap">Roadmap</a> &middot; <a href="#market">Market</a> &middot; <a href="/sitemap.xml">Sitemap</a> &middot; <a href="https://x.com/thyrk_">X @thyrk_</a></p>
+  <p><a href="/llms.txt">llms.txt</a> &middot; <a href="/agent-skill.md">Agent skill</a> &middot; <a href="/gallery.html">Gallery</a> &middot; <a href="/check.html">Check</a> &middot; <a href="#roadmap">Roadmap</a> &middot; <a href="#market">Market</a> &middot; <a href="/sitemap.xml">Sitemap</a> &middot; <a href="/burn.html">Burn</a> &middot; <a href="https://x.com/thyrk_">X @thyrk_</a></p>
   <p>Contract not deployed yet. No mint is live. No NFTs have been minted.</p>
 </footer>
 <script>
