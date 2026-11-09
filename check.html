@@ -130,7 +130,7 @@
     var addr = v.trim();
     r.innerHTML = '<div class="note">' +
       row('Knights held', '&mdash;') + row('Times minted', '&mdash;') +
-      row('Free mint', '&mdash;') + row('Next mint', '&mdash;') +
+      row('Free mint', '&mdash;') + row('Mint status', '&mdash;') +
       row('SPACE ID Agent ID', '&mdash;') + '</div>';
     var calls = {
       bal: callFirstRpc(NFT, SEL_BALANCE + padAddress(addr)).then(toBig),
@@ -153,20 +153,18 @@
       html += row('Knights held', bal === null ? '&mdash;' : esc(bal.toString()));
       if (cnt === null) {
         html += row('Times minted', '&mdash;');
-        html += row('Next mint', '&mdash;');
+        html += row('Mint status', 'Closed — no new mints.');
       } else if (cnt >= 30n) {
         html += row('Times minted', esc(cnt.toString()) + ' (max 30 per wallet reached)');
-        html += row('Next mint', 'This wallet has reached the 30-mint limit.');
+        html += row('Mint status', 'Closed — no new mints. This wallet already reached the 30-mint limit.');
       } else {
-        var next = cnt + 1n;
-        var band = cnt < 10n ? '1&ndash;10' : (cnt < 20n ? '11&ndash;20' : '21&ndash;30');
         html += row('Times minted', esc(cnt.toString()) + ' (max 30 per wallet)');
-        html += row('Next mint', 'Mint #' + esc(next.toString()) + ' for this wallet (tier ' + band + ')');
+        html += row('Mint status', 'Closed — no new mints.');
       }
       if (free === null) {
         html += row('Free mint', '&mdash;');
       } else if (free === 0n) {
-        html += row('Free mint', 'Still available' + (freeLeft === null ? '' : ' (' + esc(freeLeft.toString()) + ' of 777 free mints still unclaimed)'));
+        html += row('Free mint', 'Not used — but minting is closed, so it can no longer be claimed' + (freeLeft === null ? '' : ' (' + esc(freeLeft.toString()) + ' of 777 free mints remain unclaimed)'));
       } else {
         html += row('Free mint', 'Already used');
       }
