@@ -1,0 +1,31 @@
+{
+  "name": "THYRK Divine #70",
+  "description": "THYRK \u2014 7,777 knight NFTs on BNB Chain. 16-bit pixel art. Divine \u2014 1 of 77, redeemable only with 1,500 $THYRK.",
+  "image": "https://raw.githubusercontent.com/nugian10/THYRK/main/collection/images/divine-070.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Divine"
+    },
+    {
+      "trait_type": "Pose",
+      "value": "both arms raised, throwing knives flying in an arc around the knight"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "glowing golden throwing knives in flight"
+    },
+    {
+      "trait_type": "Helmet",
+      "value": "open-face helmet with golden circlet"
+    },
+    {
+      "trait_type": "Wings",
+      "value": "large golden feathered wings"
+    },
+    {
+      "trait_type": "Theme",
+      "value": "golden knife storm"
+    }
+  ]
+}

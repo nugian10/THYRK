@@ -1,0 +1,31 @@
+{
+  "name": "THYRK Divine #77",
+  "description": "THYRK \u2014 7,777 knight NFTs on BNB Chain. 16-bit pixel art. Divine \u2014 1 of 77, redeemable only with 1,500 $THYRK.",
+  "image": "https://raw.githubusercontent.com/nugian10/THYRK/main/collection/images/divine-077.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Divine"
+    },
+    {
+      "trait_type": "Pose",
+      "value": "moon staff held upright, serene lunar guardian stance"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "tall moon staff topped with glowing silver crescent moon and blue orb"
+    },
+    {
+      "trait_type": "Helmet",
+      "value": "helmet crowned with a large glowing blue crystal"
+    },
+    {
+      "trait_type": "Wings",
+      "value": "pale silver-blue feathered wings"
+    },
+    {
+      "trait_type": "Theme",
+      "value": "midnight-blue lunar guardian"
+    }
+  ]
+}

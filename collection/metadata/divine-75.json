@@ -1,0 +1,31 @@
+{
+  "name": "THYRK Divine #75",
+  "description": "THYRK \u2014 7,777 knight NFTs on BNB Chain. 16-bit pixel art. Divine \u2014 1 of 77, redeemable only with 1,500 $THYRK.",
+  "image": "https://raw.githubusercontent.com/nugian10/THYRK/main/collection/images/divine-075.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Divine"
+    },
+    {
+      "trait_type": "Pose",
+      "value": "shortbow lowered at rest, relaxed ranger stance"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "small shortbow, glowing arrow, leather quiver on back"
+    },
+    {
+      "trait_type": "Helmet",
+      "value": "helmet with two curved deer antlers"
+    },
+    {
+      "trait_type": "Wings",
+      "value": "brown and white feathered wings"
+    },
+    {
+      "trait_type": "Theme",
+      "value": "brown ranger of the hunt"
+    }
+  ]
+}

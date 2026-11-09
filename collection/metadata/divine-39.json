@@ -1,0 +1,31 @@
+{
+  "name": "THYRK Divine #39",
+  "description": "THYRK \u2014 7,777 knight NFTs on BNB Chain. 16-bit pixel art. Divine \u2014 1 of 77, redeemable only with 1,500 $THYRK.",
+  "image": "https://raw.githubusercontent.com/nugian10/THYRK/main/collection/images/divine-039.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Divine"
+    },
+    {
+      "trait_type": "Pose",
+      "value": "claymore held upright two-handed in front"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "claymore"
+    },
+    {
+      "trait_type": "Helmet",
+      "value": "plumed helmet"
+    },
+    {
+      "trait_type": "Wings",
+      "value": "large golden angel wings"
+    },
+    {
+      "trait_type": "Theme",
+      "value": "gold-winged claymore champion"
+    }
+  ]
+}

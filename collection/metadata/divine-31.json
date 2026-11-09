@@ -1,0 +1,31 @@
+{
+  "name": "THYRK Divine #31",
+  "description": "THYRK \u2014 7,777 knight NFTs on BNB Chain. 16-bit pixel art. Divine \u2014 1 of 77, redeemable only with 1,500 $THYRK.",
+  "image": "https://raw.githubusercontent.com/nugian10/THYRK/main/collection/images/divine-031.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Divine"
+    },
+    {
+      "trait_type": "Pose",
+      "value": "spear in right hand, glowing orb of holy light floating above open left palm"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "golden spear + glowing holy orb"
+    },
+    {
+      "trait_type": "Helmet",
+      "value": "translucent glowing crystal helmet with crystal spikes"
+    },
+    {
+      "trait_type": "Wings",
+      "value": "large white angel wings"
+    },
+    {
+      "trait_type": "Theme",
+      "value": "white and gold armor, light cyan cape, crystal blue gems"
+    }
+  ]
+}

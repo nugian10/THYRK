@@ -1,0 +1,31 @@
+{
+  "name": "THYRK Divine #76",
+  "description": "THYRK \u2014 7,777 knight NFTs on BNB Chain. 16-bit pixel art. Divine \u2014 1 of 77, redeemable only with 1,500 $THYRK.",
+  "image": "https://raw.githubusercontent.com/nugian10/THYRK/main/collection/images/divine-076.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Divine"
+    },
+    {
+      "trait_type": "Pose",
+      "value": "spellbook in left arm, star-tipped wand raised, archmage stance"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "open glowing spellbook + slender magic wand with bright star tip"
+    },
+    {
+      "trait_type": "Helmet",
+      "value": "golden circlet helmet with small horns"
+    },
+    {
+      "trait_type": "Wings",
+      "value": "huge white feathered wings"
+    },
+    {
+      "trait_type": "Theme",
+      "value": "deep-blue archmage"
+    }
+  ]
+}
