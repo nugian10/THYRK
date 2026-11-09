@@ -1,0 +1,53 @@
+{
+  "project": "THYRK",
+  "chain": 56,
+  "chainName": "BNB Chain",
+  "seed": "0x544859524B",
+  "seedNote": "0x544859524b = ASCII 'THYRK'",
+  "deckHash": "0x592a9180d7c57fa9c609176c204e8c4950ee20d7d13c5705c0227516e97e8233",
+  "totalMintable": 7777,
+  "totalDivine": 77,
+  "totalFiles": 7854,
+  "counts": {
+    "Common": {
+      "total": 4000,
+      "designs": 5,
+      "editionsPerDesign": 800
+    },
+    "Rare": {
+      "total": 2500,
+      "designs": 5,
+      "editionsPerDesign": 500
+    },
+    "Epic": {
+      "total": 1000,
+      "designs": 5,
+      "editionsPerDesign": 200
+    },
+    "Legendary": {
+      "total": 277,
+      "designs": 277,
+      "editionsPerDesign": 1
+    },
+    "Divine": {
+      "total": 77,
+      "designs": 77,
+      "editionsPerDesign": 1
+    }
+  },
+  "baseURI": "https://raw.githubusercontent.com/nugian10/THYRK/main/collection/metadata/",
+  "imageBaseURI": "https://raw.githubusercontent.com/nugian10/THYRK/main/collection/images/",
+  "deckMethod": "Deck built in fixed order (Common 5 designs x 800, Rare 5 x 500, Epic 5 x 200, Legendary design 1-277), then shuffled with Python random.Random(0x544859524b).shuffle() \u2014 a Fisher-Yates shuffle driven by the Mersenne Twister PRNG. Token ID = deck position + 1. Edition numbers are assigned per design in deck order (first occurrence = edition 1). Re-running generate_metadata.py reproduces the exact same deck.",
+  "deckHashEncoding": "Per token in deck order (token ID 1 first), 3 bytes: byte 0 = rarity code (0=Common, 1=Rare, 2=Epic, 3=Legendary); bytes 1-2 = design index as big-endian uint16 (Common/Rare/Epic: 1-5; Legendary: 1-277). Concatenate all 7,777 x 3 = 23,331 bytes and take keccak256. keccak256 from eth-hash (pip install \"eth-hash[pycryptodome]\"), fallback Crypto.Hash.keccak.",
+  "files": {
+    "metadata": "metadata/1.json .. 7777.json (mintable) + metadata/divine-1.json .. divine-77.json (Divine, token-only redeem, not in the mint deck)",
+    "images": "images/common-N.webp / rare-N.webp / epic-N.webp (N=1-5), legendary-NNN.webp (001-277), divine-NNN.webp (001-077)",
+    "sources": "legendary-traits.json (Legendary traits), divine-batch-D1.json .. D4.json (Divine 016-077 traits), EXISTING-FILES.md (Divine 001-015 source names)"
+  },
+  "notes": [
+    "Divine is NOT part of the mint deck and NOT part of deckHash; Divine is redeemable only with 1,500 $THYRK (1 of 77).",
+    "Legendary 1-7 are the approved originals; their traits in metadata are assigned from their source-file names in generate_metadata.py (LEGENDARY_ORIGINALS).",
+    "Divine 001-015 traits are derived from their approved source-file names in EXISTING-FILES.md (generate_metadata.py DIVINE_FIRST_15).",
+    "All images are 1600x1600 WebP pixel art."
+  ]
+}
