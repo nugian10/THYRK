@@ -1,0 +1,1920 @@
+{
+  "1": {
+    "source_file": "legendary-knight-0",
+    "note": "approved original"
+  },
+  "2": {
+    "source_file": "legendary-alt-attributes-0",
+    "note": "approved original"
+  },
+  "3": {
+    "source_file": "legendary-no-bg-random-0",
+    "note": "approved original"
+  },
+  "4": {
+    "source_file": "legendary-red-fire-0",
+    "note": "approved original"
+  },
+  "5": {
+    "source_file": "legendary-blue-lightning-0",
+    "note": "approved original"
+  },
+  "6": {
+    "source_file": "legendary-purple-shadow-0",
+    "note": "approved original"
+  },
+  "7": {
+    "source_file": "legendary-gold-holy-0",
+    "note": "approved original"
+  },
+  "8": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 120,
+    "aura": "red",
+    "bg_tint": "dark-purple"
+  },
+  "9": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 0,
+    "aura": "green",
+    "bg_tint": "dark-purple"
+  },
+  "10": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 120,
+    "aura": "purple",
+    "bg_tint": "dark-blue"
+  },
+  "11": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 60,
+    "aura": "blue",
+    "bg_tint": "dark-purple"
+  },
+  "12": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 180,
+    "aura": "green",
+    "bg_tint": "dark-purple"
+  },
+  "13": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 240,
+    "aura": "green",
+    "bg_tint": "dark-green"
+  },
+  "14": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 0,
+    "aura": "red",
+    "bg_tint": "dark-blue"
+  },
+  "15": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 120,
+    "aura": "red",
+    "bg_tint": "dark-blue"
+  },
+  "16": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 240,
+    "aura": "gold",
+    "bg_tint": "dark-purple"
+  },
+  "17": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 180,
+    "aura": "cyan",
+    "bg_tint": "dark-green"
+  },
+  "18": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 60,
+    "aura": "green",
+    "bg_tint": "dark-purple"
+  },
+  "19": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 180,
+    "aura": "cyan",
+    "bg_tint": "dark-purple"
+  },
+  "20": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 0,
+    "aura": "blue",
+    "bg_tint": "dark-green"
+  },
+  "21": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 60,
+    "aura": "gold",
+    "bg_tint": "dark-blue"
+  },
+  "22": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 0,
+    "aura": "red",
+    "bg_tint": "dark-purple"
+  },
+  "23": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 60,
+    "aura": "cyan",
+    "bg_tint": "dark-blue"
+  },
+  "24": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 120,
+    "aura": "blue",
+    "bg_tint": "dark-blue"
+  },
+  "25": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 240,
+    "aura": "red",
+    "bg_tint": "dark-green"
+  },
+  "26": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 120,
+    "aura": "purple",
+    "bg_tint": "dark-green"
+  },
+  "27": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 60,
+    "aura": "purple",
+    "bg_tint": "dark-purple"
+  },
+  "28": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 240,
+    "aura": "gold",
+    "bg_tint": "dark-green"
+  },
+  "29": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 240,
+    "aura": "blue",
+    "bg_tint": "dark-purple"
+  },
+  "30": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 60,
+    "aura": "cyan",
+    "bg_tint": "dark-green"
+  },
+  "31": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 300,
+    "aura": "cyan",
+    "bg_tint": "dark-green"
+  },
+  "32": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 180,
+    "aura": "green",
+    "bg_tint": "dark-green"
+  },
+  "33": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 0,
+    "aura": "blue",
+    "bg_tint": "dark-green"
+  },
+  "34": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 240,
+    "aura": "cyan",
+    "bg_tint": "dark-purple"
+  },
+  "35": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 240,
+    "aura": "blue",
+    "bg_tint": "dark-green"
+  },
+  "36": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 0,
+    "aura": "green",
+    "bg_tint": "dark-blue"
+  },
+  "37": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 240,
+    "aura": "gold",
+    "bg_tint": "dark-blue"
+  },
+  "38": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 0,
+    "aura": "blue",
+    "bg_tint": "dark-blue"
+  },
+  "39": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 180,
+    "aura": "purple",
+    "bg_tint": "dark-green"
+  },
+  "40": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 300,
+    "aura": "gold",
+    "bg_tint": "dark-blue"
+  },
+  "41": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 240,
+    "aura": "blue",
+    "bg_tint": "dark-blue"
+  },
+  "42": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 300,
+    "aura": "blue",
+    "bg_tint": "dark-green"
+  },
+  "43": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 300,
+    "aura": "purple",
+    "bg_tint": "dark-green"
+  },
+  "44": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 60,
+    "aura": "green",
+    "bg_tint": "dark-blue"
+  },
+  "45": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 300,
+    "aura": "purple",
+    "bg_tint": "dark-purple"
+  },
+  "46": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 180,
+    "aura": "purple",
+    "bg_tint": "dark-green"
+  },
+  "47": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 300,
+    "aura": "purple",
+    "bg_tint": "dark-blue"
+  },
+  "48": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 180,
+    "aura": "purple",
+    "bg_tint": "dark-purple"
+  },
+  "49": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 240,
+    "aura": "blue",
+    "bg_tint": "dark-green"
+  },
+  "50": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 60,
+    "aura": "cyan",
+    "bg_tint": "dark-purple"
+  },
+  "51": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 120,
+    "aura": "blue",
+    "bg_tint": "dark-green"
+  },
+  "52": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 0,
+    "aura": "gold",
+    "bg_tint": "dark-purple"
+  },
+  "53": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 180,
+    "aura": "blue",
+    "bg_tint": "dark-purple"
+  },
+  "54": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 240,
+    "aura": "blue",
+    "bg_tint": "dark-green"
+  },
+  "55": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 120,
+    "aura": "purple",
+    "bg_tint": "dark-blue"
+  },
+  "56": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 180,
+    "aura": "green",
+    "bg_tint": "dark-blue"
+  },
+  "57": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 300,
+    "aura": "green",
+    "bg_tint": "dark-blue"
+  },
+  "58": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 240,
+    "aura": "purple",
+    "bg_tint": "dark-blue"
+  },
+  "59": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 60,
+    "aura": "gold",
+    "bg_tint": "dark-blue"
+  },
+  "60": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 180,
+    "aura": "gold",
+    "bg_tint": "dark-green"
+  },
+  "61": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 180,
+    "aura": "green",
+    "bg_tint": "dark-blue"
+  },
+  "62": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 0,
+    "aura": "gold",
+    "bg_tint": "dark-purple"
+  },
+  "63": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 240,
+    "aura": "green",
+    "bg_tint": "dark-green"
+  },
+  "64": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 180,
+    "aura": "blue",
+    "bg_tint": "dark-green"
+  },
+  "65": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 180,
+    "aura": "purple",
+    "bg_tint": "dark-blue"
+  },
+  "66": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 180,
+    "aura": "gold",
+    "bg_tint": "dark-purple"
+  },
+  "67": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 120,
+    "aura": "purple",
+    "bg_tint": "dark-green"
+  },
+  "68": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 180,
+    "aura": "cyan",
+    "bg_tint": "dark-purple"
+  },
+  "69": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 60,
+    "aura": "cyan",
+    "bg_tint": "dark-blue"
+  },
+  "70": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 120,
+    "aura": "green",
+    "bg_tint": "dark-blue"
+  },
+  "71": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 300,
+    "aura": "purple",
+    "bg_tint": "dark-blue"
+  },
+  "72": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 240,
+    "aura": "gold",
+    "bg_tint": "dark-blue"
+  },
+  "73": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 300,
+    "aura": "purple",
+    "bg_tint": "dark-green"
+  },
+  "74": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 300,
+    "aura": "blue",
+    "bg_tint": "dark-green"
+  },
+  "75": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 300,
+    "aura": "cyan",
+    "bg_tint": "dark-green"
+  },
+  "76": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 300,
+    "aura": "gold",
+    "bg_tint": "dark-blue"
+  },
+  "77": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 60,
+    "aura": "gold",
+    "bg_tint": "dark-purple"
+  },
+  "78": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 300,
+    "aura": "red",
+    "bg_tint": "dark-green"
+  },
+  "79": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 0,
+    "aura": "red",
+    "bg_tint": "dark-blue"
+  },
+  "80": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 120,
+    "aura": "purple",
+    "bg_tint": "dark-green"
+  },
+  "81": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 120,
+    "aura": "red",
+    "bg_tint": "dark-purple"
+  },
+  "82": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 300,
+    "aura": "cyan",
+    "bg_tint": "dark-purple"
+  },
+  "83": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 300,
+    "aura": "green",
+    "bg_tint": "dark-purple"
+  },
+  "84": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 300,
+    "aura": "cyan",
+    "bg_tint": "dark-purple"
+  },
+  "85": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 120,
+    "aura": "gold",
+    "bg_tint": "dark-purple"
+  },
+  "86": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 120,
+    "aura": "cyan",
+    "bg_tint": "dark-purple"
+  },
+  "87": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 180,
+    "aura": "purple",
+    "bg_tint": "dark-green"
+  },
+  "88": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 120,
+    "aura": "green",
+    "bg_tint": "dark-blue"
+  },
+  "89": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 300,
+    "aura": "blue",
+    "bg_tint": "dark-green"
+  },
+  "90": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 180,
+    "aura": "blue",
+    "bg_tint": "dark-blue"
+  },
+  "91": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 120,
+    "aura": "cyan",
+    "bg_tint": "dark-blue"
+  },
+  "92": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 0,
+    "aura": "cyan",
+    "bg_tint": "dark-blue"
+  },
+  "93": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 0,
+    "aura": "green",
+    "bg_tint": "dark-green"
+  },
+  "94": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 180,
+    "aura": "blue",
+    "bg_tint": "dark-green"
+  },
+  "95": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 120,
+    "aura": "cyan",
+    "bg_tint": "dark-blue"
+  },
+  "96": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 180,
+    "aura": "cyan",
+    "bg_tint": "dark-green"
+  },
+  "97": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 180,
+    "aura": "gold",
+    "bg_tint": "dark-blue"
+  },
+  "98": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 300,
+    "aura": "green",
+    "bg_tint": "dark-purple"
+  },
+  "99": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 60,
+    "aura": "red",
+    "bg_tint": "dark-blue"
+  },
+  "100": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 180,
+    "aura": "blue",
+    "bg_tint": "dark-purple"
+  },
+  "101": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 180,
+    "aura": "cyan",
+    "bg_tint": "dark-purple"
+  },
+  "102": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 120,
+    "aura": "gold",
+    "bg_tint": "dark-purple"
+  },
+  "103": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 300,
+    "aura": "purple",
+    "bg_tint": "dark-blue"
+  },
+  "104": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 60,
+    "aura": "cyan",
+    "bg_tint": "dark-green"
+  },
+  "105": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 300,
+    "aura": "blue",
+    "bg_tint": "dark-blue"
+  },
+  "106": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 300,
+    "aura": "purple",
+    "bg_tint": "dark-green"
+  },
+  "107": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 180,
+    "aura": "red",
+    "bg_tint": "dark-blue"
+  },
+  "108": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 120,
+    "aura": "purple",
+    "bg_tint": "dark-purple"
+  },
+  "109": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 300,
+    "aura": "blue",
+    "bg_tint": "dark-purple"
+  },
+  "110": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 0,
+    "aura": "purple",
+    "bg_tint": "dark-blue"
+  },
+  "111": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 0,
+    "aura": "green",
+    "bg_tint": "dark-blue"
+  },
+  "112": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 180,
+    "aura": "red",
+    "bg_tint": "dark-purple"
+  },
+  "113": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 120,
+    "aura": "gold",
+    "bg_tint": "dark-purple"
+  },
+  "114": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 240,
+    "aura": "purple",
+    "bg_tint": "dark-purple"
+  },
+  "115": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 180,
+    "aura": "red",
+    "bg_tint": "dark-green"
+  },
+  "116": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 120,
+    "aura": "blue",
+    "bg_tint": "dark-blue"
+  },
+  "117": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 300,
+    "aura": "gold",
+    "bg_tint": "dark-blue"
+  },
+  "118": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 240,
+    "aura": "green",
+    "bg_tint": "dark-blue"
+  },
+  "119": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 300,
+    "aura": "red",
+    "bg_tint": "dark-blue"
+  },
+  "120": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 240,
+    "aura": "cyan",
+    "bg_tint": "dark-green"
+  },
+  "121": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 240,
+    "aura": "red",
+    "bg_tint": "dark-green"
+  },
+  "122": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 300,
+    "aura": "red",
+    "bg_tint": "dark-green"
+  },
+  "123": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 0,
+    "aura": "green",
+    "bg_tint": "dark-green"
+  },
+  "124": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 240,
+    "aura": "red",
+    "bg_tint": "dark-blue"
+  },
+  "125": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 120,
+    "aura": "purple",
+    "bg_tint": "dark-green"
+  },
+  "126": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 0,
+    "aura": "cyan",
+    "bg_tint": "dark-green"
+  },
+  "127": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 180,
+    "aura": "red",
+    "bg_tint": "dark-purple"
+  },
+  "128": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 0,
+    "aura": "gold",
+    "bg_tint": "dark-green"
+  },
+  "129": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 300,
+    "aura": "cyan",
+    "bg_tint": "dark-blue"
+  },
+  "130": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 0,
+    "aura": "purple",
+    "bg_tint": "dark-purple"
+  },
+  "131": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 0,
+    "aura": "red",
+    "bg_tint": "dark-green"
+  },
+  "132": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 0,
+    "aura": "cyan",
+    "bg_tint": "dark-green"
+  },
+  "133": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 60,
+    "aura": "cyan",
+    "bg_tint": "dark-blue"
+  },
+  "134": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 60,
+    "aura": "red",
+    "bg_tint": "dark-purple"
+  },
+  "135": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 300,
+    "aura": "blue",
+    "bg_tint": "dark-purple"
+  },
+  "136": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 240,
+    "aura": "gold",
+    "bg_tint": "dark-green"
+  },
+  "137": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 240,
+    "aura": "purple",
+    "bg_tint": "dark-purple"
+  },
+  "138": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 180,
+    "aura": "red",
+    "bg_tint": "dark-blue"
+  },
+  "139": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 180,
+    "aura": "green",
+    "bg_tint": "dark-green"
+  },
+  "140": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 180,
+    "aura": "blue",
+    "bg_tint": "dark-blue"
+  },
+  "141": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 240,
+    "aura": "green",
+    "bg_tint": "dark-purple"
+  },
+  "142": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 300,
+    "aura": "green",
+    "bg_tint": "dark-green"
+  },
+  "143": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 60,
+    "aura": "green",
+    "bg_tint": "dark-blue"
+  },
+  "144": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 300,
+    "aura": "green",
+    "bg_tint": "dark-green"
+  },
+  "145": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 300,
+    "aura": "gold",
+    "bg_tint": "dark-green"
+  },
+  "146": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 60,
+    "aura": "purple",
+    "bg_tint": "dark-blue"
+  },
+  "147": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 120,
+    "aura": "red",
+    "bg_tint": "dark-purple"
+  },
+  "148": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 60,
+    "aura": "gold",
+    "bg_tint": "dark-green"
+  },
+  "149": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 240,
+    "aura": "red",
+    "bg_tint": "dark-purple"
+  },
+  "150": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 180,
+    "aura": "purple",
+    "bg_tint": "dark-blue"
+  },
+  "151": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 240,
+    "aura": "red",
+    "bg_tint": "dark-purple"
+  },
+  "152": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 120,
+    "aura": "blue",
+    "bg_tint": "dark-purple"
+  },
+  "153": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 300,
+    "aura": "cyan",
+    "bg_tint": "dark-blue"
+  },
+  "154": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 240,
+    "aura": "cyan",
+    "bg_tint": "dark-blue"
+  },
+  "155": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 240,
+    "aura": "green",
+    "bg_tint": "dark-blue"
+  },
+  "156": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 120,
+    "aura": "red",
+    "bg_tint": "dark-green"
+  },
+  "157": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 120,
+    "aura": "red",
+    "bg_tint": "dark-green"
+  },
+  "158": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 180,
+    "aura": "blue",
+    "bg_tint": "dark-green"
+  },
+  "159": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 240,
+    "aura": "cyan",
+    "bg_tint": "dark-purple"
+  },
+  "160": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 240,
+    "aura": "cyan",
+    "bg_tint": "dark-green"
+  },
+  "161": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 240,
+    "aura": "blue",
+    "bg_tint": "dark-blue"
+  },
+  "162": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 300,
+    "aura": "blue",
+    "bg_tint": "dark-green"
+  },
+  "163": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 0,
+    "aura": "gold",
+    "bg_tint": "dark-purple"
+  },
+  "164": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 120,
+    "aura": "purple",
+    "bg_tint": "dark-blue"
+  },
+  "165": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 60,
+    "aura": "purple",
+    "bg_tint": "dark-green"
+  },
+  "166": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 180,
+    "aura": "red",
+    "bg_tint": "dark-green"
+  },
+  "167": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 240,
+    "aura": "green",
+    "bg_tint": "dark-purple"
+  },
+  "168": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 180,
+    "aura": "cyan",
+    "bg_tint": "dark-blue"
+  },
+  "169": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 0,
+    "aura": "cyan",
+    "bg_tint": "dark-blue"
+  },
+  "170": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 120,
+    "aura": "red",
+    "bg_tint": "dark-green"
+  },
+  "171": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 240,
+    "aura": "blue",
+    "bg_tint": "dark-purple"
+  },
+  "172": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 240,
+    "aura": "purple",
+    "bg_tint": "dark-green"
+  },
+  "173": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 300,
+    "aura": "cyan",
+    "bg_tint": "dark-green"
+  },
+  "174": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 300,
+    "aura": "purple",
+    "bg_tint": "dark-green"
+  },
+  "175": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 180,
+    "aura": "gold",
+    "bg_tint": "dark-green"
+  },
+  "176": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 240,
+    "aura": "blue",
+    "bg_tint": "dark-purple"
+  },
+  "177": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 60,
+    "aura": "blue",
+    "bg_tint": "dark-purple"
+  },
+  "178": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 60,
+    "aura": "purple",
+    "bg_tint": "dark-purple"
+  },
+  "179": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 180,
+    "aura": "cyan",
+    "bg_tint": "dark-blue"
+  },
+  "180": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 120,
+    "aura": "red",
+    "bg_tint": "dark-green"
+  },
+  "181": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 300,
+    "aura": "red",
+    "bg_tint": "dark-green"
+  },
+  "182": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 300,
+    "aura": "blue",
+    "bg_tint": "dark-purple"
+  },
+  "183": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 120,
+    "aura": "green",
+    "bg_tint": "dark-purple"
+  },
+  "184": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 0,
+    "aura": "blue",
+    "bg_tint": "dark-purple"
+  },
+  "185": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 0,
+    "aura": "blue",
+    "bg_tint": "dark-green"
+  },
+  "186": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 0,
+    "aura": "gold",
+    "bg_tint": "dark-green"
+  },
+  "187": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 60,
+    "aura": "blue",
+    "bg_tint": "dark-purple"
+  },
+  "188": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 0,
+    "aura": "purple",
+    "bg_tint": "dark-green"
+  },
+  "189": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 60,
+    "aura": "green",
+    "bg_tint": "dark-purple"
+  },
+  "190": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 180,
+    "aura": "purple",
+    "bg_tint": "dark-purple"
+  },
+  "191": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 120,
+    "aura": "red",
+    "bg_tint": "dark-purple"
+  },
+  "192": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 0,
+    "aura": "gold",
+    "bg_tint": "dark-blue"
+  },
+  "193": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 60,
+    "aura": "cyan",
+    "bg_tint": "dark-purple"
+  },
+  "194": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 300,
+    "aura": "green",
+    "bg_tint": "dark-purple"
+  },
+  "195": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 300,
+    "aura": "gold",
+    "bg_tint": "dark-blue"
+  },
+  "196": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 60,
+    "aura": "purple",
+    "bg_tint": "dark-green"
+  },
+  "197": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 120,
+    "aura": "blue",
+    "bg_tint": "dark-blue"
+  },
+  "198": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 300,
+    "aura": "blue",
+    "bg_tint": "dark-blue"
+  },
+  "199": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 120,
+    "aura": "green",
+    "bg_tint": "dark-green"
+  },
+  "200": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 60,
+    "aura": "cyan",
+    "bg_tint": "dark-green"
+  },
+  "201": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 300,
+    "aura": "gold",
+    "bg_tint": "dark-green"
+  },
+  "202": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 0,
+    "aura": "red",
+    "bg_tint": "dark-green"
+  },
+  "203": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 60,
+    "aura": "blue",
+    "bg_tint": "dark-green"
+  },
+  "204": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 240,
+    "aura": "gold",
+    "bg_tint": "dark-green"
+  },
+  "205": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 120,
+    "aura": "gold",
+    "bg_tint": "dark-green"
+  },
+  "206": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 60,
+    "aura": "green",
+    "bg_tint": "dark-green"
+  },
+  "207": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 180,
+    "aura": "green",
+    "bg_tint": "dark-blue"
+  },
+  "208": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 240,
+    "aura": "blue",
+    "bg_tint": "dark-green"
+  },
+  "209": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 240,
+    "aura": "red",
+    "bg_tint": "dark-green"
+  },
+  "210": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 180,
+    "aura": "green",
+    "bg_tint": "dark-purple"
+  },
+  "211": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 300,
+    "aura": "gold",
+    "bg_tint": "dark-purple"
+  },
+  "212": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 300,
+    "aura": "red",
+    "bg_tint": "dark-green"
+  },
+  "213": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 60,
+    "aura": "gold",
+    "bg_tint": "dark-green"
+  },
+  "214": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 120,
+    "aura": "cyan",
+    "bg_tint": "dark-green"
+  },
+  "215": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 300,
+    "aura": "blue",
+    "bg_tint": "dark-blue"
+  },
+  "216": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 120,
+    "aura": "gold",
+    "bg_tint": "dark-green"
+  },
+  "217": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 60,
+    "aura": "gold",
+    "bg_tint": "dark-purple"
+  },
+  "218": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 300,
+    "aura": "green",
+    "bg_tint": "dark-blue"
+  },
+  "219": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 300,
+    "aura": "red",
+    "bg_tint": "dark-blue"
+  },
+  "220": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 120,
+    "aura": "green",
+    "bg_tint": "dark-purple"
+  },
+  "221": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 120,
+    "aura": "red",
+    "bg_tint": "dark-blue"
+  },
+  "222": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 240,
+    "aura": "purple",
+    "bg_tint": "dark-blue"
+  },
+  "223": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 300,
+    "aura": "gold",
+    "bg_tint": "dark-green"
+  },
+  "224": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 300,
+    "aura": "purple",
+    "bg_tint": "dark-blue"
+  },
+  "225": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 240,
+    "aura": "purple",
+    "bg_tint": "dark-blue"
+  },
+  "226": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 0,
+    "aura": "blue",
+    "bg_tint": "dark-blue"
+  },
+  "227": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 300,
+    "aura": "purple",
+    "bg_tint": "dark-purple"
+  },
+  "228": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 60,
+    "aura": "gold",
+    "bg_tint": "dark-green"
+  },
+  "229": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 60,
+    "aura": "red",
+    "bg_tint": "dark-green"
+  },
+  "230": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 180,
+    "aura": "green",
+    "bg_tint": "dark-green"
+  },
+  "231": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 180,
+    "aura": "gold",
+    "bg_tint": "dark-blue"
+  },
+  "232": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 240,
+    "aura": "blue",
+    "bg_tint": "dark-blue"
+  },
+  "233": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 180,
+    "aura": "gold",
+    "bg_tint": "dark-green"
+  },
+  "234": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 240,
+    "aura": "red",
+    "bg_tint": "dark-green"
+  },
+  "235": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 120,
+    "aura": "cyan",
+    "bg_tint": "dark-blue"
+  },
+  "236": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 180,
+    "aura": "blue",
+    "bg_tint": "dark-blue"
+  },
+  "237": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 120,
+    "aura": "purple",
+    "bg_tint": "dark-green"
+  },
+  "238": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 120,
+    "aura": "blue",
+    "bg_tint": "dark-green"
+  },
+  "239": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 240,
+    "aura": "blue",
+    "bg_tint": "dark-blue"
+  },
+  "240": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 0,
+    "aura": "cyan",
+    "bg_tint": "dark-blue"
+  },
+  "241": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 180,
+    "aura": "red",
+    "bg_tint": "dark-green"
+  },
+  "242": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 60,
+    "aura": "gold",
+    "bg_tint": "dark-blue"
+  },
+  "243": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 0,
+    "aura": "purple",
+    "bg_tint": "dark-green"
+  },
+  "244": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 240,
+    "aura": "red",
+    "bg_tint": "dark-purple"
+  },
+  "245": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 120,
+    "aura": "cyan",
+    "bg_tint": "dark-green"
+  },
+  "246": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 120,
+    "aura": "gold",
+    "bg_tint": "dark-green"
+  },
+  "247": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 180,
+    "aura": "green",
+    "bg_tint": "dark-purple"
+  },
+  "248": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 60,
+    "aura": "purple",
+    "bg_tint": "dark-green"
+  },
+  "249": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 0,
+    "aura": "blue",
+    "bg_tint": "dark-green"
+  },
+  "250": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 180,
+    "aura": "gold",
+    "bg_tint": "dark-green"
+  },
+  "251": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 0,
+    "aura": "purple",
+    "bg_tint": "dark-blue"
+  },
+  "252": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 300,
+    "aura": "cyan",
+    "bg_tint": "dark-blue"
+  },
+  "253": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 240,
+    "aura": "gold",
+    "bg_tint": "dark-purple"
+  },
+  "254": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 240,
+    "aura": "red",
+    "bg_tint": "dark-green"
+  },
+  "255": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 180,
+    "aura": "blue",
+    "bg_tint": "dark-purple"
+  },
+  "256": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 300,
+    "aura": "green",
+    "bg_tint": "dark-green"
+  },
+  "257": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 300,
+    "aura": "green",
+    "bg_tint": "dark-purple"
+  },
+  "258": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 240,
+    "aura": "red",
+    "bg_tint": "dark-purple"
+  },
+  "259": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 180,
+    "aura": "gold",
+    "bg_tint": "dark-blue"
+  },
+  "260": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 180,
+    "aura": "gold",
+    "bg_tint": "dark-blue"
+  },
+  "261": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 120,
+    "aura": "red",
+    "bg_tint": "dark-purple"
+  },
+  "262": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 0,
+    "aura": "cyan",
+    "bg_tint": "dark-green"
+  },
+  "263": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 180,
+    "aura": "gold",
+    "bg_tint": "dark-purple"
+  },
+  "264": {
+    "source_file": "legendary-005.webp",
+    "base": "blue-lightning",
+    "hue_degrees": 180,
+    "aura": "red",
+    "bg_tint": "dark-purple"
+  },
+  "265": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 240,
+    "aura": "cyan",
+    "bg_tint": "dark-green"
+  },
+  "266": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 120,
+    "aura": "green",
+    "bg_tint": "dark-blue"
+  },
+  "267": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 0,
+    "aura": "cyan",
+    "bg_tint": "dark-purple"
+  },
+  "268": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 240,
+    "aura": "purple",
+    "bg_tint": "dark-green"
+  },
+  "269": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 240,
+    "aura": "green",
+    "bg_tint": "dark-purple"
+  },
+  "270": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 120,
+    "aura": "green",
+    "bg_tint": "dark-purple"
+  },
+  "271": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 60,
+    "aura": "red",
+    "bg_tint": "dark-purple"
+  },
+  "272": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 0,
+    "aura": "green",
+    "bg_tint": "dark-blue"
+  },
+  "273": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 0,
+    "aura": "purple",
+    "bg_tint": "dark-green"
+  },
+  "274": {
+    "source_file": "legendary-004.webp",
+    "base": "red-fire",
+    "hue_degrees": 60,
+    "aura": "blue",
+    "bg_tint": "dark-blue"
+  },
+  "275": {
+    "source_file": "legendary-007.webp",
+    "base": "gold-holy",
+    "hue_degrees": 240,
+    "aura": "blue",
+    "bg_tint": "dark-green"
+  },
+  "276": {
+    "source_file": "legendary-006.webp",
+    "base": "purple-shadow",
+    "hue_degrees": 60,
+    "aura": "cyan",
+    "bg_tint": "dark-purple"
+  },
+  "277": {
+    "source_file": "legendary-001.webp",
+    "base": "knight-0",
+    "hue_degrees": 180,
+    "aura": "blue",
+    "bg_tint": "dark-purple"
+  }
+}
