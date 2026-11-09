@@ -78,9 +78,7 @@ button{cursor:pointer}
 .showcase{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px}
 .showcase img{border-radius:14px;border:1px solid var(--line);image-rendering:pixelated;transition:transform .25s}
 .showcase img:hover{transform:scale(1.03)}
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
-.reveal.visible{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.hero-art img,.mystery{animation:none}}
+@media (prefers-reduced-motion:reduce){.hero-art img,.mystery{animation:none}}
 @media (min-width:700px){ .hero{padding-top:84px} section{padding-top:56px} }
 /* Hamburger menu (Zigzoo pattern): inline links on desktop, ☰ button on phones */
 .menu-toggle{display:none}

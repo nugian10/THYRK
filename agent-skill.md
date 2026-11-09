@@ -42,7 +42,7 @@ mintable — only redeemed with $THYRK. Site: https://thyrk.fun/
   helmet, weapon, cape, aura and shield combined).
 - $THYRK (max supply 777,777): paid mint earns 20 $THYRK. Burn a Common
   for 20, a Rare for 50, an Epic for 120, a Legendary for 300 $THYRK.
-  Divine costs 2,000 $THYRK. Redeem mint: 100 $THYRK = 1 mint, max 3 per
+  Divine costs 1,500 $THYRK. Redeem mint: 100 $THYRK = 1 mint, max 3 per
   wallet. Upgrades: 3 Common + 50 $THYRK = 1 Rare; 3 Rare + 100 $THYRK =
   1 Epic; 3 Epic + 200 $THYRK = 1 Legendary.
 - Marketplace royalty: 5% to the creator (the Agentic Wallet above).

@@ -29,7 +29,7 @@
 ## $THYRK token
 
 - Max supply 777,777 $THYRK. Paid mint earns 20 $THYRK. Burn: Common 20, Rare 50, Epic 120, Legendary 300.
-- Uses: redeem 1 Divine for 2,000 $THYRK (77 max); redeem 1 mint for 100 $THYRK (max 3 per wallet); upgrade 3 Common + 50 $THYRK = 1 Rare, 3 Rare + 100 $THYRK = 1 Epic, 3 Epic + 200 $THYRK = 1 Legendary. Repost the official THYRK post on X: 20 $THYRK, max 1 per wallet.
+- Uses: redeem 1 Divine for 1,500 $THYRK (77 max); redeem 1 mint for 100 $THYRK (max 3 per wallet); upgrade 3 Common + 50 $THYRK = 1 Rare, 3 Rare + 100 $THYRK = 1 Epic, 3 Epic + 200 $THYRK = 1 Legendary. Repost the official THYRK post on X: 20 $THYRK, max 1 per wallet.
 
 ## Gallery
 
