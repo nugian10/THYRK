@@ -53,8 +53,8 @@ mintable — only redeemed with $THYRK. Site: https://thyrk.fun/
   a real $THYRK token contract address. Divine redemption is first come
   first served (77 max).
 - Official THYRK account on X: https://x.com/thyrk_ (@thyrk_). Repost
-  reward: 20 $THYRK, max 1 per wallet and 1 per X account, budget
-  77,777 $THYRK (max 3,888 wallets). Claims are NOT open yet — the
+  reward: 100 $THYRK, max 1 per wallet and 1 per X account, budget
+  77,777 $THYRK (max 777 wallets). Claims are NOT open yet — the
   official post to repost has not been published.
 - Marketplace royalty: 5% to the creator (the Agentic Wallet above).
 
