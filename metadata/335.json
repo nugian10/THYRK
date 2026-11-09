@@ -1,0 +1,27 @@
+{
+  "name": "THYRK #335",
+  "description": "THYRK \u2014 7,777 knight NFTs on BNB Chain. 16-bit pixel art.",
+  "image": "https://raw.githubusercontent.com/nugian10/THYRK/main/collection/images/legendary-100.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Legendary"
+    },
+    {
+      "trait_type": "Base",
+      "value": "purple-shadow"
+    },
+    {
+      "trait_type": "Aura",
+      "value": "blue"
+    },
+    {
+      "trait_type": "Hue",
+      "value": 180
+    },
+    {
+      "trait_type": "Background Tint",
+      "value": "dark-purple"
+    }
+  ]
+}
