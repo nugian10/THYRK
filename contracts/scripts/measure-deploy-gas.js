@@ -107,7 +107,7 @@ async function main() {
   costRows("TOTAL", total);
   const at005 = total * ethers.parseUnits("0.05", "gwei");
   console.log("TOTAL at 0.05 gwei in BNB:", ethers.formatEther(at005));
-  console.log("Top-up recommendation: siapkan ~0.001 BNB di wallet deployer (Agentic).");
+  console.log("Top-up recommendation: siapkan ~0.001 BNB di wallet deployer (My Wallet).");
 }
 
 main().catch((e) => {

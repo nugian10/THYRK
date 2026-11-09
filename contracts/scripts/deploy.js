@@ -5,15 +5,15 @@
 //   npx hardhat run scripts/deploy.js --network bsc   # MAINNET, real BNB
 //
 // TWO contracts, in order:
-//   1. ThyrkToken ($THYRK, ERC-20, cap 777,777) — owner = Agentic Wallet.
+//   1. ThyrkToken ($THYRK, ERC-20, cap 777,777) — owner = My Wallet.
 //   2. ThyrkNFT (ERC-721, 7,777 + 77 Divine) — constructor needs the
 //      token address, so the token MUST be deployed first.
 //
 // Then (owner-only, on the token): setMinter(nftAddress, true), so the
 // NFT contract can mint the 20 $THYRK paid-mint bonus / burn rewards.
 // This script does that automatically when the deployer IS the owner;
-// otherwise it prints the exact call for the owner (Agentic Wallet via
-// his Binance agent) to run after deploy.
+// otherwise it prints the exact call for the owner (My Wallet, e.g. via
+// the deploy page) to run after deploy.
 //
 // Deck (hash-only design): the NFT stores ONLY deckHash =
 // 0x592a9180d7c57fa9c609176c204e8c4950ee20d7d13c5705c0227516e97e8233
@@ -25,9 +25,12 @@
 //   - deckHash != ZeroHash
 // Minting stays OFF after deploy (mintActive false) — the owner turns
 // it on with setMintActive(true) only at launch.
-// Owner AND revenue are both the Binance Agentic Wallet
+// Owner is Bryan's My Wallet 0x0262e8e5E4584D8AB840fD950a6E2E0A414d4097;
+// revenue is the Binance Agentic Wallet
 // 0x89c37649Ba3BAA9E1ce028612b7DE4e9c3a947B7. The deployer pays gas
-// only; the deployer address does NOT have to be the owner.
+// only; the deployer address does NOT have to be the owner — but
+// deploying from My Wallet is the normal path (then setMinter runs
+// automatically).
 // NEVER paste a private key in chat. Deploy needs Bryan's own wallet
 // signature (his Binance agent / deploy page), like previous projects.
 // See contracts/ThyrkNFT.sol and contracts/ThyrkToken.sol headers.
@@ -35,7 +38,8 @@ const fs = require("node:fs");
 const path = require("node:path");
 const { ethers } = require("hardhat");
 
-const AGENTIC_WALLET = "0x89c37649Ba3BAA9E1ce028612b7DE4e9c3a947B7";
+const OWNER_WALLET = "0x0262e8e5E4584D8AB840fD950a6E2E0A414d4097"; // Bryan's My Wallet
+const AGENTIC_WALLET = "0x89c37649Ba3BAA9E1ce028612b7DE4e9c3a947B7"; // Binance Agentic Wallet (revenue)
 const DEFAULT_AGENT_ID_REGISTRY = "0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F";
 const DEFAULT_BASE_URI = "https://raw.githubusercontent.com/nugian10/THYRK/main/collection/metadata/";
 const EXPECTED_DECK_HASH = "0x592a9180d7c57fa9c609176c204e8c4950ee20d7d13c5705c0227516e97e8233";
@@ -44,7 +48,7 @@ const EXPECTED_SEED = "0x544859524b";
 async function main() {
   const network = await ethers.provider.getNetwork();
   const [deployer] = await ethers.getSigners();
-  const owner = process.env.OWNER_ADDRESS || AGENTIC_WALLET;
+  const owner = process.env.OWNER_ADDRESS || OWNER_WALLET;
   const revenue = process.env.REVENUE_WALLET || AGENTIC_WALLET;
   const agentIdRegistry = process.env.AGENT_ID_REGISTRY || DEFAULT_AGENT_ID_REGISTRY;
   const baseURI = process.env.BASE_URI || DEFAULT_BASE_URI;
@@ -82,7 +86,7 @@ async function main() {
 
   console.log("Network:", network.name, "chainId:", Number(network.chainId));
   console.log("Deployer (bayar gas):", deployer.address);
-  console.log("Owner (Agentic):", owner);
+  console.log("Owner (My Wallet):", owner);
   console.log("Revenue wallet (Agentic):", revenue);
   console.log("Agent ID registry:", agentIdRegistry);
   console.log("Base URI:", baseURI);
@@ -142,7 +146,7 @@ async function main() {
       await token.minters(nftAddress));
   } else {
     console.log("Deployer is NOT the token owner, so setMinter was NOT called.");
-    console.log("OWNER MUST RUN (from the Agentic Wallet, via his Binance agent):");
+    console.log("OWNER (My Wallet) MUST RUN — e.g. via the deploy page https://thyrk.fun/deploy.html:");
     console.log(`  ThyrkToken(${tokenAddress}).setMinter(${nftAddress}, true)`);
     console.log("Until then, paid mints / burns / upgrades WILL REVERT (NFT is not a minter).");
   }

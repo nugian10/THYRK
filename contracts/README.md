@@ -12,7 +12,7 @@ Tests: **40/40 passing** (`npx hardhat test`).
 
 ## Locked parameters (do not change without Bryan)
 
-- Owner **and** revenue: Binance Agentic Wallet `0x89c37649Ba3BAA9E1ce028612b7DE4e9c3a947B7`
+- Owner: Bryan's My Wallet `0x0262e8e5E4584D8AB840fD950a6E2E0A414d4097`; revenue: Binance Agentic Wallet `0x89c37649Ba3BAA9E1ce028612b7DE4e9c3a947B7`
 - Agent ID registry (SPACE ID): `0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F`
 - baseURI: `https://raw.githubusercontent.com/nugian10/THYRK/main/collection/metadata/`
 - deckHash: `0x592a9180d7c57fa9c609176c204e8c4950ee20d7d13c5705c0227516e97e8233` (seed `0x544859524b`)
@@ -46,10 +46,10 @@ npx hardhat run scripts/deploy.js --network bsc   # MAINNET, real BNB
 ```
 
 Order: ThyrkToken first, then ThyrkNFT (needs the token address). The deployer pays gas only;
-owner/revenue are constructor arguments (Agentic Wallet). After deploy the owner must call
+owner (My Wallet) and revenue (Agentic Wallet) are constructor arguments. After deploy the owner must call
 `ThyrkToken.setMinter(nftAddress, true)` — until then paid mints, burns and upgrades revert.
-`scripts/deploy.js` does this automatically only when the deployer IS the owner; otherwise it
-prints the exact call for the owner (Agentic Wallet via his Binance agent).
+`scripts/deploy.js` does this automatically only when the deployer IS the owner (deploy from My Wallet);
+otherwise it prints the exact call for the owner (My Wallet, e.g. via the deploy page).
 
 Measured deploy gas (local Hardhat, real deckHash + bitmap, 0.05 gwei, 1 BNB ≈ Rp 12,229,764):
 
@@ -61,7 +61,7 @@ Measured deploy gas (local Hardhat, real deckHash + bitmap, 0.05 gwei, 1 BNB ≈
 | setMintActive(true) | 29,832 | ~Rp 18 |
 | **Total** | **5,923,174** | **~Rp 3,622** |
 
-Top-up recommendation: ~0.001 BNB in the deploying wallet.
+Top-up recommendation: ~0.001 BNB in the deploying wallet (My Wallet).
 
 After deploy: verify BOTH sources on BscScan (0.8.24, runs 200, cancun, MIT), then
 `setMintActive(true)` ONLY at launch (after Bryan lifts the public launch hold).
