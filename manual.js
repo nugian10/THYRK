@@ -8,6 +8,15 @@
    needed); writes go through the connected injected wallet. */
 (function () {
   "use strict";
+  /* t(): translated string via i18n.js when loaded, else the English
+     fallback passed inline (fb). Vars like {n} are substituted. */
+  function t(k, fb, vars) {
+    if (window.THYRK_T) return window.THYRK_T(k, vars);
+    var s = fb;
+    if (vars) for (var n in vars) s = s.split("{" + n + "}").join(String(vars[n]));
+    return s;
+  }
+
 
   var NFT = "0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e";
   var TOKEN = "0x3b8747d067b2ed8565330667128260c2a4954300";
@@ -54,7 +63,7 @@
     return e.reason || e.message || String(e);
   }
   function txAnchor(hash) {
-    return '<a href="https://bscscan.com/tx/' + hash + '" target="_blank" rel="noopener">View on BscScan</a>';
+    return '<a href="https://bscscan.com/tx/' + hash + '" target="_blank" rel="noopener">' + t("manual.view_bscscan", "View on BscScan") + '</a>';
   }
   function fmtThyrk(wei) {
     try { return (BigInt(wei) / 1000000000000000000n).toString(); }
@@ -71,7 +80,7 @@
 
   async function getReadProvider() {
     if (typeof ethers === "undefined") {
-      throw new Error("The wallet library did not load — check your connection and refresh this page.");
+      throw new Error(t("manual.lib_missing", "The wallet library did not load — check your connection and refresh this page."));
     }
     if (readProvider) return readProvider;
     for (var i = 0; i < RPCS.length; i++) {
@@ -82,14 +91,14 @@
         return p;
       } catch (e) { /* try the next RPC */ }
     }
-    throw new Error("Could not reach BNB Chain — check your connection and try again.");
+    throw new Error(t("manual.no_chain", "Could not reach BNB Chain — check your connection and try again."));
   }
 
   async function nftRead() { return new ethers.Contract(NFT, NFT_ABI, await getReadProvider()); }
   async function tokenRead() { return new ethers.Contract(TOKEN, TOKEN_ABI, await getReadProvider()); }
 
   async function getSigner() {
-    if (!signer) throw new Error("Connect your wallet first.");
+    if (!signer) throw new Error(t("manual.connect_first", "Connect your wallet first."));
     return signer;
   }
   async function nftWrite() { return new ethers.Contract(NFT, NFT_ABI, await getSigner()); }
@@ -100,23 +109,23 @@
      [data-manual-wallet] status line on the page. */
   async function connect(statusFn) {
     if (typeof ethers === "undefined") {
-      if (statusFn) statusFn("The wallet library did not load — check your connection and refresh this page.");
+      if (statusFn) statusFn(t("manual.lib_missing", "The wallet library did not load — check your connection and refresh this page."));
       return null;
     }
     if (typeof window.ethereum === "undefined") {
-      if (statusFn) statusFn("No wallet found — install MetaMask or Binance Wallet, then refresh this page.");
+      if (statusFn) statusFn(t("manual.no_wallet", "No wallet found — install MetaMask or Binance Wallet, then refresh this page."));
       return null;
     }
     try {
       var provider = new ethers.BrowserProvider(window.ethereum);
       var accounts = await provider.send("eth_requestAccounts", []);
-      if (!accounts || !accounts.length) throw new Error("No account selected.");
+      if (!accounts || !accounts.length) throw new Error(t("manual.no_account", "No account selected."));
       var net = await provider.getNetwork();
       if (Number(net.chainId) !== CHAIN_ID) {
         try {
           await provider.send("wallet_switchEthereumChain", [{ chainId: "0x38" }]);
         } catch (e) {
-          if (statusFn) statusFn("Please switch your wallet to BNB Smart Chain (chain 56) and try again.");
+          if (statusFn) statusFn(t("manual.switch_chain", "Please switch your wallet to BNB Smart Chain (chain 56) and try again."));
           return null;
         }
         provider = new ethers.BrowserProvider(window.ethereum);
@@ -124,10 +133,10 @@
       signer = await provider.getSigner();
       account = await signer.getAddress();
       var els = document.querySelectorAll("[data-manual-wallet]");
-      for (var i = 0; i < els.length; i++) els[i].textContent = "Connected: " + shortAddr(account);
+      for (var i = 0; i < els.length; i++) els[i].textContent = t("manual.connected", "Connected: {addr}.", { addr: shortAddr(account) });
       return account;
     } catch (e) {
-      if (statusFn) statusFn("Could not connect wallet: " + errMsg(e));
+      if (statusFn) statusFn(t("manual.connect_fail", "Could not connect wallet: {err}", { err: errMsg(e) }));
       return null;
     }
   }
@@ -139,9 +148,9 @@
     var t = await tokenWrite();
     var allow = await t.allowance(account, NFT);
     if (allow >= amount) return true;
-    if (statusFn) statusFn("Approving $THYRK for the NFT contract — confirm it in your wallet.");
+    if (statusFn) statusFn(t("manual.approving", "Approving $THYRK for the NFT contract — confirm it in your wallet."));
     var tx = await t.approve(NFT, amount);
-    if (statusFn) statusFn("Approval sent — waiting for confirmation…");
+    if (statusFn) statusFn(t("manual.approval_sent", "Approval sent — waiting for confirmation…"));
     await tx.wait();
     return true;
   }

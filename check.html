@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Check — THYRK</title>
-<meta name="description" content="Check a wallet's THYRK knights or look up a THYRK NFT by token number. Mint is live.">
+<title data-i18n-title="meta.title.check">チェック — THYRK</title>
+<meta name="description" content="ウォレットのTHYRKナイトを確認したり、トークン番号でTHYRK NFTを調べたりできます。ミント受付中。" data-i18n-desc="meta.desc.check">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/style.css">
+<script src="/i18n.js" defer></script>
 <style>.result{overflow-wrap:break-word}</style>
 </head>
 <body>
@@ -14,51 +15,53 @@
   <div class="nav">
     <a class="logo" href="/">THYRK</a>
     <nav id="site-nav" aria-label="Sections">
-      <a href="/#collection">Collection</a>
-      <a href="/#token">$THYRK</a>
-      <a href="/#agent-mint">Mint</a>
-      <a href="/#roadmap">Roadmap</a>
-      <a href="/#market">Market</a>
-      <a href="/gallery.html">Gallery</a>
-      <a href="/check.html">Check</a>
-      <a href="/redeem.html">Redeem</a>
-      <a href="/token-mint.html">Token Mint</a>
-      <a href="/upgrade.html">Upgrade</a>
-      <a href="/burn.html">Burn</a>
-      <a href="/#faq">FAQ</a>
+      <a href="/#collection" data-i18n="nav.collection">コレクション</a>
+      <a href="/#token" data-i18n="nav.token">$THYRK</a>
+      <a href="/#agent-mint" data-i18n="nav.mint">ミント</a>
+      <a href="/#roadmap" data-i18n="nav.roadmap">ロードマップ</a>
+      <a href="/#market" data-i18n="nav.market">マーケット</a>
+      <a href="/gallery.html" data-i18n="nav.gallery">ギャラリー</a>
+      <a href="/check.html" data-i18n="nav.check">チェック</a>
+      <a href="/redeem.html" data-i18n="nav.redeem">引き換え</a>
+      <a href="/token-mint.html" data-i18n="nav.tokenmint">トークンミント</a>
+      <a href="/upgrade.html" data-i18n="nav.upgrade">アップグレード</a>
+      <a href="/burn.html" data-i18n="nav.burn">バーン</a>
+      <a href="/#faq" data-i18n="nav.faq">FAQ</a>
+      <div class="lang-switch in-menu" role="group" aria-label="Language"><button type="button" data-lang="ja">日本語</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="zh">中文</button></div>
     </nav>
+<div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang="ja">日本語</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="zh">中文</button></div>
     <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </header>
 <main>
 <div class="wrap">
-  <h1>Check</h1>
-  <p><span class="badge">✦ MINT IS LIVE</span></p>
-  <div class="note">The new THYRK contract is deployed and minting is LIVE. This checker reads the live contract on BNB Chain through a public RPC. Counts only — it never shows prices. If the chain cannot be reached, a value shows as &ldquo;&mdash;&rdquo; instead of a guessed number.</div>
+  <h1 data-i18n="nav.check">チェック</h1>
+  <p><span class="badge">✦ <span data-i18n="status.live">ミント受付中</span></span></p>
+  <div class="note" data-i18n-html="check.note">新しいTHYRKコントラクトがデプロイされ、ミントは受付中です。このチェッカーは公開RPCを通じてBNBチェーン上のライブコントラクトを読み取ります。数値のみ — 価格は表示しません。チェーンに接続できない場合、値は推測値ではなく「—」と表示されます。</div>
 
-  <h2>Check a wallet</h2>
-  <p>Enter a wallet address. This shows how many THYRK knights the wallet holds, how many times it has minted, whether its first mint is still free (first mint per wallet is free and automatic — no total cap), and whether it holds a SPACE ID Agent ID.</p>
+  <h2 data-i18n="check.wallet.h">ウォレットをチェック</h2>
+  <p data-i18n="check.wallet.p">ウォレットアドレスを入力してください。そのウォレットが持つTHYRKナイトの数、ミント回数、初回ミントがまだ無料かどうか（1ウォレットの初回ミントは自動的に無料 — 総数に上限なし）、SPACE IDエージェントIDを持っているかどうかが表示されます。</p>
   <form onsubmit="checkWallet(event)">
     <input type="text" id="wallet" placeholder="0x..." autocomplete="off" spellcheck="false">
-    <p><button class="btn" type="submit">Check wallet</button></p>
+    <p><button class="btn" type="submit" data-i18n="check.wallet.btn">ウォレットをチェック</button></p>
   </form>
   <div class="result" id="wallet-result"></div>
 
-  <h2>Check an NFT</h2>
-  <p>Enter a token number (1 to 7,777 for mintable knights; Divine tokens are separate). This shows the knight's owner, image, name, rarity and traits — if the token has been minted.</p>
+  <h2 data-i18n="check.nft.h">NFTをチェック</h2>
+  <p data-i18n="check.nft.p">トークン番号を入力してください（ミント可能なナイトは1〜7,777、ディバイントークンは別）。そのナイトの所有者、画像、名前、レアリティ、特性が表示されます — トークンがミント済みの場合。</p>
   <form onsubmit="checkNft(event)">
-    <input type="text" id="token" placeholder="Token number, e.g. 1" autocomplete="off" inputmode="numeric">
-    <p><button class="btn" type="submit">Check NFT</button></p>
+    <input type="text" id="token" placeholder="トークン番号（例：1）" data-i18n-placeholder="check.nft.ph" autocomplete="off" inputmode="numeric">
+    <p><button class="btn" type="submit" data-i18n="check.nft.btn">NFTをチェック</button></p>
   </form>
   <div class="result" id="nft-result"></div>
 
-  <p><a class="btn ghost" href="/">Back to home</a></p>
+  <p><a class="btn ghost" href="/" data-i18n="common.back_home">ホームに戻る</a></p>
 </div>
 </main>
 <footer>
-  <p>THYRK — 7,777 knights on BNB Chain. Agent-only mint.</p>
-  <p><a href="/llms.txt">llms.txt</a> &middot; <a href="/agent-skill.md">Agent skill</a> &middot; <a href="/gallery.html">Gallery</a> &middot; <a href="/burn.html">Burn</a> &middot; <a href="https://x.com/thyrk_">X @thyrk_</a></p>
-  <p>Mint is live.</p>
+  <p data-i18n="foot.tagline">THYRK — BNBチェーン上の7,777体のナイト。エージェント専用ミント。</p>
+  <p><a href="/llms.txt">llms.txt</a> &middot; <a href="/agent-skill.md" data-i18n="foot.agent_skill">エージェントスキル</a> &middot; <a href="/gallery.html" data-i18n="nav.gallery">ギャラリー</a> &middot; <a href="/burn.html" data-i18n="nav.burn">バーン</a> &middot; <a href="https://x.com/thyrk_">X @thyrk_</a></p>
+  <p data-i18n="foot.live">ミント受付中。</p>
 </footer>
 <script>
 /* THYRK wallet + NFT checker — reads the NFT contract live via public
@@ -71,6 +74,14 @@
    makes no RPC calls to the contract. */
 (function () {
   var NFT = "0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e";
+  /* t(): translated string via i18n.js when loaded, else the English
+     fallback passed inline (fb). Vars like {n} are substituted. */
+  function t(k, fb, vars) {
+    if (window.THYRK_T) return window.THYRK_T(k, vars);
+    var s = fb;
+    if (vars) for (var n in vars) s = s.split("{" + n + "}").join(String(vars[n]));
+    return s;
+  }
   var NOT_DEPLOYED = /^0x0{40}$/.test(NFT);
   var RPCS = [
     "https://bsc-dataseed.binance.org/",
@@ -123,7 +134,7 @@
   }
   function isAddress(v) { return /^0x[0-9a-fA-F]{40}$/.test(v.trim()); }
   function notDeployedHtml() {
-    return '<div class="note">Mint is not yet open — the contract is deployed but mintActive is false. There is nothing to check on-chain yet. Please come back once minting opens.</div>';
+    return '<div class="note">' + t('check.not_open', 'Mint is not yet open — the contract is deployed but mintActive is false. There is nothing to check on-chain yet. Please come back once minting opens.') + '</div>';
   }
 
   window.checkWallet = function (e) {
@@ -131,7 +142,7 @@
     var v = document.getElementById('wallet').value;
     var r = document.getElementById('wallet-result');
     if (!isAddress(v)) {
-      r.innerHTML = '<div class="note">Please enter a valid wallet address (0x followed by 40 hex characters).</div>';
+      r.innerHTML = '<div class="note">' + t('check.err_addr', 'Please enter a valid wallet address (0x followed by 40 hex characters).') + '</div>';
       return;
     }
     if (NOT_DEPLOYED) {
@@ -140,9 +151,9 @@
     }
     var addr = v.trim();
     r.innerHTML = '<div class="note">' +
-      row('Knights held', '&mdash;') + row('Times minted', '&mdash;') +
-      row('Free mint', '&mdash;') + row('Mint status', '&mdash;') +
-      row('SPACE ID Agent ID', '&mdash;') + '</div>';
+      row(t('check.knights_held', 'Knights held'), '&mdash;') + row(t('check.times_minted', 'Times minted'), '&mdash;') +
+      row(t('check.free_mint', 'Free mint'), '&mdash;') + row(t('check.mint_status', 'Mint status'), '&mdash;') +
+      row(t('check.agent_id', 'SPACE ID Agent ID'), '&mdash;') + '</div>';
     var calls = {
       bal: callFirstRpc(NFT, SEL_BALANCE + padAddress(addr)).then(toBig),
       cnt: callFirstRpc(NFT, SEL_COUNT + padAddress(addr)).then(toBig),
@@ -155,28 +166,28 @@
       var free = res[2].status === 'fulfilled' ? res[2].value : null;
       var agent = res[3].status === 'fulfilled' ? res[3].value : null;
       if (bal === null && cnt === null && free === null && agent === null) {
-        r.innerHTML = '<div class="note">Could not reach BNB Chain right now — please try again. No numbers were guessed.</div>';
+        r.innerHTML = '<div class="note">' + t('check.err_chain', 'Could not reach BNB Chain right now — please try again. No numbers were guessed.') + '</div>';
         return;
       }
       var html = '<div class="note">';
-      html += row('Knights held', bal === null ? '&mdash;' : esc(bal.toString()));
+      html += row(t('check.knights_held', 'Knights held'), bal === null ? '&mdash;' : esc(bal.toString()));
       if (cnt === null) {
-        html += row('Times minted', '&mdash;');
+        html += row(t('check.times_minted', 'Times minted'), '&mdash;');
       } else if (cnt >= 30n) {
-        html += row('Times minted', esc(cnt.toString()) + ' (max 30 per wallet reached)');
+        html += row('Times minted', esc(cnt.toString()) + t('check.max_reached', ' (max 30 per wallet reached)'));
       } else {
-        html += row('Times minted', esc(cnt.toString()) + ' (max 30 per wallet)');
+        html += row('Times minted', esc(cnt.toString()) + t('check.max_left', ' (max 30 per wallet)'));
       }
-      html += row('Mint status', 'Mint is live.');
+      html += row(t('check.mint_status', 'Mint status'), t('check.mint_live', 'Mint is live.'));
       if (free === null) {
-        html += row('Free mint', '&mdash;');
+        html += row(t('check.free_mint', 'Free mint'), '&mdash;');
       } else if (free === 0n) {
-        html += row('Free mint', 'Still free — the first mint per wallet is free and automatic');
+        html += row(t('check.free_mint', 'Free mint'), t('check.free_still', 'Still free — the first mint per wallet is free and automatic'));
       } else {
-        html += row('Free mint', 'Already used — the first mint was free and automatic');
+        html += row(t('check.free_mint', 'Free mint'), t('check.free_used', 'Already used — the first mint was free and automatic'));
       }
-      html += row('SPACE ID Agent ID', agent === null ? '&mdash;' : (agent !== 0n ? 'Yes' : 'No'));
-      html += '<p>Read live from the THYRK contract on BNB Chain.</p></div>';
+      html += row(t('check.agent_id', 'SPACE ID Agent ID'), agent === null ? '&mdash;' : (agent !== 0n ? t('common.yes', 'Yes') : t('common.no', 'No')));
+      html += '<p>' + t('check.read_live', 'Read live from the THYRK contract on BNB Chain.') + '</p></div>';
       r.innerHTML = html;
     });
   };
@@ -187,14 +198,14 @@
     var r = document.getElementById('nft-result');
     var n = parseInt(v, 10);
     if (!/^\d+$/.test(v) || n < 1 || n > 7777) {
-      r.innerHTML = '<div class="note">Please enter a token number from 1 to 7,777.</div>';
+      r.innerHTML = '<div class="note">' + t('check.err_token', 'Please enter a token number from 1 to 7,777.') + '</div>';
       return;
     }
     if (NOT_DEPLOYED) {
       r.innerHTML = notDeployedHtml();
       return;
     }
-    r.innerHTML = '<div class="note"><p>Looking up token #' + n + '&hellip;</p></div>';
+    r.innerHTML = '<div class="note"><p>' + t('check.looking_up', 'Looking up token #{n}…', { n: n }) + '</p></div>';
     callFirstRpc(NFT, SEL_OWNER + padUint(n)).then(function (hex) {
       var owner = toAddr(hex);
       return callFirstRpc(NFT, SEL_URI + padUint(n)).then(function (uriHex) {
@@ -204,14 +215,14 @@
       });
     }).then(function (info) {
       var html = '<div class="note">' +
-        row('Token', '#' + n) +
-        row('Owner', esc(info.owner)) + '</div>';
+        row(t('check.token', 'Token'), '#' + n) +
+        row(t('check.owner', 'Owner'), esc(info.owner)) + '</div>';
       r.innerHTML = html;
       if (!info.uri) {
         r.innerHTML = '<div class="note">' +
-          row('Token', '#' + n) +
-          row('Owner', esc(info.owner)) +
-          '<p>This knight is minted, but its details could not be loaded right now.</p></div>';
+          row(t('check.token', 'Token'), '#' + n) +
+          row(t('check.owner', 'Owner'), esc(info.owner)) +
+          '<p>' + t('check.details_fail', 'This knight is minted, but its details could not be loaded right now.') + '</p></div>';
         return;
       }
       fetch(info.uri).then(function (resp) {
@@ -244,7 +255,7 @@
         });
         var own = document.createElement('p');
         var ob = document.createElement('strong');
-        ob.textContent = 'Owner: ';
+        ob.textContent = t('check.owner_prefix', 'Owner: ');
         own.appendChild(ob);
         own.appendChild(document.createTextNode(info.owner));
         card.appendChild(own);
@@ -252,12 +263,12 @@
         r.appendChild(card);
       }).catch(function () {
         r.innerHTML = '<div class="note">' +
-          row('Token', '#' + n) +
-          row('Owner', esc(info.owner)) +
-          '<p>This knight is minted, but its details could not be loaded right now.</p></div>';
+          row(t('check.token', 'Token'), '#' + n) +
+          row(t('check.owner', 'Owner'), esc(info.owner)) +
+          '<p>' + t('check.details_fail', 'This knight is minted, but its details could not be loaded right now.') + '</p></div>';
       });
     }).catch(function () {
-      r.innerHTML = '<div class="note">Token #' + n + ' has not been minted yet.</div>';
+      r.innerHTML = '<div class="note">' + t('check.not_minted', 'Token #{n} has not been minted yet.', { n: n }) + '</div>';
     });
   };
 })();

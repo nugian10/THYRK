@@ -1,75 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gallery — THYRK Knights</title>
-<meta name="description" content="Preview gallery of THYRK knights: Common, Rare, Epic and Legendary. Divine is hidden — shown only as a mystery card.">
+<title data-i18n-title="meta.title.gallery">ギャラリー — THYRKナイト</title>
+<meta name="description" content="THYRKナイトのプレビューギャラリー：Common、Rare、Epic、Legendary。ディバインは非公開 — ミステリーカードとしてのみ表示されます。" data-i18n-desc="meta.desc.gallery">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/style.css">
+<script src="/i18n.js" defer></script>
 </head>
 <body>
 <header>
   <div class="nav">
     <a class="logo" href="/">THYRK</a>
     <nav id="site-nav" aria-label="Sections">
-      <a href="/#collection">Collection</a>
-      <a href="/#token">$THYRK</a>
-      <a href="/#agent-mint">Mint</a>
-      <a href="/#roadmap">Roadmap</a>
-      <a href="/#market">Market</a>
-      <a href="/gallery.html">Gallery</a>
-      <a href="/check.html">Check</a>
-      <a href="/redeem.html">Redeem</a>
-      <a href="/token-mint.html">Token Mint</a>
-      <a href="/upgrade.html">Upgrade</a>
-      <a href="/burn.html">Burn</a>
-      <a href="/#faq">FAQ</a>
+      <a href="/#collection" data-i18n="nav.collection">コレクション</a>
+      <a href="/#token" data-i18n="nav.token">$THYRK</a>
+      <a href="/#agent-mint" data-i18n="nav.mint">ミント</a>
+      <a href="/#roadmap" data-i18n="nav.roadmap">ロードマップ</a>
+      <a href="/#market" data-i18n="nav.market">マーケット</a>
+      <a href="/gallery.html" data-i18n="nav.gallery">ギャラリー</a>
+      <a href="/check.html" data-i18n="nav.check">チェック</a>
+      <a href="/redeem.html" data-i18n="nav.redeem">引き換え</a>
+      <a href="/token-mint.html" data-i18n="nav.tokenmint">トークンミント</a>
+      <a href="/upgrade.html" data-i18n="nav.upgrade">アップグレード</a>
+      <a href="/burn.html" data-i18n="nav.burn">バーン</a>
+      <a href="/#faq" data-i18n="nav.faq">FAQ</a>
+      <div class="lang-switch in-menu" role="group" aria-label="Language"><button type="button" data-lang="ja">日本語</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="zh">中文</button></div>
     </nav>
+<div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang="ja">日本語</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="zh">中文</button></div>
     <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </header>
 <main class="gallery-page">
 <div class="wrap">
-  <h1>Gallery</h1>
-  <p>Preview artwork for the THYRK knights — one preview per rarity. Common, Rare and Epic each have 5 designs, built from the five reference knights. Legendary knights are trait-random — no two are the same. These are previews; the full collection is drawn from a shuffled deck at mint.</p>
-  <p><span class="badge">✦ MINT IS LIVE</span></p>
+  <h1 data-i18n="nav.gallery">ギャラリー</h1>
+  <p data-i18n="gallery.intro">THYRKナイトのアートワークプレビュー — 各レアリティ1点ずつ。Common、Rare、Epicはそれぞれ5デザインで、5体のリファレンスナイトから作られました。Legendaryナイトは特性ランダム — 同じものは2体といません。これらはプレビューです。全コレクションはミント時にシャッフルされたデッキから引かれます。</p>
+  <p><span class="badge">✦ <span data-i18n="status.live">ミント受付中</span></span></p>
 
   <h2 class="rarity-title rarity-common">Common — 4,000</h2>
   <div class="grid">
-    <div class="card rarity-common"><img src="/images/common.webp" alt="Common THYRK knight preview"><p><strong>Common Knight</strong><br>5 designs. Your first mint per wallet is free — and it can draw any rarity, even Legendary.</p></div>
+    <div class="card rarity-common"><img src="/images/common.webp" alt="コモンTHYRKナイトのプレビュー" data-i18n-alt="alt.common"><p data-i18n-html="gallery.common.p"><strong>コモンナイト</strong><br>5デザイン。1ウォレットの初回ミントは無料 — どのレアリティでも、レジェンダリーすら引けます。</p></div>
   </div>
 
   <h2 class="rarity-title rarity-rare">Rare — 2,500</h2>
   <div class="grid">
-    <div class="card rarity-rare"><img src="/images/rare.webp" alt="Rare THYRK knight preview"><p><strong>Rare Knight</strong><br>5 designs. Blue-silver armor, red plume, glowing sword.</p></div>
+    <div class="card rarity-rare"><img src="/images/rare.webp" alt="レアTHYRKナイトのプレビュー" data-i18n-alt="alt.rare"><p data-i18n-html="gallery.rare.p"><strong>レアナイト</strong><br>5デザイン。青銀の鎧、赤い羽飾り、光る剣。</p></div>
   </div>
 
   <h2 class="rarity-title rarity-epic">Epic — 1,000</h2>
   <div class="grid">
-    <div class="card rarity-epic"><img src="/images/epic.webp" alt="Epic THYRK knight preview"><p><strong>Epic Knight</strong><br>5 designs. Purple-gold armor, red cape, glowing sword.</p></div>
+    <div class="card rarity-epic"><img src="/images/epic.webp" alt="エピックTHYRKナイトのプレビュー" data-i18n-alt="alt.epic"><p data-i18n-html="gallery.epic.p"><strong>エピックナイト</strong><br>5デザイン。紫金の鎧、赤いマント、光る剣。</p></div>
   </div>
 
   <h2 class="rarity-title rarity-legendary">Legendary — 277</h2>
-  <p>Legendary knights are made from a base knight plus random traits — helmet, weapon, cape, aura and shield. Each one is different.</p>
+  <p data-i18n="gallery.legendary.p">レジェンダリーナイトは、ベースナイトにランダムな特性 — ヘルメット、武器、マント、オーラ、盾 — を組み合わせて作られます。すべて異なります。</p>
   <div class="grid">
-    <div class="card rarity-legendary"><img src="/images/legendary-red-fire.webp" alt="Legendary THYRK knight, Red Fire variation"><p><strong>Red Fire</strong><br>One preview. Every Legendary in the collection is its own knight.</p></div>
+    <div class="card rarity-legendary"><img src="/images/legendary-red-fire.webp" alt="レジェンダリーTHYRKナイト、レッド・ファイアバリエーション" data-i18n-alt="alt.legendary"><p data-i18n-html="gallery.legendary.card"><strong>レッド・ファイア</strong><br>1点のプレビュー。コレクションのすべてのレジェンダリーは、それぞれ独自のナイトです。</p></div>
   </div>
 
   <h2 class="rarity-title rarity-divine">Divine — 77</h2>
   <div class="grid">
     <div class="card rarity-divine">
       <div class="mystery">?</div>
-      <p><strong>Divine — mystery card</strong><br>77 unique 1-of-1 knights. Not mintable — only redeemed with 1,500 $THYRK. Artwork is hidden here and revealed only to its owner.</p>
+      <p data-i18n-html="gallery.divine.card"><strong>ディバイン — ミステリーカード</strong><br>77体のユニークな1 of 1ナイト。ミント不可 — 1,500 $THYRKでの引き換えのみ。アートワークはここでは非公開で、所有者にのみ明かされます。</p>
     </div>
   </div>
-  <p><a class="btn" href="/">Back to home</a></p>
+  <p><a class="btn" href="/" data-i18n="common.back_home">ホームに戻る</a></p>
 </div>
 </main>
 <footer>
-  <p>THYRK — 7,777 knights on BNB Chain. Agent-only mint.</p>
-  <p><a href="/llms.txt">llms.txt</a> &middot; <a href="/agent-skill.md">Agent skill</a> &middot; <a href="/check.html">Check</a> &middot; <a href="/burn.html">Burn</a> &middot; <a href="https://x.com/thyrk_">X @thyrk_</a></p>
-  <p>Mint is live.</p>
+  <p data-i18n="foot.tagline">THYRK — BNBチェーン上の7,777体のナイト。エージェント専用ミント。</p>
+  <p><a href="/llms.txt">llms.txt</a> &middot; <a href="/agent-skill.md" data-i18n="foot.agent_skill">エージェントスキル</a> &middot; <a href="/check.html" data-i18n="nav.check">チェック</a> &middot; <a href="/burn.html" data-i18n="nav.burn">バーン</a> &middot; <a href="https://x.com/thyrk_">X @thyrk_</a></p>
+  <p data-i18n="foot.live">ミント受付中。</p>
 </footer>
 <script>
 (function(){

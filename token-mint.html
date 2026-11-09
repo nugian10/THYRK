@@ -1,87 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mint with $THYRK — THYRK</title>
-<meta name="description" content="Redeem 100 $THYRK for 1 THYRK mint, max 3 per wallet. Earn $THYRK by minting and burning knights. Live now on BNB Chain.">
+<title data-i18n-title="meta.title.tokenmint">$THYRKでミント — THYRK</title>
+<meta name="description" content="100 $THYRKでTHYRKミント1回と引き換え、1ウォレット最大3回。ミントとバーンで$THYRKを稼ぎましょう。BNBチェーンで受付中。" data-i18n-desc="meta.desc.tokenmint">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/style.css">
+<script src="/i18n.js" defer></script>
 </head>
 <body>
 <header>
   <div class="nav">
     <a class="logo" href="/">THYRK</a>
     <nav id="site-nav" aria-label="Sections">
-      <a href="/#collection">Collection</a>
-      <a href="/#token">$THYRK</a>
-      <a href="/#agent-mint">Mint</a>
-      <a href="/#roadmap">Roadmap</a>
-      <a href="/#market">Market</a>
-      <a href="/gallery.html">Gallery</a>
-      <a href="/check.html">Check</a>
-      <a href="/redeem.html">Redeem</a>
-      <a href="/token-mint.html">Token Mint</a>
-      <a href="/upgrade.html">Upgrade</a>
-      <a href="/burn.html">Burn</a>
-      <a href="/#faq">FAQ</a>
+      <a href="/#collection" data-i18n="nav.collection">コレクション</a>
+      <a href="/#token" data-i18n="nav.token">$THYRK</a>
+      <a href="/#agent-mint" data-i18n="nav.mint">ミント</a>
+      <a href="/#roadmap" data-i18n="nav.roadmap">ロードマップ</a>
+      <a href="/#market" data-i18n="nav.market">マーケット</a>
+      <a href="/gallery.html" data-i18n="nav.gallery">ギャラリー</a>
+      <a href="/check.html" data-i18n="nav.check">チェック</a>
+      <a href="/redeem.html" data-i18n="nav.redeem">引き換え</a>
+      <a href="/token-mint.html" data-i18n="nav.tokenmint">トークンミント</a>
+      <a href="/upgrade.html" data-i18n="nav.upgrade">アップグレード</a>
+      <a href="/burn.html" data-i18n="nav.burn">バーン</a>
+      <a href="/#faq" data-i18n="nav.faq">FAQ</a>
+      <div class="lang-switch in-menu" role="group" aria-label="Language"><button type="button" data-lang="ja">日本語</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="zh">中文</button></div>
     </nav>
+<div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang="ja">日本語</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="zh">中文</button></div>
     <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </header>
 <main>
 <div class="wrap">
-  <h1>Mint with $THYRK</h1>
-  <p><span class="badge">MINT IS LIVE</span></p>
-  <p>Spent $THYRK can mint knights too: <strong>100 $THYRK = 1 mint</strong>, up to <strong>3 mints per wallet</strong>. No payment in BNB is needed for these mints — the 100 $THYRK is burned instead.</p>
+  <h1 data-i18n="tm.h1">$THYRKでミント</h1>
+  <p><span class="badge"><span data-i18n="status.live">ミント受付中</span></span></p>
+  <p data-i18n-html="tm.intro">使った$THYRKでもナイトをミントできます：<strong>100 $THYRK = 1ミント</strong>、<strong>1ウォレット最大3回</strong>。これらのミントにBNBの支払いは不要です — 代わりに100 $THYRKがバーンされます。</p>
 
-  <p>$THYRK in circulation: <strong><span data-live="thyrk">0</span> / 777,777</strong> — read live from the token contract.</p>
+  <p><span data-i18n="live.circulation_label">$THYRK流通量：</span> <strong><span data-live="thyrk">0</span> / 777,777</strong> <span data-i18n="live.read_token">— トークンコントラクトからライブで読み取ります。</span></p>
 
-  <h2>How it works</h2>
+  <h2 data-i18n="how.works">仕組み</h2>
   <ol>
-    <li>Earn $THYRK: 20 per mint (free and paid), 20 / 50 / 120 / 300 for burning a Common / Rare / Epic / Legendary.</li>
-    <li>Collect 100 $THYRK for each mint you want to redeem (max 3 per wallet, 300 $THYRK in total).</li>
-    <li>Ask your agent to redeem — the 100 $THYRK is burned and your agent mints 1 knight for you from the same shuffled deck.</li>
-    <li>The knight can be any rarity, like a normal mint — Common, Rare, Epic or Legendary.</li>
+    <li data-i18n-html="redeem.s1">$THYRKを稼ぐ：ミント1回につき20（無料・有料とも）、コモン／レア／エピック／レジェンダリーのバーンで20／50／120／300。</li>
+    <li data-i18n-html="tm.s2">引き換えたいミント1回につき100 $THYRKを集めます（1ウォレット最大3回、合計300 $THYRK）。</li>
+    <li data-i18n-html="tm.s3">エージェントに引き換えを依頼 — 100 $THYRKがバーンされ、エージェントが同じシャッフルされたデッキからナイト1体をミントします。</li>
+    <li data-i18n-html="tm.s4">ナイトは通常のミントと同じく、どのレアリティでも出ます — Common、Rare、Epic、Legendary。</li>
   </ol>
 
-  <div class="note"><strong>Redeem mints count toward your 30 mints per wallet.</strong> A wallet can hold at most 30 THYRK knights in total, however they were minted. Minting is still agent-only: your agent makes the mint call for you, and your wallet must hold a SPACE ID Agent ID.</div>
+  <div class="note" data-i18n-html="tm.note1"><strong>引き換えミントも1ウォレット30回のミント数に数えられます。</strong>ウォレットは、ミント方法に関わらず合計最大30体のTHYRKナイトまでしか持てません。ミントは引き続きエージェント専用です。エージェントがあなたの代わりにミントを呼び出し、ウォレットはSPACE IDエージェントIDを持っている必要があります。</div>
 
-  <div class="note">Token mints draw from the <strong>full 7,777 deck</strong> — any rarity, including Legendary. They pay no BNB and earn <strong>no 20 $THYRK bonus</strong>.</div>
+  <div class="note" data-i18n-html="tm.note2">トークンミントは<strong>7,777体フルデッキ</strong>から引かれます — レジェンダリーを含むどのレアリティでも。BNBの支払いはなく、<strong>20 $THYRKボーナスもありません</strong>。</div>
 
-  <h2>How to earn $THYRK</h2>
+  <h2 data-i18n="earn.h">$THYRKの稼ぎ方</h2>
   <table>
-    <tr><th>How to earn $THYRK</th><th>Amount</th></tr>
-    <tr><td>Mint (free or paid)</td><td>20 $THYRK per mint</td></tr>
-    <tr><td>Burn a Common</td><td>20 $THYRK</td></tr>
-    <tr><td>Burn a Rare</td><td>50 $THYRK</td></tr>
-    <tr><td>Burn an Epic</td><td>120 $THYRK</td></tr>
-    <tr><td>Burn a Legendary</td><td>300 $THYRK</td></tr>
+    <tr><th data-i18n="th.earn">$THYRKの獲得方法</th><th data-i18n="th.amount">数量</th></tr>
+    <tr><td data-i18n="earn.mint">ミント（無料・有料）</td><td data-i18n="earn.per">1ミントにつき20 $THYRK</td></tr>
+    <tr><td data-i18n="earn.burn_common">コモンをバーン</td><td>20 $THYRK</td></tr>
+    <tr><td data-i18n="earn.burn_rare">レアをバーン</td><td>50 $THYRK</td></tr>
+    <tr><td data-i18n="earn.burn_epic">エピックをバーン</td><td>120 $THYRK</td></tr>
+    <tr><td data-i18n="earn.burn_legendary">レジェンダリーをバーン</td><td>300 $THYRK</td></tr>
   </table>
 
-  <h2>Redeem a mint</h2>
-  <p>$THYRK token contract: <a href="https://bscscan.com/address/0x3b8747d067b2ed8565330667128260c2a4954300"><code>0x3b8747d067b2ed8565330667128260c2a4954300</code></a><br>NFT contract: <a href="https://bscscan.com/address/0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e"><code>0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e</code></a></p>
-  <p>Do it yourself below — connect your wallet, approve 100 $THYRK per mint, and mint. Or ask your agent to run the token mint for you (see <a href="/agent-skill.md">agent-skill.md</a>).</p>
+  <h2 data-i18n="tm.h2">ミントと引き換える</h2>
+  <p><span data-i18n="common.token_contract">$THYRKトークンコントラクト：</span> <a href="https://bscscan.com/address/0x3b8747d067b2ed8565330667128260c2a4954300"><code>0x3b8747d067b2ed8565330667128260c2a4954300</code></a><br><span data-i18n="common.nft_contract">NFTコントラクト：</span> <a href="https://bscscan.com/address/0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e"><code>0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e</code></a></p>
+  <p data-i18n-html="tm.diy.p">下で自分で行いましょう — ウォレットを接続し、1ミントにつき100 $THYRKを承認してミントします。またはエージェントにトークンミントを依頼することもできます（<a href="/agent-skill.md">agent-skill.md</a>参照）。</p>
   <div class="note">
-    <h3 style="margin-top:0">Do it yourself</h3>
-    <p><button class="btn" id="connect-btn" type="button">Connect wallet</button>
-    <span id="wallet-status" data-manual-wallet>Not connected.</span></p>
-    <p class="status-line" id="tokenmint-info" role="status">Connect your wallet to see your $THYRK balance and token mints used.</p>
-    <label for="tokenmint-qty"><strong>How many mints (1–3)</strong></label>
+    <h3 style="margin-top:0" data-i18n="diy.h">自分で行う</h3>
+    <p><button class="btn" id="connect-btn" type="button" data-i18n="common.connect_wallet">ウォレットを接続</button>
+    <span id="wallet-status" data-manual-wallet data-i18n="common.not_connected">未接続。</span></p>
+    <p class="status-line" id="tokenmint-info" role="status" data-i18n="tm.info_default">ウォレットを接続すると$THYRK残高と使用済みトークンミント回数が表示されます。</p>
+    <label for="tokenmint-qty"><strong data-i18n="tm.qty">ミント数（1〜3）</strong></label>
     <input id="tokenmint-qty" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" value="1">
-    <p><button class="btn" id="approve-btn" type="button" disabled>Approve $THYRK</button>
-    <button class="btn primary" id="mint-token-btn" type="button" disabled>Mint with $THYRK</button></p>
+    <p><button class="btn" id="approve-btn" type="button" disabled data-i18n="tm.approve_btn">$THYRKを承認</button>
+    <button class="btn primary" id="mint-token-btn" type="button" disabled data-i18n="tm.h1">$THYRKでミント</button></p>
     <p class="status-line" id="manual-status" role="status"></p>
     <p class="status-line" id="agentid-warning" role="status"></p>
   </div>
 
-  <p><a class="btn ghost" href="/">Back to home</a></p>
+  <p><a class="btn ghost" href="/" data-i18n="common.back_home">ホームに戻る</a></p>
 </div>
 </main>
 <footer>
-  <p>THYRK — 7,777 knights on BNB Chain. Agent-only mint.</p>
-  <p><a href="/llms.txt">llms.txt</a> &middot; <a href="/agent-skill.md">Agent skill</a> &middot; <a href="/gallery.html">Gallery</a> &middot; <a href="/check.html">Check</a> &middot; <a href="/redeem.html">Redeem</a> &middot; <a href="/token-mint.html">Token Mint</a> &middot; <a href="/upgrade.html">Upgrade</a> &middot; <a href="/burn.html">Burn</a> &middot; <a href="https://x.com/thyrk_">X @thyrk_</a></p>
-  <p>Mint is live.</p>
+  <p data-i18n="foot.tagline">THYRK — BNBチェーン上の7,777体のナイト。エージェント専用ミント。</p>
+  <p><a href="/llms.txt">llms.txt</a> &middot; <a href="/agent-skill.md" data-i18n="foot.agent_skill">エージェントスキル</a> &middot; <a href="/gallery.html" data-i18n="nav.gallery">ギャラリー</a> &middot; <a href="/check.html" data-i18n="nav.check">チェック</a> &middot; <a href="/redeem.html" data-i18n="nav.redeem">引き換え</a> &middot; <a href="/token-mint.html" data-i18n="nav.tokenmint">トークンミント</a> &middot; <a href="/upgrade.html" data-i18n="nav.upgrade">アップグレード</a> &middot; <a href="/burn.html" data-i18n="nav.burn">バーン</a> &middot; <a href="https://x.com/thyrk_">X @thyrk_</a></p>
+  <p data-i18n="foot.live">ミント受付中。</p>
 </footer>
 <script>
 (function(){
@@ -111,12 +114,25 @@
    will see its transaction revert. The page checks and warns first. */
 (function () {
   var M = window.THYRK_MANUAL;
+  /* t(): translated string via i18n.js when loaded, else the English
+     fallback passed inline (fb). Vars like {n} are substituted. */
+  function t(k, fb, vars) {
+    if (window.THYRK_T) return window.THYRK_T(k, vars);
+    var s = fb;
+    if (vars) for (var n in vars) s = s.split("{" + n + "}").join(String(vars[n]));
+    return s;
+  }
+
   var COST_EACH = null; // 100 $THYRK in wei
   function $(id) { return document.getElementById(id); }
   function setStatus(t) { $("manual-status").textContent = t; }
   function setResultHtml(h) { $("manual-status").innerHTML = h; }
   if (typeof ethers === "undefined" || !M) {
-    setStatus("The wallet library did not load — check your connection and refresh this page.");
+    /* Defer the message to DOMContentLoaded so i18n.js (deferred) has
+       run and the message shows in the visitor's language. */
+    document.addEventListener("DOMContentLoaded", function () {
+      setStatus(t("manual.lib_missing", "The wallet library did not load — check your connection and refresh this page."));
+    });
     return;
   }
   COST_EACH = ethers.parseUnits("100", 18);
@@ -129,7 +145,7 @@
   async function refresh() {
     var acct = M.account();
     if (!acct) {
-      $("tokenmint-info").textContent = "Connect your wallet to see your $THYRK balance and token mints used.";
+      $("tokenmint-info").textContent = t("tm.info_default", "Connect your wallet to see your $THYRK balance and token mints used.");
       $("approve-btn").disabled = true;
       $("mint-token-btn").disabled = true;
       $("agentid-warning").textContent = "";
@@ -144,57 +160,56 @@
       var hasAgent = await nft.holdsAgentId(acct);
       var q = qty();
       var left = 3 - Number(used);
-      $("tokenmint-info").textContent = "Token mints used: " + used.toString() + " / 3 · Your $THYRK: " + M.fmtThyrk(bal) +
-        " · Approved for the NFT contract: " + M.fmtThyrk(allow) + " · Agent ID: " + (hasAgent ? "Yes" : "No") + ".";
+      $("tokenmint-info").textContent = t("tm.info_line", "Token mints used: {used} / 3 · Your $THYRK: {bal} · Approved for the NFT contract: {allow} · Agent ID: {yesno}.", { used: used.toString(), bal: M.fmtThyrk(bal), allow: M.fmtThyrk(allow), yesno: hasAgent ? t("common.yes", "Yes") : t("common.no", "No") });
       if (!hasAgent) {
-        $("agentid-warning").textContent = "Your wallet does not hold a SPACE ID Agent ID — the contract requires one for a token mint, so the transaction would revert. Get an Agent ID first, or mint with BNB through an agent instead.";
+        $("agentid-warning").textContent = t("tm.no_agent", "Your wallet does not hold a SPACE ID Agent ID — the contract requires one for a token mint, so the transaction would revert. Get an Agent ID first, or mint with BNB through an agent instead.");
       } else {
         $("agentid-warning").textContent = "";
       }
       var need = COST_EACH * BigInt(q || 1);
       var okQty = q >= 1 && q <= left;
       $("approve-btn").disabled = !okQty || !hasAgent || bal < need || allow >= need;
-      $("approve-btn").textContent = "Approve " + (100 * (q || 1)) + " $THYRK";
+      $("approve-btn").textContent = t("tm.approve_qty", "Approve {n} $THYRK", { n: 100 * (q || 1) });
       $("mint-token-btn").disabled = !okQty || !hasAgent || bal < need || allow < need;
-      if (!okQty) setStatus(left <= 0 ? "You have used all 3 token mints for this wallet." : "Enter a quantity from 1 to 3 (you have " + left + " left).");
-      else if (bal < need) setStatus("You need " + (100 * q) + " $THYRK for " + q + " mint" + (q > 1 ? "s" : "") + " — you have " + M.fmtThyrk(bal) + ".");
-      else if (allow < need) setStatus("Approve " + (100 * q) + " $THYRK first, then mint.");
-      else setStatus("Ready — you can mint " + q + " knight" + (q > 1 ? "s" : "") + " with $THYRK.");
+      if (!okQty) setStatus(left <= 0 ? t("tm.used_all", "You have used all 3 token mints for this wallet.") : t("tm.qty_range", "Enter a quantity from 1 to 3 (you have {left} left).", { left: left }));
+      else if (bal < need) setStatus(t("tm.need", "You need {n} $THYRK for {q} mint{s} — you have {bal}.", { n: 100 * q, q: q, s: q > 1 ? "s" : "", bal: M.fmtThyrk(bal) }));
+      else if (allow < need) setStatus(t("tm.approve_first", "Approve {n} $THYRK first, then mint.", { n: 100 * q }));
+      else setStatus(t("tm.ready", "Ready — you can mint {q} knight{s} with $THYRK.", { q: q, s: q > 1 ? "s" : "" }));
     } catch (e) {
-      $("tokenmint-info").textContent = "Could not read your wallet state — the chain could not be reached. Try again.";
+      $("tokenmint-info").textContent = t("tm.info_fail", "Could not read your wallet state — the chain could not be reached. Try again.");
     }
   }
   $("connect-btn").addEventListener("click", async function () {
     var a = await M.connect(setStatus);
-    if (a) { setStatus("Connected: " + M.shortAddr(a) + "."); await refresh(); }
+    if (a) { setStatus(t("manual.connected", "Connected: {addr}.", { addr: M.shortAddr(a) })); await refresh(); }
   });
   $("tokenmint-qty").addEventListener("input", function () { refresh(); });
   $("approve-btn").addEventListener("click", async function () {
     var q = qty();
     if (!q) return;
     var need = COST_EACH * BigInt(q);
-    setStatus("Approving " + (100 * q) + " $THYRK — confirm it in your wallet.");
+    setStatus(t("tm.approving", "Approving {n} $THYRK — confirm it in your wallet.", { n: 100 * q }));
     try {
       await M.ensureAllowance(need, setStatus);
-      setStatus("Approved ✓ — you can now mint with $THYRK.");
+      setStatus(t("tm.approved", "Approved ✓ — you can now mint with $THYRK."));
       await refresh();
     } catch (e) {
-      setStatus("Approval failed or was rejected: " + M.errMsg(e));
+      setStatus(t("manual.approve_fail", "Approval failed or was rejected: {err}", { err: M.errMsg(e) }));
     }
   });
   $("mint-token-btn").addEventListener("click", async function () {
     var q = qty();
     if (!q) return;
-    setStatus("Sending token mint for " + q + " knight" + (q > 1 ? "s" : "") + " — confirm it in your wallet. No BNB is sent; " + (100 * q) + " $THYRK will be burned.");
+    setStatus(t("tm.sending", "Sending token mint for {q} knight{s} — confirm it in your wallet. No BNB is sent; {n} $THYRK will be burned.", { q: q, s: q > 1 ? "s" : "", n: 100 * q }));
     try {
       var nft = await M.nftWrite();
       var tx = await nft.mintWithToken(q);
-      setStatus("Transaction sent — waiting for confirmation…");
+      setStatus(t("redeem.sent", "Transaction sent — waiting for confirmation…"));
       await tx.wait();
-      setResultHtml("Minted ✓ — " + q + " knight" + (q > 1 ? "s" : "") + " minted with $THYRK. Check them on the <a href=\"/check.html\">Check page</a>. " + M.txAnchor(tx.hash));
+      setResultHtml(t("tm.done", "Minted ✓ — {q} knight{s} minted with $THYRK. Check them on the <a href=\"/check.html\">Check page</a>. {link}", { q: q, s: q > 1 ? "s" : "", link: M.txAnchor(tx.hash) }));
       await refresh();
     } catch (e) {
-      setStatus("Token mint failed or was rejected: " + M.errMsg(e));
+      setStatus(t("tm.fail", "Token mint failed or was rejected: {err}", { err: M.errMsg(e) }));
     }
   });
 })();

@@ -1,65 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How to Mint — THYRK</title>
-<meta name="description" content="THYRK minting is agent-only. How an AI agent mints THYRK knights for you on BNB Chain.">
+<title data-i18n-title="meta.title.mint">ミント方法 — THYRK</title>
+<meta name="description" content="THYRKのミントはエージェント専用です。AIエージェントがBNBチェーン上でTHYRKナイトをミントする方法。" data-i18n-desc="meta.desc.mint">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/style.css">
+<script src="/i18n.js" defer></script>
 </head>
 <body>
 <header>
   <div class="nav">
     <a class="logo" href="/">THYRK</a>
     <nav id="site-nav" aria-label="Sections">
-      <a href="/#collection">Collection</a>
-      <a href="/#token">$THYRK</a>
-      <a href="/#agent-mint">Mint</a>
-      <a href="/#roadmap">Roadmap</a>
-      <a href="/#market">Market</a>
-      <a href="/gallery.html">Gallery</a>
-      <a href="/check.html">Check</a>
-      <a href="/redeem.html">Redeem</a>
-      <a href="/token-mint.html">Token Mint</a>
-      <a href="/upgrade.html">Upgrade</a>
-      <a href="/burn.html">Burn</a>
-      <a href="/#faq">FAQ</a>
+      <a href="/#collection" data-i18n="nav.collection">コレクション</a>
+      <a href="/#token" data-i18n="nav.token">$THYRK</a>
+      <a href="/#agent-mint" data-i18n="nav.mint">ミント</a>
+      <a href="/#roadmap" data-i18n="nav.roadmap">ロードマップ</a>
+      <a href="/#market" data-i18n="nav.market">マーケット</a>
+      <a href="/gallery.html" data-i18n="nav.gallery">ギャラリー</a>
+      <a href="/check.html" data-i18n="nav.check">チェック</a>
+      <a href="/redeem.html" data-i18n="nav.redeem">引き換え</a>
+      <a href="/token-mint.html" data-i18n="nav.tokenmint">トークンミント</a>
+      <a href="/upgrade.html" data-i18n="nav.upgrade">アップグレード</a>
+      <a href="/burn.html" data-i18n="nav.burn">バーン</a>
+      <a href="/#faq" data-i18n="nav.faq">FAQ</a>
+      <div class="lang-switch in-menu" role="group" aria-label="Language"><button type="button" data-lang="ja">日本語</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="zh">中文</button></div>
     </nav>
+<div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang="ja">日本語</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="zh">中文</button></div>
     <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </header>
 <main>
 <div class="wrap">
-  <h1>How to Mint</h1>
-  <p><span class="badge">✦ <span data-live="status">MINT IS LIVE</span></span></p>
-  <p>Minted <strong><span data-live="minted">–</span> / 7,777</strong></p>
-  <p><strong>The new THYRK contract is deployed and mint is LIVE.</strong> Minting is <strong>agent-only</strong>. There is no mint button for humans on this site. An AI agent mints for you — and only if your wallet holds a SPACE ID Agent ID.</p>
+  <h1 data-i18n="mint.h1">ミント方法</h1>
+  <p><span class="badge">✦ <span data-live="status">ミント受付中</span></span></p>
+  <p><span data-i18n="stat.minted">ミント済み</span> <strong><span data-live="minted">–</span> / 7,777</strong></p>
+  <p data-i18n-html="mint.intro"><strong>新しいTHYRKコントラクトがデプロイされ、ミントは受付中です。</strong>ミントは<strong>エージェント専用</strong>です。このサイトに人間用のミントボタンはありません。AIエージェントがあなたの代わりにミントします — ウォレットがSPACE IDエージェントIDを持っている場合に限ります。</p>
 
-  <h2>How minting works</h2>
+  <h2 data-i18n="mint.how">ミントの仕組み</h2>
   <ul>
-    <li>You need a wallet on BNB Chain with a <strong>SPACE ID Agent ID</strong> attached to it.</li>
-    <li>You need an AI agent that can call contracts for you.</li>
-    <li>Your wallet can mint at most <strong>30 THYRK knights</strong> in total.</li>
-    <li>Your <strong>first mint per wallet is FREE and automatic</strong> — no choice to make, no separate free-mint step. It applies to 1 mint per wallet, with no total cap on free mints.</li>
-    <li>The free mint draws from the <strong>full deck, including Legendary</strong> — a free mint can draw any tier: Common, Rare, Epic or Legendary.</li>
-    <li><strong>Bulk mint:</strong> up to 30 knights in 1 transaction — 1 free + 29 paid.</li>
-    <li>The price for each mint depends on how many times your wallet has minted. The exact price is always read from the contract at mint time and shown in your wallet confirmation before you sign. The price is never shown as a static number on this site.</li>
-    <li>Every mint — free and paid — earns <strong>20 $THYRK</strong>.</li>
+    <li data-i18n-html="mint.li1">BNBチェーン上のウォレットに<strong>SPACE IDエージェントID</strong>が紐付いている必要があります。</li>
+    <li data-i18n-html="mint.li2">コントラクトを呼び出せるAIエージェントが必要です。</li>
+    <li data-i18n-html="mint.li3">ウォレットは合計で最大<strong>30体のTHYRKナイト</strong>までミントできます。</li>
+    <li data-i18n-html="mint.li4">1ウォレットの<strong>初回ミントは無料で自動</strong>です — 選ぶ必要も、無料ミントの別ステップもありません。1ウォレットにつき1回、無料ミントの総数に上限はありません。</li>
+    <li data-i18n-html="mint.li5">無料ミントは<strong>レジェンダリーを含むフルデッキ</strong>から引かれます — 無料ミントでもどのティアでも出ます：Common、Rare、Epic、Legendary。</li>
+    <li data-i18n-html="mint.li6"><strong>一括ミント：</strong>1回のトランザクションで最大30体 — 無料1体 + 有料29体。</li>
+    <li data-i18n-html="mint.li7">各ミントの価格はウォレットのミント回数によって決まります。正確な価格はミント時に常にコントラクトから読み取られ、署名前にウォレットの確認画面に表示されます。価格がこのサイトに固定の数字として表示されることはありません。</li>
+    <li data-i18n-html="mint.li8">すべてのミント — 無料も有料も — <strong>20 $THYRK</strong>がもらえます。</li>
   </ul>
 
-  <h2>The mint flow</h2>
+  <h2 data-i18n="mint.flow">ミントの流れ</h2>
   <ol>
-    <li>You give your agent the prompt below, or point it to <a href="/agent-skill.md">agent-skill.md</a>.</li>
-    <li>Your agent checks the contract: mint is open, your wallet holds an Agent ID, and you are below 30 mints.</li>
-    <li>Your agent reads the exact price for your mint from the contract with <code>quoteBulk(wallet, quantity)</code> and shows it in your wallet confirmation before you sign.</li>
-    <li>You confirm. Your agent calls <code>mint(uint256 quantity)</code> — one knight, or up to 30 at once in a single transaction. There is no separate free-mint argument: the first mint per wallet is free automatically.</li>
-    <li>Your agent verifies the mint on-chain and shows you your knight: image, name, rarity and traits.</li>
-    <li>Each mint earns 20 $THYRK, free mints included.</li>
+    <li data-i18n-html="mint.f1">下のプロンプトをエージェントに渡すか、<a href="/agent-skill.md">agent-skill.md</a>を指し示します。</li>
+    <li data-i18n-html="mint.f2">エージェントがコントラクトを確認：ミントは受付中で、ウォレットはエージェントIDを持ち、ミント回数は30回未満です。</li>
+    <li data-i18n-html="mint.f3">エージェントが<code>quoteBulk(wallet, quantity)</code>でコントラクトからミントの正確な価格を読み取り、署名前にウォレットの確認画面に表示します。</li>
+    <li data-i18n-html="mint.f4">あなたが確認します。エージェントが<code>mint(uint256 quantity)</code>を呼び出します — 1体、または1回のトランザクションで最大30体まで。無料ミントの別の引数はありません。1ウォレットの初回ミントは自動的に無料です。</li>
+    <li data-i18n-html="mint.f5">エージェントはミントをオンチェーンで確認し、あなたのナイトを表示します：画像、名前、レアリティ、特性。</li>
+    <li data-i18n-html="mint.f6">各ミントで20 $THYRKがもらえます。無料ミントも含まれます。</li>
   </ol>
 
-  <h2>Agent prompt</h2>
-  <p>Copy this prompt to your AI agent:</p>
+  <h2 data-i18n="prompt.h">エージェント用プロンプト</h2>
+  <p data-i18n="prompt.p">この短いプロンプトをエージェントにコピーしてください：</p>
   <pre>THYRK mint — agent-only on BNB Chain (chain ID 56).
 NFT contract: 0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e (deployed, minting is live).
 Token $THYRK: 0x3b8747d067b2ed8565330667128260c2a4954300.
@@ -71,23 +74,23 @@ Before signing, read quoteBulk(wallet, quantity) from the contract for the exact
 After minting, verify on-chain (totalSupply, mintCount) and show the knight: image, name, rarity and traits.
 </pre>
 
-  <h2>After you mint</h2>
+  <h2 data-i18n="mint.after">ミントした後</h2>
   <ul>
-    <li>Check your knight on the <a href="/check.html">Check page</a>.</li>
-    <li>Burn a knight you do not want to earn $THYRK: Common 20, Rare 50, Epic 120, Legendary 300.</li>
-    <li>Collect 1,500 $THYRK to redeem a Divine — 77 unique 1-of-1 knights, revealed only to their owner.</li>
-    <li>Or spend $THYRK on a token mint (100 $THYRK, max 3 per wallet) or on upgrades (3 Common + 50, 3 Rare + 100, 3 Epic + 200).</li>
+    <li data-i18n-html="mint.a1"><a href="/check.html">チェックページ</a>であなたのナイトを確認しましょう。</li>
+    <li data-i18n-html="mint.a2">不要なナイトをバーンして$THYRKを獲得：コモン20、レア50、エピック120、レジェンダリー300。</li>
+    <li data-i18n-html="mint.a3">1,500 $THYRKを集めてディバインと引き換えましょう — 77体のユニークな1 of 1ナイト、所有者にのみ明かされます。</li>
+    <li data-i18n-html="mint.a4">または$THYRKをトークンミント（100 $THYRK、1ウォレット最大3回）やアップグレード（コモン3体 + 50、レア3体 + 100、エピック3体 + 200）に使いましょう。</li>
   </ul>
 
-  <h2>For agents</h2>
-  <p>Full machine-readable instructions: <a href="/agent-skill.md">agent-skill.md</a> and <a href="/llms.txt">llms.txt</a>. The new NFT contract is <strong>deployed</strong> and mint is <strong>LIVE</strong>: <a href="https://bscscan.com/address/0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e"><code>0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e</code></a>.</p>
-  <p><a class="btn" href="/">Back to home</a></p>
+  <h2 data-i18n="mint.foragents">エージェント向け</h2>
+  <p data-i18n-html="mint.foragents.p">機械可読の完全な説明：<a href="/agent-skill.md">agent-skill.md</a>と<a href="/llms.txt">llms.txt</a>。新しいNFTコントラクトは<strong>デプロイ済み</strong>で、ミントは<strong>受付中</strong>です：<a href="https://bscscan.com/address/0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e"><code>0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e</code></a>。</p>
+  <p><a class="btn" href="/" data-i18n="common.back_home">ホームに戻る</a></p>
 </div>
 </main>
 <footer>
-  <p>THYRK — 7,777 knights on BNB Chain. Agent-only mint.</p>
-  <p><a href="/llms.txt">llms.txt</a> &middot; <a href="/agent-skill.md">Agent skill</a> &middot; <a href="/gallery.html">Gallery</a> &middot; <a href="/check.html">Check</a> &middot; <a href="/burn.html">Burn</a> &middot; <a href="https://x.com/thyrk_">X @thyrk_</a></p>
-  <p>Mint is live.</p>
+  <p data-i18n="foot.tagline">THYRK — BNBチェーン上の7,777体のナイト。エージェント専用ミント。</p>
+  <p><a href="/llms.txt">llms.txt</a> &middot; <a href="/agent-skill.md" data-i18n="foot.agent_skill">エージェントスキル</a> &middot; <a href="/gallery.html" data-i18n="nav.gallery">ギャラリー</a> &middot; <a href="/check.html" data-i18n="nav.check">チェック</a> &middot; <a href="/burn.html" data-i18n="nav.burn">バーン</a> &middot; <a href="https://x.com/thyrk_">X @thyrk_</a></p>
+  <p data-i18n="foot.live">ミント受付中。</p>
 </footer>
 <script>
 (function(){

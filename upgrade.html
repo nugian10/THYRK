@@ -1,99 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Upgrade Knights — THYRK</title>
-<meta name="description" content="Upgrade THYRK knights: 3 Common + 50 $THYRK = 1 Rare, 3 Rare + 100 $THYRK = 1 Epic, 3 Epic + 200 $THYRK = 1 Legendary. Live now on BNB Chain.">
+<title data-i18n-title="meta.title.upgrade">ナイトをアップグレード — THYRK</title>
+<meta name="description" content="THYRKナイトをアップグレード：コモン3体 + 50 $THYRK = レア1体、レア3体 + 100 $THYRK = エピック1体、エピック3体 + 200 $THYRK = レジェンダリー1体。BNBチェーンで受付中。" data-i18n-desc="meta.desc.upgrade">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/style.css">
+<script src="/i18n.js" defer></script>
 </head>
 <body>
 <header>
   <div class="nav">
     <a class="logo" href="/">THYRK</a>
     <nav id="site-nav" aria-label="Sections">
-      <a href="/#collection">Collection</a>
-      <a href="/#token">$THYRK</a>
-      <a href="/#agent-mint">Mint</a>
-      <a href="/#roadmap">Roadmap</a>
-      <a href="/#market">Market</a>
-      <a href="/gallery.html">Gallery</a>
-      <a href="/check.html">Check</a>
-      <a href="/redeem.html">Redeem</a>
-      <a href="/token-mint.html">Token Mint</a>
-      <a href="/upgrade.html">Upgrade</a>
-      <a href="/burn.html">Burn</a>
-      <a href="/#faq">FAQ</a>
+      <a href="/#collection" data-i18n="nav.collection">コレクション</a>
+      <a href="/#token" data-i18n="nav.token">$THYRK</a>
+      <a href="/#agent-mint" data-i18n="nav.mint">ミント</a>
+      <a href="/#roadmap" data-i18n="nav.roadmap">ロードマップ</a>
+      <a href="/#market" data-i18n="nav.market">マーケット</a>
+      <a href="/gallery.html" data-i18n="nav.gallery">ギャラリー</a>
+      <a href="/check.html" data-i18n="nav.check">チェック</a>
+      <a href="/redeem.html" data-i18n="nav.redeem">引き換え</a>
+      <a href="/token-mint.html" data-i18n="nav.tokenmint">トークンミント</a>
+      <a href="/upgrade.html" data-i18n="nav.upgrade">アップグレード</a>
+      <a href="/burn.html" data-i18n="nav.burn">バーン</a>
+      <a href="/#faq" data-i18n="nav.faq">FAQ</a>
+      <div class="lang-switch in-menu" role="group" aria-label="Language"><button type="button" data-lang="ja">日本語</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="zh">中文</button></div>
     </nav>
+<div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang="ja">日本語</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="zh">中文</button></div>
     <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </header>
 <main>
 <div class="wrap">
-  <h1>Upgrade Knights</h1>
-  <p><span class="badge">MINT IS LIVE</span></p>
-  <p>Three knights of one rarity, plus $THYRK, become one knight of the next rarity. Upgrading gives your Common knights a second life — instead of burning them one by one, combine them into something rarer.</p>
+  <h1 data-i18n="up.h1">ナイトをアップグレード</h1>
+  <p><span class="badge"><span data-i18n="status.live">ミント受付中</span></span></p>
+  <p data-i18n="up.intro">同じレアリティのナイト3体に$THYRKを加えると、次のレアリティのナイト1体になります。アップグレードはコモンナイトに第二の人生を与えます — 1体ずつバーンする代わりに、組み合わせてよりレアなものにしましょう。</p>
 
-  <div class="note">Upgrades are live with the new contract. Each upgrade needs $THYRK in your wallet — earn it from mints (20 $THYRK each, free and paid) or by burning a knight.</div>
+  <div class="note" data-i18n="up.note">アップグレードは新コントラクトで利用可能です。各アップグレードにはウォレットに$THYRKが必要です — ミント（1回につき20 $THYRK、無料・有料とも）やナイトのバーンで稼ぎましょう。</div>
 
-  <h2>Upgrade recipes</h2>
+  <h2 data-i18n="up.recipes">アップグレードのレシピ</h2>
   <table>
-    <tr><th>You give</th><th>You get</th></tr>
+    <tr><th data-i18n="up.th_give">渡すもの</th><th data-i18n="up.th_get">もらえるもの</th></tr>
     <tr><td>3 Common + 50 $THYRK</td><td>1 Rare</td></tr>
     <tr><td>3 Rare + 100 $THYRK</td><td>1 Epic</td></tr>
     <tr><td>3 Epic + 200 $THYRK</td><td>1 Legendary</td></tr>
   </table>
 
-  <div class="note"><strong>Upgrade stops at Legendary.</strong> Divine cannot be reached by upgrading — there is no upgrade from Legendary to Divine. The only way to get a Divine knight is to redeem 1,500 $THYRK on the <a href="/redeem.html">Redeem page</a>. A Legendary can be burned for 300 $THYRK toward that 1,500 — but that is burning, not upgrading.</div>
+  <div class="note" data-i18n-html="up.stop"><strong>アップグレードはレジェンダリーで止まります。</strong>ディバインにアップグレードで到達することはできません — レジェンダリーからディバインへのアップグレードはありません。ディバインナイトを手に入れる唯一の方法は、<a href="/redeem.html">引き換えページ</a>で1,500 $THYRKと引き換えることです。レジェンダリーをバーンすれば300 $THYRKになり、1,500に近づきます — ただし、それはバーンであってアップグレードではありません。</div>
 
-  <h2>How it works</h2>
+  <h2 data-i18n="how.works">仕組み</h2>
   <ol>
-    <li>Pick 3 knights of the same rarity in your wallet — 3 Common, 3 Rare or 3 Epic.</li>
-    <li>Pay the $THYRK cost for that upgrade: 50, 100 or 200 $THYRK.</li>
-    <li>The 3 knights and the $THYRK are burned — they are gone for good.</li>
-    <li>You receive 1 knight of the next rarity, drawn from that rarity's deck.</li>
+    <li data-i18n-html="up.s1">ウォレットから同じレアリティのナイト3体を選びます — コモン3体、レア3体、またはエピック3体。</li>
+    <li data-i18n-html="up.s2">そのアップグレードの$THYRKコストを支払います：50、100、または200 $THYRK。</li>
+    <li data-i18n-html="up.s3">3体のナイトと$THYRKはバーンされます — 完全に消えます。</li>
+    <li data-i18n-html="up.s4">次のレアリティのナイト1体を受け取ります。そのレアリティのデッキから引かれます。</li>
   </ol>
 
-  <div class="note"><strong>Upgrading burns.</strong> The 3 knights you upgrade and the $THYRK you pay are destroyed — there is no way to undo an upgrade. Make sure you pick knights you are happy to give up.</div>
+  <div class="note" data-i18n-html="up.burn_note"><strong>アップグレードはバーンを伴います。</strong>アップグレードする3体のナイトと支払う$THYRKは破壊されます — アップグレードを取り消す方法はありません。手放してもよいナイトを選んでください。</div>
 
-  <h2>How to earn $THYRK</h2>
+  <h2 data-i18n="earn.h">$THYRKの稼ぎ方</h2>
   <table>
-    <tr><th>How to earn $THYRK</th><th>Amount</th></tr>
-    <tr><td>Mint (free or paid)</td><td>20 $THYRK per mint</td></tr>
-    <tr><td>Burn a Common</td><td>20 $THYRK</td></tr>
-    <tr><td>Burn a Rare</td><td>50 $THYRK</td></tr>
-    <tr><td>Burn an Epic</td><td>120 $THYRK</td></tr>
-    <tr><td>Burn a Legendary</td><td>300 $THYRK</td></tr>
+    <tr><th data-i18n="th.earn">$THYRKの獲得方法</th><th data-i18n="th.amount">数量</th></tr>
+    <tr><td data-i18n="earn.mint">ミント（無料・有料）</td><td data-i18n="earn.per">1ミントにつき20 $THYRK</td></tr>
+    <tr><td data-i18n="earn.burn_common">コモンをバーン</td><td>20 $THYRK</td></tr>
+    <tr><td data-i18n="earn.burn_rare">レアをバーン</td><td>50 $THYRK</td></tr>
+    <tr><td data-i18n="earn.burn_epic">エピックをバーン</td><td>120 $THYRK</td></tr>
+    <tr><td data-i18n="earn.burn_legendary">レジェンダリーをバーン</td><td>300 $THYRK</td></tr>
   </table>
 
-  <h2>Upgrade</h2>
-  <p>$THYRK token contract: <a href="https://bscscan.com/address/0x3b8747d067b2ed8565330667128260c2a4954300"><code>0x3b8747d067b2ed8565330667128260c2a4954300</code></a><br>NFT contract: <a href="https://bscscan.com/address/0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e"><code>0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e</code></a></p>
-  <p>Do it yourself below — connect your wallet, pick 3 knights of one rarity, approve the $THYRK fee, and upgrade. Or ask your agent to run the upgrade for you (see <a href="/agent-skill.md">agent-skill.md</a>).</p>
+  <h2 data-i18n="nav.upgrade">アップグレード</h2>
+  <p><span data-i18n="common.token_contract">$THYRKトークンコントラクト：</span> <a href="https://bscscan.com/address/0x3b8747d067b2ed8565330667128260c2a4954300"><code>0x3b8747d067b2ed8565330667128260c2a4954300</code></a><br><span data-i18n="common.nft_contract">NFTコントラクト：</span> <a href="https://bscscan.com/address/0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e"><code>0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e</code></a></p>
+  <p data-i18n-html="up.diy.p">下で自分で行いましょう — ウォレットを接続し、同じレアリティのナイト3体を選び、$THYRK手数料を承認してアップグレードします。またはエージェントにアップグレードを依頼することもできます（<a href="/agent-skill.md">agent-skill.md</a>参照）。</p>
   <div class="note">
-    <h3 style="margin-top:0">Do it yourself</h3>
-    <p><button class="btn" id="connect-btn" type="button">Connect wallet</button>
-    <span id="wallet-status" data-manual-wallet>Not connected.</span></p>
-    <label for="up-token-1"><strong>Knight 1 token ID</strong></label>
+    <h3 style="margin-top:0" data-i18n="diy.h">自分で行う</h3>
+    <p><button class="btn" id="connect-btn" type="button" data-i18n="common.connect_wallet">ウォレットを接続</button>
+    <span id="wallet-status" data-manual-wallet data-i18n="common.not_connected">未接続。</span></p>
+    <label for="up-token-1"><strong data-i18n="up.k1">ナイト1のトークンID</strong></label>
     <input id="up-token-1" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" placeholder="e.g. 2210">
-    <label for="up-token-2"><strong>Knight 2 token ID</strong></label>
+    <label for="up-token-2"><strong data-i18n="up.k2">ナイト2のトークンID</strong></label>
     <input id="up-token-2" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" placeholder="e.g. 456">
-    <label for="up-token-3"><strong>Knight 3 token ID</strong></label>
+    <label for="up-token-3"><strong data-i18n="up.k3">ナイト3のトークンID</strong></label>
     <input id="up-token-3" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" placeholder="e.g. 3854">
-    <p><button class="btn" id="check-upgrade-btn" type="button">Check knights</button></p>
+    <p><button class="btn" id="check-upgrade-btn" type="button" data-i18n="up.check">ナイトを確認</button></p>
     <p class="status-line" id="upgrade-check-result" role="status"></p>
-    <p><button class="btn" id="approve-btn" type="button" disabled>Approve $THYRK fee</button>
-    <button class="btn primary" id="upgrade-btn" type="button" disabled>Upgrade</button></p>
+    <p><button class="btn" id="approve-btn" type="button" disabled data-i18n="up.approve_btn">$THYRK手数料を承認</button>
+    <button class="btn primary" id="upgrade-btn" type="button" disabled data-i18n="nav.upgrade">アップグレード</button></p>
     <p class="status-line" id="manual-status" role="status"></p>
   </div>
 
-  <p><a class="btn ghost" href="/">Back to home</a></p>
+  <p><a class="btn ghost" href="/" data-i18n="common.back_home">ホームに戻る</a></p>
 </div>
 </main>
 <footer>
-  <p>THYRK — 7,777 knights on BNB Chain. Agent-only mint.</p>
-  <p><a href="/llms.txt">llms.txt</a> &middot; <a href="/agent-skill.md">Agent skill</a> &middot; <a href="/gallery.html">Gallery</a> &middot; <a href="/check.html">Check</a> &middot; <a href="/redeem.html">Redeem</a> &middot; <a href="/token-mint.html">Token Mint</a> &middot; <a href="/upgrade.html">Upgrade</a> &middot; <a href="/burn.html">Burn</a> &middot; <a href="https://x.com/thyrk_">X @thyrk_</a></p>
-  <p>Mint is live.</p>
+  <p data-i18n="foot.tagline">THYRK — BNBチェーン上の7,777体のナイト。エージェント専用ミント。</p>
+  <p><a href="/llms.txt">llms.txt</a> &middot; <a href="/agent-skill.md" data-i18n="foot.agent_skill">エージェントスキル</a> &middot; <a href="/gallery.html" data-i18n="nav.gallery">ギャラリー</a> &middot; <a href="/check.html" data-i18n="nav.check">チェック</a> &middot; <a href="/redeem.html" data-i18n="nav.redeem">引き換え</a> &middot; <a href="/token-mint.html" data-i18n="nav.tokenmint">トークンミント</a> &middot; <a href="/upgrade.html" data-i18n="nav.upgrade">アップグレード</a> &middot; <a href="/burn.html" data-i18n="nav.burn">バーン</a> &middot; <a href="https://x.com/thyrk_">X @thyrk_</a></p>
+  <p data-i18n="foot.live">ミント受付中。</p>
 </footer>
 <script>
 (function(){
@@ -119,6 +122,15 @@
 /* Upgrade page — manual flow. Check 3 knights, approve the fee, upgrade. */
 (function () {
   var M = window.THYRK_MANUAL;
+  /* t(): translated string via i18n.js when loaded, else the English
+     fallback passed inline (fb). Vars like {n} are substituted. */
+  function t(k, fb, vars) {
+    if (window.THYRK_T) return window.THYRK_T(k, vars);
+    var s = fb;
+    if (vars) for (var n in vars) s = s.split("{" + n + "}").join(String(vars[n]));
+    return s;
+  }
+
   var RARITY = ["Common", "Rare", "Epic", "Legendary", "Divine"];
   var TARGET = ["Rare", "Epic", "Legendary"];
   var FEE = [null, null, null]; // $THYRK fee in wei per input tier, set once ethers loads
@@ -127,7 +139,11 @@
   function setStatus(t) { $("manual-status").textContent = t; }
   function setResultHtml(h) { $("manual-status").innerHTML = h; }
   if (typeof ethers === "undefined" || !M) {
-    setStatus("The wallet library did not load — check your connection and refresh this page.");
+    /* Defer the message to DOMContentLoaded so i18n.js (deferred) has
+       run and the message shows in the visitor's language. */
+    document.addEventListener("DOMContentLoaded", function () {
+      setStatus(t("manual.lib_missing", "The wallet library did not load — check your connection and refresh this page."));
+    });
     return;
   }
   FEE = [ethers.parseUnits("50", 18), ethers.parseUnits("100", 18), ethers.parseUnits("200", 18)];
@@ -143,25 +159,25 @@
   }
   $("connect-btn").addEventListener("click", async function () {
     var a = await M.connect(setStatus);
-    if (a) setStatus("Connected: " + M.shortAddr(a) + ". Enter 3 knights of one rarity, then check them.");
+    if (a) setStatus(t("manual.connected", "Connected: {addr}.", { addr: M.shortAddr(a) }) + " " + t("up.connect_hint", "Enter 3 knights of one rarity, then check them."));
   });
   $("check-upgrade-btn").addEventListener("click", async function () {
     var ids = readIds();
     if (!ids) {
-      $("upgrade-check-result").textContent = "Enter 3 token numbers from 1 to 7,777 (mintable knights only).";
+      $("upgrade-check-result").textContent = t("up.err_ids", "Enter 3 token numbers from 1 to 7,777 (mintable knights only).");
       $("approve-btn").disabled = true;
       $("upgrade-btn").disabled = true;
       checked = null;
       return;
     }
     if (ids[0] === ids[1] || ids[0] === ids[2] || ids[1] === ids[2]) {
-      $("upgrade-check-result").textContent = "The 3 knights must be 3 different token IDs.";
+      $("upgrade-check-result").textContent = t("up.err_dup", "The 3 knights must be 3 different token IDs.");
       $("approve-btn").disabled = true;
       $("upgrade-btn").disabled = true;
       checked = null;
       return;
     }
-    $("upgrade-check-result").textContent = "Checking your 3 knights…";
+    $("upgrade-check-result").textContent = t("up.checking", "Checking your 3 knights…");
     try {
       var nft = await M.nftRead();
       var acct = M.account();
@@ -172,7 +188,7 @@
         rarities.push(Number(await nft.rarityOf(ids[i])));
       }
       if (!acct) {
-        $("upgrade-check-result").textContent = "Token #" + ids[0] + " is " + RARITY[rarities[0]] + ", #" + ids[1] + " is " + RARITY[rarities[1]] + ", #" + ids[2] + " is " + RARITY[rarities[2]] + ". Connect your wallet to check ownership and upgrade.";
+        $("upgrade-check-result").textContent = t("up.no_wallet", "Token #{a} is {r1}, #{b} is {r2}, #{c} is {r3}. Connect your wallet to check ownership and upgrade.", { a: ids[0], r1: RARITY[rarities[0]], b: ids[1], r2: RARITY[rarities[1]], c: ids[2], r3: RARITY[rarities[2]] });
         $("approve-btn").disabled = true;
         $("upgrade-btn").disabled = true;
         checked = null;
@@ -180,7 +196,7 @@
       }
       for (var j = 0; j < 3; j++) {
         if (owners[j].toLowerCase() !== acct.toLowerCase()) {
-          $("upgrade-check-result").textContent = "Token #" + ids[j] + " is not yours (owner " + M.shortAddr(owners[j]) + "). All 3 knights must be in your wallet.";
+          $("upgrade-check-result").textContent = t("up.not_yours", "Token #{id} is not yours (owner {owner}). All 3 knights must be in your wallet.", { id: ids[j], owner: M.shortAddr(owners[j]) });
           $("approve-btn").disabled = true;
           $("upgrade-btn").disabled = true;
           checked = null;
@@ -189,14 +205,14 @@
       }
       var r = rarities[0];
       if (rarities[1] !== r || rarities[2] !== r) {
-        $("upgrade-check-result").textContent = "The 3 knights must all be the same rarity — yours are " + RARITY[rarities[0]] + ", " + RARITY[rarities[1]] + " and " + RARITY[rarities[2]] + ".";
+        $("upgrade-check-result").textContent = t("up.not_same", "The 3 knights must all be the same rarity — yours are {r1}, {r2} and {r3}.", { r1: RARITY[rarities[0]], r2: RARITY[rarities[1]], r3: RARITY[rarities[2]] });
         $("approve-btn").disabled = true;
         $("upgrade-btn").disabled = true;
         checked = null;
         return;
       }
       if (r > 2) {
-        $("upgrade-check-result").textContent = "Only Common, Rare and Epic knights can be upgraded — yours are " + RARITY[r] + ". Upgrade stops at Legendary.";
+        $("upgrade-check-result").textContent = t("up.too_high", "Only Common, Rare and Epic knights can be upgraded — yours are {r}. Upgrade stops at Legendary.", { r: RARITY[r] });
         $("approve-btn").disabled = true;
         $("upgrade-btn").disabled = true;
         checked = null;
@@ -204,15 +220,15 @@
       }
       checked = { ids: ids, tier: r, fee: FEE[r] };
       var feeWhole = [50, 100, 200][r];
-      $("upgrade-check-result").textContent = "3 " + RARITY[r] + " knights, all yours ✓ — fee " + feeWhole + " $THYRK, you get 1 " + TARGET[r] + ".";
+      $("upgrade-check-result").textContent = t("up.ok", "3 {r} knights, all yours ✓ — fee {fee} $THYRK, you get 1 {t}.", { r: RARITY[r], fee: feeWhole, t: TARGET[r] });
       var token = await M.tokenRead();
       var allow = await token.allowance(acct, M.NFT);
       $("approve-btn").disabled = allow >= FEE[r];
-      $("approve-btn").textContent = "Approve " + feeWhole + " $THYRK fee";
+      $("approve-btn").textContent = t("up.approve_qty", "Approve {fee} $THYRK fee", { fee: feeWhole });
       $("upgrade-btn").disabled = allow < FEE[r];
-      setStatus(allow >= FEE[r] ? "Ready — you can upgrade." : "Approve the " + feeWhole + " $THYRK fee first, then upgrade.");
+      setStatus(allow >= FEE[r] ? t("up.ready", "Ready — you can upgrade.") : t("up.approve_first", "Approve the {fee} $THYRK fee first, then upgrade.", { fee: feeWhole }));
     } catch (e) {
-      $("upgrade-check-result").textContent = "Could not read your knights — one may not be minted yet, or the chain could not be reached.";
+      $("upgrade-check-result").textContent = t("up.read_fail", "Could not read your knights — one may not be minted yet, or the chain could not be reached.");
       $("approve-btn").disabled = true;
       $("upgrade-btn").disabled = true;
       checked = null;
@@ -221,23 +237,23 @@
   $("approve-btn").addEventListener("click", async function () {
     if (!checked) return;
     var feeWhole = [50, 100, 200][checked.tier];
-    setStatus("Approving " + feeWhole + " $THYRK — confirm it in your wallet.");
+    setStatus(t("up.approving", "Approving {fee} $THYRK — confirm it in your wallet.", { fee: feeWhole }));
     try {
       await M.ensureAllowance(checked.fee, setStatus);
-      setStatus("Approved ✓ — you can now upgrade.");
+      setStatus(t("up.approved", "Approved ✓ — you can now upgrade."));
       $("approve-btn").disabled = true;
       $("upgrade-btn").disabled = false;
     } catch (e) {
-      setStatus("Approval failed or was rejected: " + M.errMsg(e));
+      setStatus(t("manual.approve_fail", "Approval failed or was rejected: {err}", { err: M.errMsg(e) }));
     }
   });
   $("upgrade-btn").addEventListener("click", async function () {
     if (!checked) return;
-    setStatus("Sending upgrade — confirm it in your wallet. The 3 knights and the fee will be burned.");
+    setStatus(t("up.sending", "Sending upgrade — confirm it in your wallet. The 3 knights and the fee will be burned."));
     try {
       var nft = await M.nftWrite();
       var tx = await nft.upgrade(checked.ids[0], checked.ids[1], checked.ids[2]);
-      setStatus("Transaction sent — waiting for confirmation…");
+      setStatus(t("redeem.sent", "Transaction sent — waiting for confirmation…"));
       var rc = await tx.wait();
       var newId = null;
       try {
@@ -250,16 +266,15 @@
         }
       } catch (e) { /* fall back to text below */ }
       if (newId) {
-        setResultHtml("Upgraded ✓ — your new " + TARGET[checked.tier] + " knight is token #" + newId +
-          ". Check it on the <a href=\"/check.html\">Check page</a>. " + M.txAnchor(tx.hash));
+        setResultHtml(t("up.done_id", "Upgraded ✓ — your new {t} knight is token #{id}. Check it on the <a href=\"/check.html\">Check page</a>. {link}", { t: TARGET[checked.tier], id: newId, link: M.txAnchor(tx.hash) }));
       } else {
-        setResultHtml("Upgraded ✓ — your new " + TARGET[checked.tier] + " knight is in your wallet. Check it on the <a href=\"/check.html\">Check page</a>. " + M.txAnchor(tx.hash));
+        setResultHtml(t("up.done", "Upgraded ✓ — your new {t} knight is in your wallet. Check it on the <a href=\"/check.html\">Check page</a>. {link}", { t: TARGET[checked.tier], link: M.txAnchor(tx.hash) }));
       }
       $("upgrade-btn").disabled = true;
       $("approve-btn").disabled = true;
       checked = null;
     } catch (e) {
-      setStatus("Upgrade failed or was rejected: " + M.errMsg(e));
+      setStatus(t("up.fail", "Upgrade failed or was rejected: {err}", { err: M.errMsg(e) }));
     }
   });
 })();

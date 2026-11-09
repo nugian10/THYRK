@@ -1,101 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Burn Knights for $THYRK — THYRK</title>
-<meta name="description" content="Burn THYRK knights for $THYRK: Common 20, Rare 50, Epic 120, Legendary 300. Burning is permanent. Live now on BNB Chain.">
+<title data-i18n-title="meta.title.burn">ナイトをバーンして$THYRKに — THYRK</title>
+<meta name="description" content="THYRKナイトをバーンして$THYRKに：コモン20、レア50、エピック120、レジェンダリー300。バーンは永久です。BNBチェーンで受付中。" data-i18n-desc="meta.desc.burn">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/style.css">
+<script src="/i18n.js" defer></script>
 </head>
 <body>
 <header>
   <div class="nav">
     <a class="logo" href="/">THYRK</a>
     <nav id="site-nav" aria-label="Sections">
-      <a href="/#collection">Collection</a>
-      <a href="/#token">$THYRK</a>
-      <a href="/#agent-mint">Mint</a>
-      <a href="/#roadmap">Roadmap</a>
-      <a href="/#market">Market</a>
-      <a href="/gallery.html">Gallery</a>
-      <a href="/check.html">Check</a>
-      <a href="/redeem.html">Redeem</a>
-      <a href="/token-mint.html">Token Mint</a>
-      <a href="/upgrade.html">Upgrade</a>
-      <a href="/burn.html">Burn</a>
-      <a href="/#faq">FAQ</a>
+      <a href="/#collection" data-i18n="nav.collection">コレクション</a>
+      <a href="/#token" data-i18n="nav.token">$THYRK</a>
+      <a href="/#agent-mint" data-i18n="nav.mint">ミント</a>
+      <a href="/#roadmap" data-i18n="nav.roadmap">ロードマップ</a>
+      <a href="/#market" data-i18n="nav.market">マーケット</a>
+      <a href="/gallery.html" data-i18n="nav.gallery">ギャラリー</a>
+      <a href="/check.html" data-i18n="nav.check">チェック</a>
+      <a href="/redeem.html" data-i18n="nav.redeem">引き換え</a>
+      <a href="/token-mint.html" data-i18n="nav.tokenmint">トークンミント</a>
+      <a href="/upgrade.html" data-i18n="nav.upgrade">アップグレード</a>
+      <a href="/burn.html" data-i18n="nav.burn">バーン</a>
+      <a href="/#faq" data-i18n="nav.faq">FAQ</a>
+      <div class="lang-switch in-menu" role="group" aria-label="Language"><button type="button" data-lang="ja">日本語</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="zh">中文</button></div>
     </nav>
+<div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang="ja">日本語</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="zh">中文</button></div>
     <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </header>
 <main>
 <div class="wrap">
-  <h1>Burn Knights for $THYRK</h1>
-  <p><span class="badge">MINT IS LIVE</span></p>
-  <p>Burning means destroying a knight to get $THYRK in return. A knight you do not want — a duplicate Common, for example — becomes $THYRK you can spend on a Divine, a token mint, or an upgrade.</p>
+  <h1 data-i18n="burn.h1">$THYRKのためにナイトをバーン</h1>
+  <p><span class="badge"><span data-i18n="status.live">ミント受付中</span></span></p>
+  <p data-i18n="burn.intro">バーンとは、ナイトを破壊して代わりに$THYRKを得ることです。不要なナイト — 例えば重複したコモン — が、ディバイン、トークンミント、アップグレードに使える$THYRKになります。</p>
 
-  <div class="note">Burning is live with the new contract. Burning a knight mints $THYRK to your wallet. A burned knight also makes room: burning lowers the total supply of knights in existence.</div>
+  <div class="note" data-i18n="burn.note1">バーンは新コントラクトで利用可能です。ナイトをバーンすると$THYRKがウォレットにミントされます。バーンされたナイトは枠も空けます。バーンすると存在するナイトの総供給量が減ります。</div>
 
-  <div class="note"><strong>Burning is permanent — the NFT is gone forever.</strong> A burned knight can never be recovered, traded, or unburned. Only burn knights you are sure you do not want to keep.</div>
+  <div class="note" data-i18n-html="burn.note2"><strong>バーンは永久です — NFTは永遠に消えます。</strong>バーンされたナイトは二度と回復も、取引も、元に戻すこともできません。手放してもよいと確信できるナイトだけをバーンしてください。</div>
 
-  <h2>What you get for burning</h2>
+  <h2 data-i18n="burn.what">バーンでもらえるもの</h2>
   <table>
-    <tr><th>Burn</th><th>You get</th></tr>
+    <tr><th data-i18n="burn.th_burn">バーンするもの</th><th data-i18n="up.th_get">もらえるもの</th></tr>
     <tr><td>Common</td><td>20 $THYRK</td></tr>
     <tr><td>Rare</td><td>50 $THYRK</td></tr>
     <tr><td>Epic</td><td>120 $THYRK</td></tr>
     <tr><td>Legendary</td><td>300 $THYRK</td></tr>
   </table>
 
-  <div class="note"><strong>Divine cannot be burned.</strong> Only Common, Rare, Epic and Legendary knights can be burned.</div>
+  <div class="note" data-i18n-html="burn.divine_note"><strong>ディバインはバーンできません。</strong>バーンできるのはCommon、Rare、Epic、Legendaryのナイトのみです。</div>
 
-  <h2>Free mints earn $THYRK too</h2>
-  <p>Your free first mint earns the full <strong>20 $THYRK</strong>, exactly like a paid mint. And any Common you hold — free or paid — burns for the same <strong>20 $THYRK</strong>.</p>
+  <h2 data-i18n="burn.free_h">無料ミントでも$THYRKがもらえる</h2>
+  <p data-i18n-html="burn.free_p">無料の初回ミントでも、有料ミントとまったく同じく満額の<strong>20 $THYRK</strong>がもらえます。持っているコモンはどれも — 無料でも有料でも — 同じ<strong>20 $THYRK</strong>でバーンできます。</p>
 
-  <h2>Example</h2>
-  <p>Burn 5 Common knights: 5 &times; 20 = <strong>100 $THYRK</strong> — exactly enough for 1 token mint on the <a href="/token-mint.html">Token Mint page</a>.</p>
+  <h2 data-i18n="burn.ex_h">例</h2>
+  <p data-i18n-html="burn.ex_p">コモンナイト5体をバーン：5 × 20 = <strong>100 $THYRK</strong> — <a href="/token-mint.html">トークンミントページ</a>でのトークンミント1回分にちょうどなります。</p>
 
-  <h2>What to spend $THYRK on</h2>
+  <h2 data-i18n="burn.spend_h">$THYRKの使い道</h2>
   <table>
-    <tr><th>Use</th><th>Cost</th></tr>
-    <tr><td><a href="/redeem.html">Redeem a Divine knight</a> (77 max, first come first served)</td><td>1,500 $THYRK</td></tr>
-    <tr><td><a href="/token-mint.html">Mint with $THYRK</a> (max 3 per wallet)</td><td>100 $THYRK per mint</td></tr>
-    <tr><td><a href="/upgrade.html">Upgrade knights</a> (3 Common + 50 = 1 Rare; 3 Rare + 100 = 1 Epic; 3 Epic + 200 = 1 Legendary)</td><td>50 / 100 / 200 $THYRK</td></tr>
+    <tr><th data-i18n="burn.spend_use">用途</th><th data-i18n="th.cost">コスト</th></tr>
+    <tr><td data-i18n-html="burn.spend_divine"><a href="/redeem.html">ディバインナイトと引き換える</a>（最大77体、先着順）</td><td>1,500 $THYRK</td></tr>
+    <tr><td data-i18n-html="burn.spend_tm"><a href="/token-mint.html">$THYRKでミント</a>（1ウォレット最大3回）</td><td>100 $THYRK per mint</td></tr>
+    <tr><td data-i18n-html="burn.spend_up"><a href="/upgrade.html">ナイトをアップグレード</a>（コモン3体 + 50 = レア1体；レア3体 + 100 = エピック1体；エピック3体 + 200 = レジェンダリー1体）</td><td>50 / 100 / 200 $THYRK</td></tr>
   </table>
 
-  <h2>How to earn $THYRK</h2>
+  <h2 data-i18n="earn.h">$THYRKの稼ぎ方</h2>
   <table>
-    <tr><th>How to earn $THYRK</th><th>Amount</th></tr>
-    <tr><td>Mint (free or paid)</td><td>20 $THYRK per mint</td></tr>
-    <tr><td>Burn a Common</td><td>20 $THYRK</td></tr>
-    <tr><td>Burn a Rare</td><td>50 $THYRK</td></tr>
-    <tr><td>Burn an Epic</td><td>120 $THYRK</td></tr>
-    <tr><td>Burn a Legendary</td><td>300 $THYRK</td></tr>
+    <tr><th data-i18n="th.earn">$THYRKの獲得方法</th><th data-i18n="th.amount">数量</th></tr>
+    <tr><td data-i18n="earn.mint">ミント（無料・有料）</td><td data-i18n="earn.per">1ミントにつき20 $THYRK</td></tr>
+    <tr><td data-i18n="earn.burn_common">コモンをバーン</td><td>20 $THYRK</td></tr>
+    <tr><td data-i18n="earn.burn_rare">レアをバーン</td><td>50 $THYRK</td></tr>
+    <tr><td data-i18n="earn.burn_epic">エピックをバーン</td><td>120 $THYRK</td></tr>
+    <tr><td data-i18n="earn.burn_legendary">レジェンダリーをバーン</td><td>300 $THYRK</td></tr>
   </table>
 
-  <h2>Burn</h2>
-  <p>$THYRK token contract: <a href="https://bscscan.com/address/0x3b8747d067b2ed8565330667128260c2a4954300"><code>0x3b8747d067b2ed8565330667128260c2a4954300</code></a><br>NFT contract: <a href="https://bscscan.com/address/0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e"><code>0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e</code></a></p>
-  <p>Do it yourself below — connect your wallet and burn a knight directly. Or ask your agent to run the burn for you (see <a href="/agent-skill.md">agent-skill.md</a>).</p>
+  <h2 data-i18n="nav.burn">バーン</h2>
+  <p><span data-i18n="common.token_contract">$THYRKトークンコントラクト：</span> <a href="https://bscscan.com/address/0x3b8747d067b2ed8565330667128260c2a4954300"><code>0x3b8747d067b2ed8565330667128260c2a4954300</code></a><br><span data-i18n="common.nft_contract">NFTコントラクト：</span> <a href="https://bscscan.com/address/0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e"><code>0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e</code></a></p>
+  <p data-i18n-html="burn.diy.p">下で自分で行いましょう — ウォレットを接続してナイトを直接バーンします。またはエージェントにバーンを依頼することもできます（<a href="/agent-skill.md">agent-skill.md</a>参照）。</p>
   <div class="note">
-    <h3 style="margin-top:0">Do it yourself</h3>
-    <p><button class="btn" id="connect-btn" type="button">Connect wallet</button>
-    <span id="wallet-status" data-manual-wallet>Not connected.</span></p>
-    <label for="burn-token-id"><strong>Knight token ID to burn</strong></label>
+    <h3 style="margin-top:0" data-i18n="diy.h">自分で行う</h3>
+    <p><button class="btn" id="connect-btn" type="button" data-i18n="common.connect_wallet">ウォレットを接続</button>
+    <span id="wallet-status" data-manual-wallet data-i18n="common.not_connected">未接続。</span></p>
+    <label for="burn-token-id"><strong data-i18n="burn.token_label">バーンするナイトのトークンID</strong></label>
     <input id="burn-token-id" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" placeholder="e.g. 2210">
-    <p><button class="btn" id="check-knight-btn" type="button">Check knight</button></p>
+    <p><button class="btn" id="check-knight-btn" type="button" data-i18n="burn.check">ナイトを確認</button></p>
     <p class="status-line" id="burn-check-result" role="status"></p>
-    <p><button class="btn primary" id="burn-btn" type="button" disabled>Burn knight</button></p>
+    <p><button class="btn primary" id="burn-btn" type="button" disabled data-i18n="burn.btn">ナイトをバーン</button></p>
     <p class="status-line" id="manual-status" role="status"></p>
   </div>
 
-  <p><a class="btn ghost" href="/">Back to home</a></p>
+  <p><a class="btn ghost" href="/" data-i18n="common.back_home">ホームに戻る</a></p>
 </div>
 </main>
 <footer>
-  <p>THYRK — 7,777 knights on BNB Chain. Agent-only mint.</p>
-  <p><a href="/llms.txt">llms.txt</a> &middot; <a href="/agent-skill.md">Agent skill</a> &middot; <a href="/gallery.html">Gallery</a> &middot; <a href="/check.html">Check</a> &middot; <a href="/redeem.html">Redeem</a> &middot; <a href="/token-mint.html">Token Mint</a> &middot; <a href="/upgrade.html">Upgrade</a> &middot; <a href="/burn.html">Burn</a> &middot; <a href="https://x.com/thyrk_">X @thyrk_</a></p>
-  <p>Mint is live.</p>
+  <p data-i18n="foot.tagline">THYRK — BNBチェーン上の7,777体のナイト。エージェント専用ミント。</p>
+  <p><a href="/llms.txt">llms.txt</a> &middot; <a href="/agent-skill.md" data-i18n="foot.agent_skill">エージェントスキル</a> &middot; <a href="/gallery.html" data-i18n="nav.gallery">ギャラリー</a> &middot; <a href="/check.html" data-i18n="nav.check">チェック</a> &middot; <a href="/redeem.html" data-i18n="nav.redeem">引き換え</a> &middot; <a href="/token-mint.html" data-i18n="nav.tokenmint">トークンミント</a> &middot; <a href="/upgrade.html" data-i18n="nav.upgrade">アップグレード</a> &middot; <a href="/burn.html" data-i18n="nav.burn">バーン</a> &middot; <a href="https://x.com/thyrk_">X @thyrk_</a></p>
+  <p data-i18n="foot.live">ミント受付中。</p>
 </footer>
 <script>
 (function(){
@@ -121,6 +124,15 @@
 /* Burn page — manual flow. Check a knight, then burn it from your wallet. */
 (function () {
   var M = window.THYRK_MANUAL;
+  /* t(): translated string via i18n.js when loaded, else the English
+     fallback passed inline (fb). Vars like {n} are substituted. */
+  function t(k, fb, vars) {
+    if (window.THYRK_T) return window.THYRK_T(k, vars);
+    var s = fb;
+    if (vars) for (var n in vars) s = s.split("{" + n + "}").join(String(vars[n]));
+    return s;
+  }
+
   var RARITY = ["Common", "Rare", "Epic", "Legendary", "Divine"];
   var REWARD = [20, 50, 120, 300, 0];
   var checkedId = null;
@@ -129,60 +141,63 @@
   function setStatus(t) { $("manual-status").textContent = t; }
   function setResultHtml(h) { $("manual-status").innerHTML = h; }
   if (typeof ethers === "undefined" || !M) {
-    setStatus("The wallet library did not load — check your connection and refresh this page.");
+    /* Defer the message to DOMContentLoaded so i18n.js (deferred) has
+       run and the message shows in the visitor's language. */
+    document.addEventListener("DOMContentLoaded", function () {
+      setStatus(t("manual.lib_missing", "The wallet library did not load — check your connection and refresh this page."));
+    });
     return;
   }
   $("connect-btn").addEventListener("click", async function () {
     var a = await M.connect(setStatus);
-    if (a) setStatus("Connected: " + M.shortAddr(a) + ". Check a knight below, then burn it.");
+    if (a) setStatus(t("manual.connected", "Connected: {addr}.", { addr: M.shortAddr(a) }) + " " + t("burn.connect_after", "Check a knight below, then burn it."));
   });
   $("check-knight-btn").addEventListener("click", async function () {
     var v = $("burn-token-id").value.trim();
     var n = parseInt(v, 10);
     if (!/^\d+$/.test(v) || n < 1 || n > 7854) {
-      $("burn-check-result").textContent = "Enter a token number from 1 to 7,854.";
+      $("burn-check-result").textContent = t("burn.err_range", "Enter a token number from 1 to 7,854.");
       $("burn-btn").disabled = true;
       checkedOk = false;
       return;
     }
-    $("burn-check-result").textContent = "Checking token #" + n + "…";
+    $("burn-check-result").textContent = t("burn.checking", "Checking token #{n}…", { n: n });
     try {
       var nft = await M.nftRead();
       var owner = await nft.ownerOf(n);
       var r = Number(await nft.rarityOf(n));
       if (r === 4) {
-        $("burn-check-result").textContent = "Token #" + n + " is Divine — Divine cannot be burned.";
+        $("burn-check-result").textContent = t("burn.divine", "Token #{n} is Divine — Divine cannot be burned.", { n: n });
         $("burn-btn").disabled = true;
         checkedOk = false;
         return;
       }
       var acct = M.account();
       var yours = !!acct && owner.toLowerCase() === acct.toLowerCase();
-      $("burn-check-result").textContent = "Token #" + n + ": " + RARITY[r] + ", owner " + M.shortAddr(owner) +
-        (yours ? " (yours)" : " (not yours)") + ". Burning it earns " + REWARD[r] + " $THYRK.";
+      $("burn-check-result").textContent = t("burn.info", "Token #{n}: {r}, owner {owner}{yours}. Burning it earns {reward} $THYRK.", { n: n, r: RARITY[r], owner: M.shortAddr(owner), yours: yours ? t("burn.yours", " (yours)") : t("burn.not_yours", " (not yours)"), reward: REWARD[r] });
       checkedId = n;
       checkedOk = yours;
       $("burn-btn").disabled = !checkedOk;
-      if (!yours && !acct) $("burn-check-result").textContent += " Connect your wallet to burn it.";
+      if (!yours && !acct) $("burn-check-result").textContent += t("burn.connect_hint", " Connect your wallet to burn it.");
     } catch (e) {
-      $("burn-check-result").textContent = "Could not read token #" + n + " — it may not be minted yet, or the chain could not be reached.";
+      $("burn-check-result").textContent = t("burn.read_fail", "Could not read token #{n} — it may not be minted yet, or the chain could not be reached.", { n: n });
       $("burn-btn").disabled = true;
       checkedOk = false;
     }
   });
   $("burn-btn").addEventListener("click", async function () {
     if (!checkedOk || checkedId === null) return;
-    setStatus("Sending burn for token #" + checkedId + " — confirm it in your wallet. This is permanent.");
+    setStatus(t("burn.sending", "Sending burn for token #{n} — confirm it in your wallet. This is permanent.", { n: checkedId }));
     try {
       var nft = await M.nftWrite();
       var tx = await nft.burn(checkedId);
-      setStatus("Transaction sent — waiting for confirmation…");
+      setStatus(t("redeem.sent", "Transaction sent — waiting for confirmation…"));
       await tx.wait();
-      setResultHtml("Burned ✓ — token #" + checkedId + " is gone and the $THYRK reward is in your wallet. " + M.txAnchor(tx.hash));
+      setResultHtml(t("burn.done", "Burned ✓ — token #{n} is gone and the $THYRK reward is in your wallet. {link}", { n: checkedId, link: M.txAnchor(tx.hash) }));
       $("burn-btn").disabled = true;
       checkedOk = false;
     } catch (e) {
-      setStatus("Burn failed or was rejected: " + M.errMsg(e));
+      setStatus(t("burn.fail", "Burn failed or was rejected: {err}", { err: M.errMsg(e) }));
     }
   });
 })();
