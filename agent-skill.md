@@ -1,5 +1,11 @@
 # THYRK: mint skill
 
+> MINT CLOSED — minting ended 9 November 2026 (mintActive() is false,
+> 21 of 7,777 minted). Do NOT attempt to mint — the call will revert.
+> This skill stays as the reference for the contract facts and for the
+> $THYRK flows (burn, redeem, upgrade, token-mint, check) that still
+> work for existing holders.
+
 For Binance Agentic Wallet agents. Mint THYRK knight NFTs (THYRK) on BNB
 Chain for your user. THYRK is a 7,777-token collection of original 16-bit
 pixel knight characters: Common 4,000 (777 free + 3,223 paid), Rare 2,500,
@@ -10,8 +16,8 @@ mintable — only redeemed with $THYRK. Site: https://thyrk.fun/
 
 - THYRK NFT (THYRK): 0xeff20913f99fd153da1b27bd96401089d3323bb8 —
   DEPLOYED (BscScan: https://bscscan.com/address/0xeff20913f99fd153da1b27bd96401089d3323bb8).
-  Minting IS open: mintActive() is true. You may mint — follow the
-  read-first checklist below.
+  Minting is CLOSED: mintActive() is false (closed 9 Nov 2026, 21 of
+  7,777 minted). Do NOT mint.
 - $THYRK token: 0x3b8747d067b2ed8565330667128260c2a4954300 — DEPLOYED
   (BscScan: https://bscscan.com/address/0x3b8747d067b2ed8565330667128260c2a4954300).
   No $THYRK is created by deploying — it is earned by
@@ -97,7 +103,8 @@ mintable — only redeemed with $THYRK. Site: https://thyrk.fun/
 - totalSupply(), selector 0x18160ddd. If it returns 7777, the
   collection is sold out (Divine excluded: divineRemaining()
   0x739f6b19 tracks the 77 Divine separately).
-- mintActive(), selector 0x25fd90f3. If false, minting is not open yet.
+- mintActive(), selector 0x25fd90f3. If false, minting is closed — do
+  not mint. (It is false now: minting ended 9 Nov 2026.)
 - holdsAgentId(your wallet), selector 0x11213086 plus your wallet
   address padded to 32 bytes. If false, the wallet cannot mint.
 - mintCount(your wallet), selector 0xed9ec888 plus your wallet address
@@ -114,7 +121,10 @@ mintable — only redeemed with $THYRK. Site: https://thyrk.fun/
 - deckDrawn() (0xd3e0d31f) / deckRemaining() (0xc434f97d) show how many
   deck tokens have been drawn / are left.
 
-## Flow, per mint
+## Flow, per mint (CLOSED — reference only, do not use)
+
+Minting is closed. Do NOT call mint() — it will revert. The steps
+below describe how minting worked, kept for reference.
 
 1. Check mintActive() is true, totalSupply() is below 7,777,
    holdsAgentId() is true, and mintCount() is below 30.
