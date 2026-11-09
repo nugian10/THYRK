@@ -1,0 +1,44 @@
+# THYRK
+
+> A collection of 7,777 16-bit pixel knight NFTs on BNB Smart Chain, plus 77 Divine knights. Agent-only mint — there is no public mint button. 777 free mints (Common only, 1 per wallet, wallet's choice when to use).
+
+## Site
+
+- Website: https://thyrk.fun/
+- Mint status: COMING SOON — the contract is NOT deployed yet. Minting is not live.
+- Total supply: 7,777 mintable NFTs (Common 4,000: 777 free + 3,223 paid; Rare 2,500; Epic 1,000; Legendary 277) plus 77 Divine (not mintable, only redeemed with $THYRK).
+- Blockchain: BNB Smart Chain Mainnet, Chain ID 56
+- Contract: 0x0000000000000000000000000000000000000000 (placeholder — not deployed yet)
+- Contract source: to be verified on BscScan after deploy
+- SPACE ID Agent ID registry: 0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F
+- Owner: Binance Agentic Wallet 0x89c37649Ba3BAA9E1ce028612b7DE4e9c3a947B7
+- Revenue: the same Agentic Wallet (mint payments are forwarded directly to it in the same transaction).
+- Marketplace royalty: 5% to the creator.
+- Base URI: https://thyrk.fun/metadata/ (to be published after deploy)
+
+## Mint (for agents only)
+
+- Minting is agent-only by design. Only a wallet holding a SPACE ID Agent ID can mint — the contract checks `holdsAgentId` on-chain (registry 0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F). Contract calls are rejected. There is no owner allowlist.
+- Max 30 mints per wallet. Bulk mint is allowed: several knights in one transaction, up to the 30-per-wallet limit.
+- Free mint: 777 total, Common only, 1 per wallet. The free mint is the wallet's choice — not automatically the first mint. A free mint earns no $THYRK at mint time, but its Common can be burned for 20 $THYRK.
+- Price: never shown on this site. Read priceFor(wallet) or currentPrice() on the contract to get the exact price for the next mint. Any overpayment is refunded automatically.
+- The draw is a shuffled deck; each mint draws the next token. Common, Rare and Epic have 5 designs each; Legendary is trait-random; Divine artworks are hidden (shown as "?" on the site) and revealed only to the owner.
+- Full agent instructions: https://thyrk.fun/agent-skill.md
+- Agent prompt: on the homepage at https://thyrk.fun/#agent-mint
+
+## $THYRK token
+
+- Max supply 777,777 $THYRK. Paid mint earns 20 $THYRK. Burn: Common 20, Rare 50, Epic 120, Legendary 300.
+- Uses: redeem 1 Divine for 2,000 $THYRK (77 max); redeem 1 mint for 100 $THYRK (max 3 per wallet); upgrade 3 Common + 50 $THYRK = 1 Rare, 3 Rare + 100 $THYRK = 1 Epic, 3 Epic + 200 $THYRK = 1 Legendary. Repost the official THYRK post on X: 20 $THYRK, max 1 per wallet.
+
+## Gallery
+
+Preview knights are shown on the gallery page at https://thyrk.fun/gallery.html — one preview per rarity (Common, Rare, Epic, Legendary). Divine is shown only as a "?" mystery card.
+
+## Links
+
+- Site: https://thyrk.fun/
+- Gallery: https://thyrk.fun/gallery.html
+- Check a wallet / NFT: https://thyrk.fun/check.html
+- How to mint: https://thyrk.fun/mint.html
+- Agent skill: https://thyrk.fun/agent-skill.md
