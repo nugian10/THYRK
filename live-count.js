@@ -7,7 +7,10 @@
    (mintActive is true, activated 10 Nov 2026). The counters read
    live from the contract; the status reads MINT IS LIVE. The
    $THYRK token is already deployed, so its supply keeps reading
-   live.
+   live. The minted counter is TRULY LIVE: totalSupply() is polled
+   every 3 seconds (one BSC block) so a new mint shows up within
+   ~3-5 seconds. The slow-changing values (divine remaining, mint
+   status, $THYRK supply) still refresh every 30 seconds.
    Counts only; never shows prices. Fails soft: shows a dash and retries. */
 (function () {
   var NFT = "0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e";
@@ -22,7 +25,8 @@
   var SEL_DIVINE = "0x739f6b19"; // divineRemaining()
   var SEL_ACTIVE = "0x25fd90f3"; // mintActive()
   var SEL_THYRK = "0x18160ddd"; // totalSupply() on the token (18 decimals)
-  var REFRESH_MS = 30000;
+  var REFRESH_MS = 30000; // slow values: divine, status, $THYRK
+  var LIVE_MS = 3000; // minted counter: one BSC block, truly live
 
   function callRpc(url, to, data) {
     return fetch(url, {
@@ -43,6 +47,12 @@
     var els = document.querySelectorAll('[data-live="' + kind + '"]');
     for (var i = 0; i < els.length; i++) els[i].textContent = value;
   }
+  function refreshMinted() {
+    // Fast live poll: only totalSupply(), every 3s, so the minted
+    // counter moves within ~one block of a new mint landing.
+    if (NOT_DEPLOYED) { setText("minted", "–"); return; }
+    callFirstRpc(NFT, SEL_MINTED).then(function (v) { setText("minted", v.toString()); }).catch(function () { /* keep dash, retry next round */ });
+  }
   function refresh() {
     if (NOT_DEPLOYED) {
       // Zero-address guard (not expected now that the contract is
@@ -51,7 +61,7 @@
       setText("divine", "–");
       setText("status", "MINT NOT YET OPEN");
     } else {
-      callFirstRpc(NFT, SEL_MINTED).then(function (v) { setText("minted", v.toString()); }).catch(function () { /* keep dash, retry next round */ });
+      refreshMinted();
       callFirstRpc(NFT, SEL_DIVINE).then(function (v) { setText("divine", v.toString()); }).catch(function () { /* keep dash, retry next round */ });
       callFirstRpc(NFT, SEL_ACTIVE).then(function (v) { setText("status", v === 0n ? "MINT NOT YET OPEN" : "MINT IS LIVE"); }).catch(function () { /* keep the default text, retry next round */ });
     }
@@ -59,6 +69,7 @@
   }
   if (document.querySelector("[data-live]")) {
     refresh();
+    setInterval(refreshMinted, LIVE_MS);
     setInterval(refresh, REFRESH_MS);
   }
 })();
