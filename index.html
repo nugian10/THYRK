@@ -22,14 +22,17 @@
 <header>
   <div class="nav">
     <a class="logo" href="/">⚔ THYRK</a>
-    <nav>
+    <nav id="site-nav" aria-label="Sections">
       <a href="#collection">Collection</a>
       <a href="#token">$THYRK</a>
       <a href="#agent-mint">Agent Mint</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#market">Market</a>
       <a href="/gallery.html">Gallery</a>
       <a href="/check.html">Check</a>
       <a href="#faq">FAQ</a>
     </nav>
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </header>
 
@@ -158,6 +161,25 @@
   </table>
 </section>
 
+<section id="roadmap" class="reveal">
+  <div class="section-head"><h2>Roadmap</h2><div class="rule"></div>
+  <p>Four phases, marked honestly. Nothing is claimed done before it happens.</p></div>
+  <div class="steps">
+    <div class="step"><b class="n">1</b><h3>Concept &amp; Artwork</h3><p><span class="badge">Done</span></p><p>Concept, rarity, $THYRK token design and 16-bit pixel artwork finished. This site is live.</p></div>
+    <div class="step"><b class="n">2</b><h3>Contract Deploy &amp; Verify</h3><p><span class="badge next">Next</span></p><p>Deploy the THYRK contract on BNB Chain and verify its source on BscScan.</p></div>
+    <div class="step"><b class="n">3</b><h3>Mint Opens</h3><p><span class="badge next">Next</span></p><p>Agent-only mint opens: 777 free mints (Common only, 1 per wallet) and paid mints up to 30 per wallet, with bulk minting.</p></div>
+    <div class="step"><b class="n">4</b><h3>$THYRK, Divine &amp; Market</h3><p><span class="badge next">Next</span></p><p>$THYRK goes live: earn it by minting and burning, redeem Divine knights, upgrade knights — and the collection starts trading on the secondary market.</p></div>
+  </div>
+</section>
+
+<section id="market" class="reveal">
+  <div class="section-head"><h2>Market</h2><div class="rule"></div>
+  <p>Where to trade THYRK knights once they exist.</p></div>
+  <p>The THYRK contract is not deployed yet, so there are no listings anywhere. The market opens after minting opens.</p>
+  <p>Once knights are minted, the collection appears automatically on Element — no listing needed from the team. OpenSea: not listed yet.</p>
+  <p>Marketplace royalty is 5% to the creator.</p>
+</section>
+
 <section id="faq" class="reveal">
   <div class="section-head"><h2>FAQ</h2><div class="rule"></div></div>
   <details><summary>Can I mint from this website?</summary><p>No. THYRK is agent-only. Only an AI agent whose wallet holds a SPACE ID Agent ID can mint, and only after you confirm the exact price in your wallet.</p></details>
@@ -174,15 +196,25 @@
 
 <footer>
   <p><strong style="color:var(--gold)">THYRK</strong> — 7,777 knights on BNB Chain. Agent-only mint.</p>
-  <p><a href="/llms.txt">llms.txt</a> &middot; <a href="/agent-skill.md">Agent skill</a> &middot; <a href="/gallery.html">Gallery</a> &middot; <a href="/check.html">Check</a> &middot; <a href="/sitemap.xml">Sitemap</a></p>
+  <p><a href="/llms.txt">llms.txt</a> &middot; <a href="/agent-skill.md">Agent skill</a> &middot; <a href="/gallery.html">Gallery</a> &middot; <a href="/check.html">Check</a> &middot; <a href="#roadmap">Roadmap</a> &middot; <a href="#market">Market</a> &middot; <a href="/sitemap.xml">Sitemap</a></p>
   <p>Contract not deployed yet. No mint is live. No NFTs have been minted.</p>
 </footer>
 <script>
 (function(){
-  var els=document.querySelectorAll('.reveal');
-  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('visible')});return;}
-  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('visible');io.unobserve(en.target);}})},{threshold:.12});
-  els.forEach(function(e){io.observe(e)});
+  var btn=document.getElementById('menu-toggle');
+  var nav=document.getElementById('site-nav');
+  if(!btn||!nav)return;
+  function closeMenu(){btn.setAttribute('aria-expanded','false');nav.classList.remove('open');}
+  btn.addEventListener('click',function(){
+    var open=nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+  });
+  nav.addEventListener('click',function(e){if(e.target.closest('a'))closeMenu();});
+  document.addEventListener('click',function(e){
+    if(!nav.classList.contains('open'))return;
+    if(e.target.closest('header'))return;
+    closeMenu();
+  });
 })();
 </script>
 </body>

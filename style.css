@@ -82,3 +82,18 @@ button{cursor:pointer}
 .reveal.visible{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.hero-art img,.mystery{animation:none}}
 @media (min-width:700px){ .hero{padding-top:84px} section{padding-top:56px} }
+/* Hamburger menu (Zigzoo pattern): inline links on desktop, ☰ button on phones */
+.menu-toggle{display:none}
+.badge.next{background:rgba(255,255,255,.05);color:var(--muted);border-color:var(--line)}
+@media (max-width:700px){
+  .menu-toggle{display:inline-flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;background:transparent;border:1px solid var(--line);border-radius:10px;cursor:pointer;flex-shrink:0;padding:0;margin-left:auto}
+  .menu-toggle span{display:block;height:3px;width:22px;margin:0 auto;background:var(--text);border-radius:2px;transition:transform .15s,opacity .15s}
+  .menu-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+  .menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .menu-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+  .nav{position:relative}
+  .nav nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--bg2);border-bottom:1px solid var(--line);padding:6px 20px 12px;margin-left:0}
+  .nav nav.open{display:flex}
+  .nav nav a{display:block;padding:12px 4px;border-bottom:1px solid var(--line)}
+  .nav nav a:last-child{border-bottom:none}
+}
