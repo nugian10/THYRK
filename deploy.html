@@ -194,6 +194,19 @@
     <p class="status-line hidden" id="activate-tx-row"><strong>Transaction:</strong> <a id="activate-tx-link" href="#" target="_blank" rel="noopener"><code class="mono" id="activate-tx"></code></a></p>
   </section>
 
+  <!-- Step 7 -->
+  <section class="step todo" id="step-7">
+    <h2>Step 7 &mdash; Close minting (owner only)</h2>
+    <p>This stops all new mints with <code>setMintActive(false)</code>. The <strong>21 knights already minted are unaffected</strong>, and the owner can re-open minting later with <code>setMintActive(true)</code>. One small transaction from the owner wallet.</p>
+    <label for="close-address"><strong>NFT contract address</strong></label>
+    <input class="addr" id="close-address" type="text" inputmode="text" autocomplete="off" spellcheck="false" value="0xeff20913f99fd153da1b27bd96401089d3323bb8">
+    <p class="status-line" id="close-estimate">Connect your wallet first.</p>
+    <button class="btn ghost small" id="refresh-close-btn" type="button">Refresh close estimate</button>
+    <button class="btn primary" id="close-btn" type="button" disabled>CLOSE MINT</button>
+    <p class="status-line" id="close-status">Waiting for wallet.</p>
+    <p class="status-line hidden" id="close-tx-row"><strong>Transaction:</strong> <a id="close-tx-link" href="#" target="_blank" rel="noopener"><code class="mono" id="close-tx"></code></a></p>
+  </section>
+
   <div id="done-box" class="done-box hidden">
     <h2>Launch checklist</h2>
     <ol>

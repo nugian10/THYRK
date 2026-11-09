@@ -34,6 +34,7 @@
   var MEASURED_NFT_GAS = 4952067; // hardhat measurement incl. 61-word bitmap (Nov 2026)
   var MEASURED_SETMINTER_GAS = 47810; // hardhat measurement
   var MEASURED_ACTIVATE_GAS = 29832; // hardhat measurement for setMintActive(true)
+  var MEASURED_CLOSE_GAS = 29832; // same setMintActive call as activate (measured for true)
   var BNB_IDR_REF = 12229764; // reference rate only, for the estimate display
 
   // ---- State ----
@@ -43,6 +44,7 @@
   var artifact = null; // { token: {abi, bytecode}, nft: {abi, bytecode}, rarityBitmap, deckHash }
   var tokenAddress = null;
   var nftAddress = null;
+  var mintClosed = null; // null = on-chain mintActive unknown, true = already closed, false = still open
 
   // ---- DOM helpers ----
   function $(id) { return document.getElementById(id); }
@@ -143,6 +145,7 @@
       setStep(1, "done");
       setStep(2, "active");
       await refreshEstimate();
+      await refreshCloseEstimate();
       return true;
     }
     setText("chain-status", "Wrong network: chain " + net.chainId.toString() +
@@ -222,6 +225,11 @@
     if (sb) sb.disabled = !(ready && tokenAddress && nftAddress && isOwner());
     var ab = $("activate-btn");
     if (ab) ab.disabled = !(ready && nftAddress && isOwner());
+    var cb = $("close-btn");
+    if (cb) {
+      var ca = $("close-address") ? $("close-address").value.trim() : "";
+      cb.disabled = !(ready && ca && ethers.isAddress(ca) && isOwner()) || mintClosed === true;
+    }
   }
 
   function updateMinterStep() {
@@ -451,6 +459,99 @@
     }
   }
 
+  // ---- Step 7: close mint (owner only) ----
+  async function refreshCloseEstimate() {
+    var addr = $("close-address").value.trim();
+    var btn = $("close-btn");
+    btn.disabled = true;
+    if (!addr || !ethers.isAddress(addr)) {
+      setText("close-estimate", "Enter the deployed contract address first.");
+      return;
+    }
+    if (!provider) {
+      setText("close-estimate", "Connect your wallet first.");
+      return;
+    }
+    if (!artifact) {
+      setText("close-estimate", "Loading contract files…");
+      return;
+    }
+    if (!isOwner()) {
+      setText("close-estimate", "Closing mint is owner-only: the connected wallet is not My Wallet. " +
+        "Connect My Wallet to run it here — setMintActive(false) on " + addr + ".");
+      return;
+    }
+    try {
+      var c = new ethers.Contract(addr, artifact.nft.abi, signer);
+      var active = await c.mintActive();
+      if (!active) {
+        mintClosed = true;
+        setText("close-estimate", "Mint is already closed ✓ — mintActive = false on-chain. No transaction needed.");
+        setText("close-status", "Mint is already closed.");
+        setStep(7, "done");
+        return;
+      }
+      mintClosed = false;
+      var fee = await provider.getFeeData();
+      var gasPrice = fee.gasPrice || fee.maxFeePerGas;
+      var gas = null;
+      try {
+        gas = await c.setMintActive.estimateGas(false);
+      } catch (e) { gas = null; }
+      var gasUsed = gas ? Number(gas) : MEASURED_CLOSE_GAS;
+      var costWei = gasPrice * BigInt(gasUsed);
+      setText("close-estimate", "Estimated: " + gasUsed.toLocaleString("en-US") + " gas ≈ " +
+        fmtBnb(costWei) + " BNB (" + fmtIdr(costWei) + " approx.) at " +
+        parseFloat(ethers.formatUnits(gasPrice, "gwei")).toFixed(4) + " gwei" +
+        (gas ? "" : " — measured reference, live estimate unavailable") + ".");
+      setText("close-status", "Ready — minting is ON (mintActive = true). Click CLOSE MINT to stop all new mints.");
+      btn.disabled = false;
+    } catch (e) {
+      setText("close-estimate", "Estimate failed: " + (e && e.message ? e.message : e));
+    }
+  }
+
+  async function closeMint() {
+    var addr = $("close-address").value.trim();
+    if (!ethers.isAddress(addr)) {
+      note("The contract address is not valid.", "error");
+      return;
+    }
+    if (!isOwner()) {
+      note("Only the owner wallet (My Wallet) can close minting.", "error");
+      return;
+    }
+    var btn = $("close-btn");
+    btn.disabled = true;
+    setText("close-status", "Sending setMintActive(false)… confirm it in your wallet.");
+    try {
+      var c = new ethers.Contract(addr, artifact.nft.abi, signer);
+      var tx = await c.setMintActive(false);
+      setText("close-tx", tx.hash);
+      $("close-tx-link").href = bscscanTx(tx.hash);
+      show("close-tx-row");
+      setText("close-status", "Transaction sent. Waiting for confirmation…");
+      await tx.wait();
+      var onChain = await c.mintActive();
+      if (!onChain) {
+        mintClosed = true;
+        setText("close-status", "Minting is now CLOSED ✓ — mintActive = false. No new mints can be made. " +
+          "The 21 already-minted knights are unaffected, and the owner can re-open minting later with setMintActive(true).");
+        setStep(7, "done");
+        note("Mint closed. Next: update the site status to MINT CLOSED (index.html, llms.txt, agent-skill.md) " +
+          "so nobody tries to mint.", "ok");
+      } else {
+        setText("close-status", "Transaction confirmed but mintActive is still true. Check BscScan.");
+        btn.disabled = false;
+      }
+    } catch (e) {
+      btn.disabled = false;
+      setText("close-status", "Closing failed or was rejected in your wallet: " +
+        (e && e.message ? e.message : e));
+      note("Closing did not complete: " + (e && e.message ? e.message : e) + ". You can try again.", "error");
+    }
+  }
+
   function copyText(text, btn) {
     var done = function () { if (btn) { btn.textContent = "Copied ✓"; setTimeout(function () { btn.textContent = "Copy"; }, 2000); } };
     if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -476,6 +577,9 @@
     $("activate-btn").addEventListener("click", activate);
     $("refresh-activate-btn").addEventListener("click", refreshActivateEstimate);
     $("activate-address").addEventListener("input", refreshActivateEstimate);
+    $("close-btn").addEventListener("click", closeMint);
+    $("refresh-close-btn").addEventListener("click", refreshCloseEstimate);
+    $("close-address").addEventListener("input", refreshCloseEstimate);
     $("nft-token-address").addEventListener("input", updateButtons);
     $("copy-token-btn").addEventListener("click", function () {
       copyText(tokenAddress || "", this);
