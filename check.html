@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Check — THYRK</title>
-<meta name="description" content="Check a wallet's THYRK knights or look up a THYRK NFT by token number. Contract not yet deployed.">
+<meta name="description" content="Check a wallet's THYRK knights or look up a THYRK NFT by token number. Mint is live.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/style.css">
 <style>.result{overflow-wrap:break-word}</style>
@@ -33,8 +33,8 @@
 <main>
 <div class="wrap">
   <h1>Check</h1>
-  <p><span class="badge">✦ NOT YET DEPLOYED</span></p>
-  <div class="note">The new THYRK contract is not yet deployed, so there is nothing to read on-chain yet. Once the live contract address is published, this checker reads it live on BNB Chain through a public RPC. Counts only — it never shows prices. If the chain cannot be reached, a value shows as &ldquo;&mdash;&rdquo; instead of a guessed number.</div>
+  <p><span class="badge">✦ MINT IS LIVE</span></p>
+  <div class="note">The new THYRK contract is deployed and minting is LIVE. This checker reads the live contract on BNB Chain through a public RPC. Counts only — it never shows prices. If the chain cannot be reached, a value shows as &ldquo;&mdash;&rdquo; instead of a guessed number.</div>
 
   <h2>Check a wallet</h2>
   <p>Enter a wallet address. This shows how many THYRK knights the wallet holds, how many times it has minted, whether its first mint is still free (first mint per wallet is free and automatic — no total cap), and whether it holds a SPACE ID Agent ID.</p>
@@ -58,18 +58,19 @@
 <footer>
   <p>THYRK — 7,777 knights on BNB Chain. Agent-only mint.</p>
   <p><a href="/llms.txt">llms.txt</a> &middot; <a href="/agent-skill.md">Agent skill</a> &middot; <a href="/gallery.html">Gallery</a> &middot; <a href="/burn.html">Burn</a> &middot; <a href="https://x.com/thyrk_">X @thyrk_</a></p>
-  <p>Mint not yet open.</p>
+  <p>Mint is live.</p>
 </footer>
 <script>
 /* THYRK wallet + NFT checker — reads the NFT contract live via public
    BSC RPC, same fallback pattern as live-count.js. Counts only, never
    prices. A failed read shows a dash, never an invented number.
-   The new contract is NOT YET DEPLOYED: NFT is the zero address until
-   the live address is filled in (TODO: FILL AFTER DEPLOY). While it is
-   the zero address the checker shows the not-yet-deployed state and
+   The new contract is deployed at
+   0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e and minting is LIVE
+   (mintActive is true, activated 10 Nov 2026). If the address were
+   ever the zero address, the checker shows the not-open state and
    makes no RPC calls to the contract. */
 (function () {
-  var NFT = "0x0000000000000000000000000000000000000000"; // TODO: FILL AFTER DEPLOY
+  var NFT = "0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e";
   var NOT_DEPLOYED = /^0x0{40}$/.test(NFT);
   var RPCS = [
     "https://bsc-dataseed.binance.org/",
@@ -122,7 +123,7 @@
   }
   function isAddress(v) { return /^0x[0-9a-fA-F]{40}$/.test(v.trim()); }
   function notDeployedHtml() {
-    return '<div class="note">The new THYRK contract is not yet deployed — mint is not yet open. There is nothing to check on-chain yet. Please come back once the live contract address is published.</div>';
+    return '<div class="note">Mint is not yet open — the contract is deployed but mintActive is false. There is nothing to check on-chain yet. Please come back once minting opens.</div>';
   }
 
   window.checkWallet = function (e) {
@@ -166,7 +167,7 @@
       } else {
         html += row('Times minted', esc(cnt.toString()) + ' (max 30 per wallet)');
       }
-      html += row('Mint status', 'Mint not yet open.');
+      html += row('Mint status', 'Mint is live.');
       if (free === null) {
         html += row('Free mint', '&mdash;');
       } else if (free === 0n) {

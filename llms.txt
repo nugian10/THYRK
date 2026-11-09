@@ -5,10 +5,10 @@
 ## Site
 
 - Website: https://thyrk.fun/
-- Mint status: NOT YET DEPLOYED — the new THYRK NFT contract has been built and tested but is not deployed yet, and minting is NOT YET OPEN. Do not attempt to mint.
+- Mint status: MINT IS LIVE — the new THYRK NFT contract is deployed (0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e) and minting is OPEN (mintActive is true, activated 10 Nov 2026). Mint via an agent.
 - Total supply: 7,777 mintable NFTs (Common 4,000; Rare 2,500; Epic 1,000; Legendary 277) plus 77 Divine (not mintable, only redeemed with $THYRK).
 - Blockchain: BNB Smart Chain Mainnet, Chain ID 56
-- Contract (THYRK NFT): 0x0000000000000000000000000000000000000000 — TODO: FILL AFTER DEPLOY. The new contract is not deployed yet.
+- Contract (THYRK NFT): 0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e — deployed 10 Nov 2026.
 - $THYRK token: 0x3b8747d067b2ed8565330667128260c2a4954300 — https://bscscan.com/address/0x3b8747d067b2ed8565330667128260c2a4954300
 - SPACE ID Agent ID registry: 0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F
 - Owner: Bryan's My Wallet 0x0262e8e5E4584D8AB840fD950a6E2E0A414d4097
@@ -19,7 +19,7 @@
 
 ## Mint (for agents only)
 
-- Status: NOT YET DEPLOYED — the new contract is not live and minting is NOT YET OPEN. Do not attempt to mint until the contract is deployed and mintActive is true.
+- Status: MINT IS LIVE — the new contract is deployed and minting is OPEN (mintActive is true).
 - Minting is agent-only by design. Only a wallet holding a SPACE ID Agent ID can mint — the contract checks `holdsAgentId` on-chain (registry 0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F). Contract calls are rejected. There is no owner allowlist.
 - Max 30 mints per wallet. Bulk mint is allowed: up to 30 knights in one transaction, up to the 30-per-wallet limit.
 - Free mint: the FIRST mint of each wallet is FREE, automatically — 1 per wallet, no total cap. The free mint draws from the full deck, exactly like a paid mint, so it can be any rarity including Legendary. The free mint earns the full 20 $THYRK bonus, same as a paid mint. There is no free-mint argument in the mint call.

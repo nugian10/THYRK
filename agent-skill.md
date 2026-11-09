@@ -1,12 +1,10 @@
 # THYRK: mint skill
 
-> STATUS: NEW CONTRACT NOT YET DEPLOYED — minting is NOT YET OPEN.
-> Do NOT attempt to mint. The new THYRK NFT contract has been built
-> and tested, but it has not been deployed to BNB Chain yet and
-> mintActive is not on. This skill describes the NEW contract so an
-> agent is ready the moment it deploys. Until then, every mint, burn,
-> redeem, upgrade and token-mint call will fail — there is no live NFT
-> contract to call.
+> STATUS: MINT IS LIVE.
+> The new THYRK NFT contract is deployed on BNB Chain at
+> 0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e, set as a minter on the
+> $THYRK token, and mintActive is true (activated 10 Nov 2026).
+> Minting is open — agents may mint now following the flow below.
 
 For Binance Agentic Wallet agents. Mint THYRK knight NFTs (THYRK) on BNB
 Chain for your user. THYRK is a 7,777-token collection of original
@@ -16,15 +14,16 @@ with $THYRK. Site: https://thyrk.fun/
 
 ## Contracts (BNB Chain, chain id 56)
 
-- THYRK NFT (THYRK): 0x0000000000000000000000000000000000000000 —
-  TODO: FILL AFTER DEPLOY. The new contract is NOT yet deployed.
+- THYRK NFT (THYRK): 0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e —
+  DEPLOYED (BscScan:
+  https://bscscan.com/address/0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e).
   Do not use any other address as the NFT contract.
 - $THYRK token: 0x3b8747d067b2ed8565330667128260c2a4954300 — DEPLOYED
   (BscScan: https://bscscan.com/address/0x3b8747d067b2ed8565330667128260c2a4954300).
-  No $THYRK exists yet (totalSupply is 0) — it is earned by mints
-  and burns once the new NFT contract is live. The new NFT contract
-  must be set as a minter on the token contract (setMinter) before
-  any mint, burn, redeem, upgrade or token-mint can work.
+  $THYRK is earned by mints and burns (100 $THYRK in circulation
+  so far). The new NFT contract has already been set as a minter
+  on the token contract (setMinter done) and minting is active
+  (mintActive is true).
 - SPACE ID Agent ID registry: 0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F
 - Owner: Bryan's My Wallet 0x0262e8e5E4584D8AB840fD950a6E2E0A414d4097
 - Revenue: Binance Agentic Wallet 0x89c37649Ba3BAA9E1ce028612b7DE4e9c3a947B7. Mint payments are forwarded directly
@@ -103,7 +102,7 @@ with $THYRK. Site: https://thyrk.fun/
   collection is sold out (Divine excluded: divineRemaining()
   0x739f6b19 tracks the 77 Divine separately).
 - mintActive(), selector 0x25fd90f3. If false, minting is closed — do
-  not mint. (It is false now: the new contract is not deployed yet.)
+  not mint. (It is true now: minting is live.)
 - holdsAgentId(your wallet), selector 0x11213086 plus your wallet
   address padded to 32 bytes. If false, the wallet cannot mint.
 - mintCount(your wallet), selector 0xed9ec888 plus your wallet address
@@ -120,11 +119,9 @@ with $THYRK. Site: https://thyrk.fun/
 - deckDrawn() (0xd3e0d31f) / deckRemaining() (0xc434f97d) show how many
   deck tokens have been drawn / are left.
 
-## Flow, per mint (NOT YET OPEN — do not use until the new contract is deployed and mintActive is true)
+## Flow, per mint (MINT IS LIVE)
 
-Minting is not open yet. Do NOT call mint() — there is no live
-contract to call. The steps below describe how minting will work
-once the new contract is deployed and activated.
+Minting is open. Follow the steps below.
 
 1. Check mintActive() is true, totalSupply() is below 7,777,
    holdsAgentId() is true, and mintCount() is below 30.
@@ -149,7 +146,7 @@ once the new contract is deployed and activated.
 Repeat as needed, up to 30 mints per wallet. Do not mint without the
 user's confirmation of the exact price shown in the wallet preview.
 
-## $THYRK flows (once the new NFT contract is deployed and set as a minter on the token — note no $THYRK exists until the first mints/burns)
+## $THYRK flows
 
 - Mint with $THYRK: approve the NFT contract to spend 100 $THYRK per
   mint, then call mintWithToken(quantity) (selector 0xb3eaff8b) with

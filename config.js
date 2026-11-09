@@ -1,16 +1,12 @@
 /* THYRK site config — single source of truth for contract addresses.
    NOTE: pages currently keep their addresses inline and are NOT rewired
    to load this file. Keep this file in sync with the inline addresses
-   in mint.html, check.html and live-count.js when the NFT address is
-   filled in after deploy. */
+   in mint.html, check.html and live-count.js. */
 var THYRK_CONFIG = {
   // BNB Chain mainnet.
   CHAIN_ID: 56,
-  // New ThyrkNFT contract — NOT YET DEPLOYED.
-  // TODO: FILL AFTER DEPLOY — replace the zero address with the live
-  // NFT contract address and update the inline addresses in mint.html,
-  // check.html and live-count.js to match.
-  NFT_ADDRESS: "0x0000000000000000000000000000000000000000",
+  // New ThyrkNFT contract — deployed 10 Nov 2026.
+  NFT_ADDRESS: "0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e",
   // $THYRK token (reused from the earlier deploy, already live).
   TOKEN_ADDRESS: "0x3b8747d067b2ed8565330667128260c2a4954300",
   // SPACE ID Agent ID registry (agent-only gate).

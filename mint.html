@@ -32,9 +32,9 @@
 <main>
 <div class="wrap">
   <h1>How to Mint</h1>
-  <p><span class="badge">✦ <span data-live="status">NOT YET DEPLOYED</span></span></p>
+  <p><span class="badge">✦ <span data-live="status">MINT IS LIVE</span></span></p>
   <p>Minted <strong><span data-live="minted">–</span> / 7,777</strong></p>
-  <p><strong>The new THYRK contract is not yet deployed, and mint is not yet open.</strong> When it opens, minting will be <strong>agent-only</strong>. There is no mint button for humans on this site. An AI agent mints for you — and only if your wallet holds a SPACE ID Agent ID.</p>
+  <p><strong>The new THYRK contract is deployed and mint is LIVE.</strong> When it opens, minting will be <strong>agent-only</strong>. There is no mint button for humans on this site. An AI agent mints for you — and only if your wallet holds a SPACE ID Agent ID.</p>
 
   <h2>How minting will work</h2>
   <ul>
@@ -61,7 +61,7 @@
   <h2>Agent prompt</h2>
   <p>Copy this prompt to your AI agent:</p>
   <pre>THYRK mint — agent-only on BNB Chain (chain ID 56).
-NFT contract: 0x0000000000000000000000000000000000000000 (not yet deployed — do not mint until the live address is published here).
+NFT contract: 0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e (deployed, minting is live).
 Token $THYRK: 0x3b8747d067b2ed8565330667128260c2a4954300.
 SPACE ID Agent ID registry: 0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F.
 Rules: minting is agent-only — the wallet must hold a SPACE ID Agent ID; contract wallets cannot mint; max 30 mints per wallet; supply 7,777.
@@ -69,7 +69,7 @@ Mint: call mint(uint256 quantity), selector 0xa0712d68, 1–30 in one transactio
 First mint per wallet is FREE and automatic, and it draws from the full deck including Legendary. Price ladder per wallet: #1 FREE, #2–10 0.0002 BNB, #11–20 0.0004 BNB, #21–30 0.0008 BNB (30 in one transaction = 0.0138 BNB).
 Before signing, read quoteBulk(wallet, quantity) from the contract for the exact total price and show it in the wallet confirmation. Each mint earns 20 $THYRK, free mints included.
 After minting, verify on-chain (totalSupply, mintCount) and show the knight: image, name, rarity and traits.
-Do not attempt to mint while the contract address above is still the zero address.</pre>
+</pre>
 
   <h2>After you mint</h2>
   <ul>
@@ -80,14 +80,14 @@ Do not attempt to mint while the contract address above is still the zero addres
   </ul>
 
   <h2>For agents</h2>
-  <p>Full machine-readable instructions: <a href="/agent-skill.md">agent-skill.md</a> and <a href="/llms.txt">llms.txt</a>. The new NFT contract is <strong>not yet deployed</strong>: <code>0x0000000000000000000000000000000000000000</code> <!-- TODO: FILL AFTER DEPLOY --> — do not attempt to mint until the live address is published here.</p>
+  <p>Full machine-readable instructions: <a href="/agent-skill.md">agent-skill.md</a> and <a href="/llms.txt">llms.txt</a>. The new NFT contract is <strong>deployed</strong> and mint is <strong>LIVE</strong>: <a href="https://bscscan.com/address/0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e"><code>0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e</code></a>.</p>
   <p><a class="btn" href="/">Back to home</a></p>
 </div>
 </main>
 <footer>
   <p>THYRK — 7,777 knights on BNB Chain. Agent-only mint.</p>
   <p><a href="/llms.txt">llms.txt</a> &middot; <a href="/agent-skill.md">Agent skill</a> &middot; <a href="/gallery.html">Gallery</a> &middot; <a href="/check.html">Check</a> &middot; <a href="/burn.html">Burn</a> &middot; <a href="https://x.com/thyrk_">X @thyrk_</a></p>
-  <p>Mint not yet open.</p>
+  <p>Mint is live.</p>
 </footer>
 <script>
 (function(){
