@@ -1,1 +1,121 @@
-{"batch":"D1","family":"polearm","images":{"divine-016.webp":{"helmet":"horned helmet with two curved gold horns","pose":"standing guard, spear upright in left hand, round shield in right hand","theme":"blue cape, gold-blue armor, sapphire gems","weapon":"long golden spear + round shield with blue gem","wings":"large white angel wings"},"divine-017.webp":{"helmet":"tall golden crown helmet","pose":"halberd held diagonally across body in both hands","theme":"crimson red cape, full gold armor, ruby gems","weapon":"massive halberd, axe blade + spear tip","wings":"large white angel wings"},"divine-018.webp":{"helmet":"winged helmet with small silver wings on sides","pose":"long lance pointing straight up, left hand on hip","theme":"white and gold armor, light blue cape, sapphire gems","weapon":"very long lance with glowing blue tip","wings":"large white angel wings"},"divine-019.webp":{"helmet":"gold circlet with laurel leaves","pose":"sweeping horizontal glaive slash, dynamic stance","theme":"flowing green cloak, silver-green armor, emerald gems","weapon":"curved glaive with glowing green blade","wings":"large white angel wings"},"divine-020.webp":{"helmet":"golden laurel wreath helmet","pose":"trident held upright, left arm raised in blessing","theme":"white and gold armor, pale blue cape, sapphire gems","weapon":"golden trident with three glowing blue prongs","wings":"large white angel wings"},"divine-021.webp":{"helmet":"spiked crown helmet","pose":"war scythe held ready across body in both hands","theme":"dark gold armor, deep purple cape, amber gems","weapon":"war scythe with long curved glowing golden blade","wings":"large radiant GOLDEN angel wings"},"divine-022.webp":{"helmet":"fully closed great helm, narrow eye slit, no face visible","pose":"standing at attention, pike vertical beside him, butt on ground","theme":"silver and gold armor, dark blue cape, sapphire gems","weapon":"very long thin pike","wings":"folded grey wings"},"divine-023.webp":{"helmet":"silver helm with small gold crown, long silver hair","pose":"graceful lunging attack, female knight","theme":"silver-blue armor with gold trim, white and blue flowing robe, sapphire gems","weapon":"curved naginata with glowing blue blade","wings":"large shimmering BLUE feathered angel wings"},"divine-024.webp":{"helmet":"helmet with branching golden stag antlers","pose":"lunging partisan thrust forward","theme":"forest green and gold armor, brown-green cape, emerald gems","weapon":"broad-bladed partisan spear with glowing green tip","wings":"large white angel wings"},"divine-025.webp":{"helmet":"simple silver circlet helmet","pose":"bardiche raised high overhead with both hands, about to strike down","theme":"white and gold armor, crimson cape, ruby gem","weapon":"massive bardiche axe-polearm","wings":"enormous white angel wings raised high and wide"},"divine-026.webp":{"helmet":"tall pointed conical helmet","pose":"voulge resting on shoulder, relaxed guard","theme":"bronze and gold armor, teal blue cape, topaz gems","weapon":"voulge with wide cleaver-like blade on long shaft","wings":"large white angel wings"},"divine-027.webp":{"helmet":"ornate silver helmet with violet plume","pose":"ready dueling stance, war fork held forward","theme":"flowing royal purple cloak, dark violet and gold armor, amethyst gems","weapon":"two-pronged war fork with glowing violet tines","wings":"large white angel wings"},"divine-028.webp":{"helmet":"silver helmet with tall red feather plume","pose":"mid-throw, hurling javelin forward","theme":"red and gold armor, white cape with red trim, ruby gems","weapon":"short flaming javelin + kite shield on left arm","wings":"large white angel wings"},"divine-029.webp":{"helmet":"polished silver helmet with small gold crest","pose":"formal salute, spear raised high vertically, left fist pressed to chest","theme":"silver and gold armor, deep blue cape, sapphire gems","weapon":"long spear with glowing blue tip","wings":"elegant SILVER feathered angel wings"},"divine-030.webp":{"helmet":"dragon-head helmet with horns and fangs","pose":"two spears crossed in X shape in front of body, one in each hand","theme":"black and gold armor with red accents, dark red cape, ruby gems","weapon":"twin long spears, crossed","wings":"large white angel wings"},"divine-031.webp":{"helmet":"translucent glowing crystal helmet with crystal spikes","pose":"spear in right hand, glowing orb of holy light floating above open left palm","theme":"white and gold armor, light cyan cape, crystal blue gems","weapon":"golden spear + glowing holy orb","wings":"large white angel wings"}},"range":"divine-016 to divine-031","reference":"workspace/user/files/1000723047_1_c832.webp","style":"16-bit pixel art, square 1600x1600 WebP, divine gold-blue knight, halo rings + crown, large angel wings, ornate gold frame, standing on stone rock, plain dark background, no text/watermark"}
+{
+  "batch": "D1",
+  "family": "polearm",
+  "images": {
+    "divine-016.webp": {
+      "helmet": "horned helmet with two curved gold horns",
+      "pose": "standing guard, spear upright in left hand, round shield in right hand",
+      "theme": "blue cape, gold-blue armor, sapphire gems",
+      "weapon": "long golden spear + round shield with blue gem",
+      "wings": "faceted translucent crystal wings"
+    },
+    "divine-017.webp": {
+      "helmet": "tall golden crown helmet",
+      "pose": "halberd held diagonally across body in both hands",
+      "theme": "crimson red cape, full gold armor, ruby gems",
+      "weapon": "massive halberd, axe blade + spear tip",
+      "wings": "dark crimson feathered wings"
+    },
+    "divine-018.webp": {
+      "helmet": "winged helmet with small silver wings on sides",
+      "pose": "long lance pointing straight up, left hand on hip",
+      "theme": "white and gold armor, light blue cape, sapphire gems",
+      "weapon": "very long lance with glowing blue tip",
+      "wings": "luminous silver-white feathered wings"
+    },
+    "divine-019.webp": {
+      "helmet": "gold circlet with laurel leaves",
+      "pose": "sweeping horizontal glaive slash, dynamic stance",
+      "theme": "flowing green cloak, silver-green armor, emerald gems",
+      "weapon": "curved glaive with glowing green blade",
+      "wings": "glowing emerald green feathered wings"
+    },
+    "divine-020.webp": {
+      "helmet": "golden laurel wreath helmet",
+      "pose": "trident held upright, left arm raised in blessing",
+      "theme": "white and gold armor, pale blue cape, sapphire gems",
+      "weapon": "golden trident with three glowing blue prongs",
+      "wings": "radiant wings of pure blue holy light"
+    },
+    "divine-021.webp": {
+      "helmet": "spiked crown helmet",
+      "pose": "war scythe held ready across body in both hands",
+      "theme": "dark gold armor, deep purple cape, amber gems",
+      "weapon": "war scythe with long curved glowing golden blade",
+      "wings": "dark shadow feathered wings, glowing violet edges"
+    },
+    "divine-022.webp": {
+      "helmet": "fully closed great helm, narrow eye slit, no face visible",
+      "pose": "standing at attention, pike vertical beside him, butt on ground",
+      "theme": "silver and gold armor, dark blue cape, sapphire gems",
+      "weapon": "very long thin pike",
+      "wings": "deep midnight-blue wings scattered with glowing stars"
+    },
+    "divine-023.webp": {
+      "helmet": "silver helm with small gold crown, long silver hair",
+      "pose": "graceful lunging attack, female knight",
+      "theme": "silver-blue armor with gold trim, white and blue flowing robe, sapphire gems",
+      "weapon": "curved naginata with glowing blue blade",
+      "wings": "faceted translucent crystal wings"
+    },
+    "divine-024.webp": {
+      "helmet": "helmet with branching golden stag antlers",
+      "pose": "lunging partisan thrust forward",
+      "theme": "forest green and gold armor, brown-green cape, emerald gems",
+      "weapon": "broad-bladed partisan spear with glowing green tip",
+      "wings": "leafy wings of green and gold leaves and vines"
+    },
+    "divine-025.webp": {
+      "helmet": "simple silver circlet helmet",
+      "pose": "bardiche raised high overhead with both hands, about to strike down",
+      "theme": "white and gold armor, crimson cape, ruby gem",
+      "weapon": "massive bardiche axe-polearm",
+      "wings": "dark crimson feathered wings"
+    },
+    "divine-026.webp": {
+      "helmet": "tall pointed conical helmet",
+      "pose": "voulge resting on shoulder, relaxed guard",
+      "theme": "bronze and gold armor, teal blue cape, topaz gems",
+      "weapon": "voulge with wide cleaver-like blade on long shaft",
+      "wings": "storm wings of crackling lightning"
+    },
+    "divine-027.webp": {
+      "helmet": "ornate silver helmet with violet plume",
+      "pose": "ready dueling stance, war fork held forward",
+      "theme": "flowing royal purple cloak, dark violet and gold armor, amethyst gems",
+      "weapon": "two-pronged war fork with glowing violet tines",
+      "wings": "violet arcane energy wings"
+    },
+    "divine-028.webp": {
+      "helmet": "silver helmet with tall red feather plume",
+      "pose": "mid-throw, hurling javelin forward",
+      "theme": "red and gold armor, white cape with red trim, ruby gems",
+      "weapon": "short flaming javelin + kite shield on left arm",
+      "wings": "blazing wings of living fire"
+    },
+    "divine-029.webp": {
+      "helmet": "polished silver helmet with small gold crest",
+      "pose": "formal salute, spear raised high vertically, left fist pressed to chest",
+      "theme": "silver and gold armor, deep blue cape, sapphire gems",
+      "weapon": "long spear with glowing blue tip",
+      "wings": "luminous silver-white feathered wings"
+    },
+    "divine-030.webp": {
+      "helmet": "dragon-head helmet with horns and fangs",
+      "pose": "two spears crossed in X shape in front of body, one in each hand",
+      "theme": "black and gold armor with red accents, dark red cape, ruby gems",
+      "weapon": "twin long spears, crossed",
+      "wings": "massive leathery dragon wings"
+    },
+    "divine-031.webp": {
+      "helmet": "translucent glowing crystal helmet with crystal spikes",
+      "pose": "spear in right hand, glowing orb of holy light floating above open left palm",
+      "theme": "white and gold armor, light cyan cape, crystal blue gems",
+      "weapon": "golden spear + glowing holy orb",
+      "wings": "radiant wings of pure blue holy light"
+    }
+  },
+  "range": "divine-016 to divine-031",
+  "reference": "workspace/user/files/1000723047_1_c832.webp",
+  "style": "16-bit pixel art, square 1600x1600 WebP, divine gold-blue knight, halo rings + crown, varied epic wings, ornate gold frame, standing on stone rock, plain dark background, no text/watermark"
+}

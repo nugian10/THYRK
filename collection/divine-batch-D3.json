@@ -1,1 +1,116 @@
-{"batch":"D3","count":15,"created":"2026-11-09","family":"heavy weapons (senjata berat)","files":{"divine-048.webp":{"helmet":"horned helmet with two large curved golden horns","pose":"standing front, massive war hammer held low with both hands, head resting near the ground","theme":"blue cape, gold-silver armor","weapon":"massive golden war hammer with blue gem","wings":"large white angel wings"},"divine-049.webp":{"helmet":"tall golden crown helmet","pose":"confident stance, gigantic maul resting over one shoulder, one hand on hip","theme":"white and gold cape, gold-silver armor","weapon":"gigantic glowing maul hammer","wings":"large golden angel wings"},"divine-050.webp":{"helmet":"winged helmet with small silver wings on its sides","pose":"dynamic heroic pose, spiked mace raised high in one hand, other arm extended outward","theme":"deep blue cape, gold-silver armor","weapon":"spiked golden mace","wings":"large silver-white angel wings"},"divine-051.webp":{"helmet":"golden spiked helmet","pose":"mid-swing pose, morningstar on chain held at side, shield on other arm","theme":"flowing red cape, red and gold armor","weapon":"morningstar (spiked ball on chain) + shield with blue gem","wings":"large golden angel wings"},"divine-052.webp":{"helmet":"golden crested helmet","pose":"dynamic action pose, chain flail swung in a wide arc beside him","theme":"blue cape, blue and silver armor","weapon":"chain flail with spiked metal ball","wings":"bright blue angel wings"},"divine-053.webp":{"helmet":"helmet with branching golden deer antlers","pose":"grounded powerful stance, huge battle axe held upright with both hands","theme":"green and gold cape, gold-silver armor","weapon":"huge single-bladed battle axe with glowing blue edge","wings":"large white angel wings"},"divine-054.webp":{"helmet":"tall golden plumed helmet","pose":"heroic upward pose, massive double-bladed greataxe raised high above head with both hands","theme":"white cape, gold and white armor","weapon":"massive double-bladed greataxe with glowing blue blades","wings":"large golden angel wings"},"divine-055.webp":{"helmet":"golden laurel wreath helmet","pose":"balanced fighting stance, one axe in each hand held out to the sides","theme":"purple and gold cape, gold-silver armor","weapon":"twin axes (one small battle axe per hand)","wings":"large white angel wings"},"divine-056.webp":{"helmet":"tall pointed golden helmet","pose":"calm regal stance, war pick held upright in one hand, other hand on its handle","theme":"flowing purple cape, gold-silver armor","weapon":"long war pick (hammer head with long curved piercing spike)","wings":"large white angel wings"},"divine-057.webp":{"helmet":"helmet topped with a tall white feather plume","pose":"guardian stance facing forward, hammer in one hand, round shield in the other","theme":"red and gold cape, gold-silver armor","weapon":"golden war hammer + large round shield with blue gem","wings":"large white angel wings"},"divine-058.webp":{"helmet":"golden spiked crown helmet","pose":"defensive battle stance, axe in one hand, tall kite shield in the other","theme":"dark blue cape, silver and blue armor","weapon":"heavy battle axe + tall kite shield with blue gem","wings":"large silver-white angel wings"},"divine-059.webp":{"helmet":"helmet with a large glowing blue crystal set in its crest","pose":"powerful overhead strike pose, war hammer raised high above head","theme":"blue cape, gold and blue armor","weapon":"golden war hammer","wings":"large white angel wings"},"divine-060.webp":{"helmet":"golden conical helmet with small spike tip","pose":"mystical pose, mace held low in one hand, glowing orb of light raised in the other","theme":"emerald green and gold cape, gold-silver armor","weapon":"spiked golden mace + glowing golden orb of light","wings":"large white angel wings"},"divine-061.webp":{"helmet":"golden winged helmet","pose":"balanced powerful stance, one war hammer in each hand held out to the sides","theme":"white cape with gold trim, white and gold armor","weapon":"twin hammers (one golden war hammer per hand)","wings":"very large white angel wings spread wider than usual"},"divine-062.webp":{"helmet":"golden dragon helmet with small dragon horns and snout crest","pose":"standing tall and proud, one hand resting on the hammer handle, other hand on hip","theme":"royal blue cape, gold-silver armor","weapon":"gigantic golden war hammer leaning against the stone rock beside him (dragon-headed)","wings":"large white angel wings"}},"range":"divine-048 to divine-062","reference":"workspace/user/files/1000723047_1_c832.webp (gold-blue divine knight, white angel wings, halo rings + crown, blue cape, gold frame, standing on stone, plain dark background)","style":"16-bit pixel art, square 1600x1600, WebP"}
+{
+  "batch": "D3",
+  "count": 15,
+  "created": "2026-11-09",
+  "family": "heavy weapons (senjata berat)",
+  "files": {
+    "divine-048.webp": {
+      "helmet": "horned helmet with two large curved golden horns",
+      "pose": "standing front, massive war hammer held low with both hands, head resting near the ground",
+      "theme": "blue cape, gold-silver armor",
+      "weapon": "massive golden war hammer with blue gem",
+      "wings": "storm wings of crackling lightning"
+    },
+    "divine-049.webp": {
+      "helmet": "tall golden crown helmet",
+      "pose": "confident stance, gigantic maul resting over one shoulder, one hand on hip",
+      "theme": "white and gold cape, gold-silver armor",
+      "weapon": "gigantic glowing maul hammer",
+      "wings": "massive radiant golden feathered wings"
+    },
+    "divine-050.webp": {
+      "helmet": "winged helmet with small silver wings on its sides",
+      "pose": "dynamic heroic pose, spiked mace raised high in one hand, other arm extended outward",
+      "theme": "deep blue cape, gold-silver armor",
+      "weapon": "spiked golden mace",
+      "wings": "luminous silver-white feathered wings"
+    },
+    "divine-051.webp": {
+      "helmet": "golden spiked helmet",
+      "pose": "mid-swing pose, morningstar on chain held at side, shield on other arm",
+      "theme": "flowing red cape, red and gold armor",
+      "weapon": "morningstar (spiked ball on chain) + shield with blue gem",
+      "wings": "dark crimson feathered wings"
+    },
+    "divine-052.webp": {
+      "helmet": "golden crested helmet",
+      "pose": "dynamic action pose, chain flail swung in a wide arc beside him",
+      "theme": "blue cape, blue and silver armor",
+      "weapon": "chain flail with spiked metal ball",
+      "wings": "storm wings of crackling lightning"
+    },
+    "divine-053.webp": {
+      "helmet": "helmet with branching golden deer antlers",
+      "pose": "grounded powerful stance, huge battle axe held upright with both hands",
+      "theme": "green and gold cape, gold-silver armor",
+      "weapon": "huge single-bladed battle axe with glowing blue edge",
+      "wings": "leafy wings of green and gold leaves and vines"
+    },
+    "divine-054.webp": {
+      "helmet": "tall golden plumed helmet",
+      "pose": "heroic upward pose, massive double-bladed greataxe raised high above head with both hands",
+      "theme": "white cape, gold and white armor",
+      "weapon": "massive double-bladed greataxe with glowing blue blades",
+      "wings": "massive radiant golden feathered wings"
+    },
+    "divine-055.webp": {
+      "helmet": "golden laurel wreath helmet",
+      "pose": "balanced fighting stance, one axe in each hand held out to the sides",
+      "theme": "purple and gold cape, gold-silver armor",
+      "weapon": "twin axes (one small battle axe per hand)",
+      "wings": "blazing wings of living fire"
+    },
+    "divine-056.webp": {
+      "helmet": "tall pointed golden helmet",
+      "pose": "calm regal stance, war pick held upright in one hand, other hand on its handle",
+      "theme": "flowing purple cape, gold-silver armor",
+      "weapon": "long war pick (hammer head with long curved piercing spike)",
+      "wings": "violet arcane energy wings"
+    },
+    "divine-057.webp": {
+      "helmet": "helmet topped with a tall white feather plume",
+      "pose": "guardian stance facing forward, hammer in one hand, round shield in the other",
+      "theme": "red and gold cape, gold-silver armor",
+      "weapon": "golden war hammer + large round shield with blue gem",
+      "wings": "blazing wings of living fire"
+    },
+    "divine-058.webp": {
+      "helmet": "golden spiked crown helmet",
+      "pose": "defensive battle stance, axe in one hand, tall kite shield in the other",
+      "theme": "dark blue cape, silver and blue armor",
+      "weapon": "heavy battle axe + tall kite shield with blue gem",
+      "wings": "deep midnight-blue wings scattered with glowing stars"
+    },
+    "divine-059.webp": {
+      "helmet": "helmet with a large glowing blue crystal set in its crest",
+      "pose": "powerful overhead strike pose, war hammer raised high above head",
+      "theme": "blue cape, gold and blue armor",
+      "weapon": "golden war hammer",
+      "wings": "faceted translucent crystal wings"
+    },
+    "divine-060.webp": {
+      "helmet": "golden conical helmet with small spike tip",
+      "pose": "mystical pose, mace held low in one hand, glowing orb of light raised in the other",
+      "theme": "emerald green and gold cape, gold-silver armor",
+      "weapon": "spiked golden mace + glowing golden orb of light",
+      "wings": "glowing emerald green feathered wings"
+    },
+    "divine-061.webp": {
+      "helmet": "golden winged helmet",
+      "pose": "balanced powerful stance, one war hammer in each hand held out to the sides",
+      "theme": "white cape with gold trim, white and gold armor",
+      "weapon": "twin hammers (one golden war hammer per hand)",
+      "wings": "colossal glowing white-gold feathered wings"
+    },
+    "divine-062.webp": {
+      "helmet": "golden dragon helmet with small dragon horns and snout crest",
+      "pose": "standing tall and proud, one hand resting on the hammer handle, other hand on hip",
+      "theme": "royal blue cape, gold-silver armor",
+      "weapon": "gigantic golden war hammer leaning against the stone rock beside him (dragon-headed)",
+      "wings": "massive leathery dragon wings"
+    }
+  },
+  "range": "divine-048 to divine-062",
+  "reference": "workspace/user/files/1000723047_1_c832.webp (gold-blue divine knight, white angel wings, halo rings + crown, blue cape, gold frame, standing on stone, plain dark background)",
+  "style": "16-bit pixel art, square 1600x1600, WebP"
+}

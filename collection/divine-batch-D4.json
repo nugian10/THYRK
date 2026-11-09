@@ -1,1 +1,113 @@
-{"batch":"D4","family":"ranged & magic (bow / staff / orb)","files":{"divine-063.webp":{"helmet":"horned helmet, long curved golden horns","pose":"longbow drawn, aiming diagonally upward","theme":"emerald archer","weapon":"golden longbow, glowing golden arrow, quiver on back","wings":"white wings with emerald-green tips"},"divine-064.webp":{"helmet":"golden royal crown helmet","pose":"crossbow aimed forward, both hands, guard stance","theme":"crimson royal crossbowman","weapon":"heavy steel crossbow, glowing red bolt, bolt case at hip","wings":"dark crimson feathered wings"},"divine-065.webp":{"helmet":"winged helmet, small silver wings on sides","pose":"magic staff raised high in one hand, spellcasting","theme":"sky-blue storm mage","weapon":"tall magic staff, glowing blue crystal orb, sparkles and light rays","wings":"pale blue feathered wings"},"divine-066.webp":{"helmet":"tall pointed wizard hood with golden circlet","pose":"glowing orb floating above open palm, mage stance","theme":"purple robe orb mage","weapon":"violet orb of light, purple magic runes circling it","wings":"violet and white feathered wings"},"divine-067.webp":{"helmet":"crowned spiked helmet, teal and gold","pose":"open magic tome floating before chest, one hand raised casting","theme":"teal scholar mage","weapon":"large glowing magic tome, bright golden pages, light rays","wings":"bright blue feathered wings"},"divine-068.webp":{"helmet":"golden laurel wreath helmet","pose":"wand raised, small shield forward, noble duelist","theme":"white-gold laurel duelist","weapon":"short glowing magic wand (green orb tip) + small round golden shield with green gem","wings":"white feathered wings with gold tips"},"divine-069.webp":{"helmet":"masked helmet, glowing violet eyes only","pose":"mid-throw, one arm extended throwing a glowing dagger","theme":"shadow assassin","weapon":"dual daggers, one gripped correctly by the handle, one thrown with purple trail","wings":"dark grey feathered wings"},"divine-070.webp":{"helmet":"open-face helmet with golden circlet","pose":"both arms raised, throwing knives flying in an arc around the knight","theme":"golden knife storm","weapon":"glowing golden throwing knives in flight","wings":"large golden feathered wings"},"divine-071.webp":{"helmet":"tall pointed conical helmet with golden tip","pose":"chakram spinning in raised hand, other hand open guiding it","theme":"silver-white chakram monk","weapon":"large glowing golden chakram ring, light trails","wings":"white feathered wings with silver tips"},"divine-072.webp":{"helmet":"golden circlet with white veil","pose":"holy scepter held high, other hand open in blessing","theme":"white holy priest-knight","weapon":"tall holy scepter topped with glowing white-gold cross and orb","wings":"pure white feathered wings, softly glowing"},"divine-073.webp":{"helmet":"slim silver helmet with small crystal crest","pose":"crystal staff planted beside the knight, calm frost-mage stance","theme":"ice-blue frost mage","weapon":"tall crystal staff, large faceted ice-blue crystal, frost sparkles","wings":"silver feathered wings"},"divine-074.webp":{"helmet":"helmet with tall white feather plume","pose":"recurve bow drawn, aiming sideways at shoulder height","theme":"forest-green recurve archer","weapon":"curved golden recurve bow, glowing green arrow","wings":"white feathered wings with green tips"},"divine-075.webp":{"helmet":"helmet with two curved deer antlers","pose":"shortbow lowered at rest, relaxed ranger stance","theme":"brown ranger of the hunt","weapon":"small shortbow, glowing arrow, leather quiver on back","wings":"brown and white feathered wings"},"divine-076.webp":{"helmet":"golden circlet helmet with small horns","pose":"spellbook in left arm, star-tipped wand raised, archmage stance","theme":"deep-blue archmage","weapon":"open glowing spellbook + slender magic wand with bright star tip","wings":"huge white feathered wings"},"divine-077.webp":{"helmet":"helmet crowned with a large glowing blue crystal","pose":"moon staff held upright, serene lunar guardian stance","theme":"midnight-blue lunar guardian","weapon":"tall moon staff topped with glowing silver crescent moon and blue orb","wings":"pale silver-blue feathered wings"}},"reference":"workspace/user/files/1000723047_1_c832.webp","style":"16-bit pixel art divine knight, gold frame + halo rings + crown, standing on stone, plain dark background, no text/watermark"}
+{
+  "batch": "D4",
+  "family": "ranged & magic (bow / staff / orb)",
+  "files": {
+    "divine-063.webp": {
+      "helmet": "horned helmet, long curved golden horns",
+      "pose": "longbow drawn, aiming diagonally upward",
+      "theme": "emerald archer",
+      "weapon": "golden longbow, glowing golden arrow, quiver on back",
+      "wings": "glowing emerald green feathered wings"
+    },
+    "divine-064.webp": {
+      "helmet": "golden royal crown helmet",
+      "pose": "crossbow aimed forward, both hands, guard stance",
+      "theme": "crimson royal crossbowman",
+      "weapon": "heavy steel crossbow, glowing red bolt, bolt case at hip",
+      "wings": "dark crimson feathered wings"
+    },
+    "divine-065.webp": {
+      "helmet": "winged helmet, small silver wings on sides",
+      "pose": "magic staff raised high in one hand, spellcasting",
+      "theme": "sky-blue storm mage",
+      "weapon": "tall magic staff, glowing blue crystal orb, sparkles and light rays",
+      "wings": "storm wings of crackling lightning"
+    },
+    "divine-066.webp": {
+      "helmet": "tall pointed wizard hood with golden circlet",
+      "pose": "glowing orb floating above open palm, mage stance",
+      "theme": "purple robe orb mage",
+      "weapon": "violet orb of light, purple magic runes circling it",
+      "wings": "violet arcane energy wings"
+    },
+    "divine-067.webp": {
+      "helmet": "crowned spiked helmet, teal and gold",
+      "pose": "open magic tome floating before chest, one hand raised casting",
+      "theme": "teal scholar mage",
+      "weapon": "large glowing magic tome, bright golden pages, light rays",
+      "wings": "faceted translucent crystal wings"
+    },
+    "divine-068.webp": {
+      "helmet": "golden laurel wreath helmet",
+      "pose": "wand raised, small shield forward, noble duelist",
+      "theme": "white-gold laurel duelist",
+      "weapon": "short glowing magic wand (green orb tip) + small round golden shield with green gem",
+      "wings": "luminous silver-white feathered wings"
+    },
+    "divine-069.webp": {
+      "helmet": "masked helmet, glowing violet eyes only",
+      "pose": "mid-throw, one arm extended throwing a glowing dagger",
+      "theme": "shadow assassin",
+      "weapon": "dual daggers, one gripped correctly by the handle, one thrown with purple trail",
+      "wings": "dark shadow feathered wings, glowing violet edges"
+    },
+    "divine-070.webp": {
+      "helmet": "open-face helmet with golden circlet",
+      "pose": "both arms raised, throwing knives flying in an arc around the knight",
+      "theme": "golden knife storm",
+      "weapon": "glowing golden throwing knives in flight",
+      "wings": "massive radiant golden feathered wings"
+    },
+    "divine-071.webp": {
+      "helmet": "tall pointed conical helmet with golden tip",
+      "pose": "chakram spinning in raised hand, other hand open guiding it",
+      "theme": "silver-white chakram monk",
+      "weapon": "large glowing golden chakram ring, light trails",
+      "wings": "luminous silver-white feathered wings"
+    },
+    "divine-072.webp": {
+      "helmet": "golden circlet with white veil",
+      "pose": "holy scepter held high, other hand open in blessing",
+      "theme": "white holy priest-knight",
+      "weapon": "tall holy scepter topped with glowing white-gold cross and orb",
+      "wings": "colossal glowing white-gold feathered wings"
+    },
+    "divine-073.webp": {
+      "helmet": "slim silver helmet with small crystal crest",
+      "pose": "crystal staff planted beside the knight, calm frost-mage stance",
+      "theme": "ice-blue frost mage",
+      "weapon": "tall crystal staff, large faceted ice-blue crystal, frost sparkles",
+      "wings": "jagged frozen ice-crystal wings"
+    },
+    "divine-074.webp": {
+      "helmet": "helmet with tall white feather plume",
+      "pose": "recurve bow drawn, aiming sideways at shoulder height",
+      "theme": "forest-green recurve archer",
+      "weapon": "curved golden recurve bow, glowing green arrow",
+      "wings": "leafy wings of green and gold leaves and vines"
+    },
+    "divine-075.webp": {
+      "helmet": "helmet with two curved deer antlers",
+      "pose": "shortbow lowered at rest, relaxed ranger stance",
+      "theme": "brown ranger of the hunt",
+      "weapon": "small shortbow, glowing arrow, leather quiver on back",
+      "wings": "brown-bronze feathered wings with autumn leaves"
+    },
+    "divine-076.webp": {
+      "helmet": "golden circlet helmet with small horns",
+      "pose": "spellbook in left arm, star-tipped wand raised, archmage stance",
+      "theme": "deep-blue archmage",
+      "weapon": "open glowing spellbook + slender magic wand with bright star tip",
+      "wings": "violet arcane energy wings"
+    },
+    "divine-077.webp": {
+      "helmet": "helmet crowned with a large glowing blue crystal",
+      "pose": "moon staff held upright, serene lunar guardian stance",
+      "theme": "midnight-blue lunar guardian",
+      "weapon": "tall moon staff topped with glowing silver crescent moon and blue orb",
+      "wings": "faceted translucent crystal wings"
+    }
+  },
+  "reference": "workspace/user/files/1000723047_1_c832.webp",
+  "style": "16-bit pixel art divine knight, gold frame + halo rings + crown, standing on stone, plain dark background, no text/watermark"
+}

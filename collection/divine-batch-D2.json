@@ -1,1 +1,120 @@
-{"batch":"D2","family":"blade (swords)","files":{"divine-032.webp":{"helmet":"horned helmet","pose":"greatsword resting on shoulder, heroic stance","theme":"gold-blue greatsword guardian","weapon":"greatsword","wings":"large white angel wings"},"divine-033.webp":{"helmet":"crown helmet","pose":"dual-wield combat stance, one sword in each hand","theme":"white-gold dual-blade king","weapon":"dual swords","wings":"large white angel wings"},"divine-034.webp":{"helmet":"winged helmet","pose":"guard stance, sword and shield","theme":"red-cape sword and shield guardian","weapon":"longsword + round blue-gem shield","wings":"large white angel wings"},"divine-035.webp":{"helmet":"horned helmet with flame crest","pose":"heroic stance, flaming blade lowered","theme":"red-gold fire knight","weapon":"flaming fire sword","wings":"large white angel wings"},"divine-036.webp":{"helmet":"horned ice-crowned helmet","pose":"heroic stance, ice blade lowered","theme":"ice-blue frost knight","weapon":"glowing ice sword","wings":"large blue angel wings"},"divine-037.webp":{"helmet":"samurai-divine helmet with golden crest and horns","pose":"katana held two-handed in ready stance","theme":"white-gold divine samurai","weapon":"katana","wings":"large white angel wings"},"divine-038.webp":{"helmet":"laurel wreath helmet","pose":"fencing stance, rapier thrust forward","theme":"green-cape duelist","weapon":"thin rapier","wings":"large white angel wings"},"divine-039.webp":{"helmet":"plumed helmet","pose":"claymore held upright two-handed in front","theme":"gold-winged claymore champion","weapon":"claymore","wings":"large golden angel wings"},"divine-040.webp":{"helmet":"cone-shaped pointed helmet","pose":"slashing pose, curved blade sweeping","theme":"green-cape falchion slasher","weapon":"curved falchion","wings":"large white angel wings"},"divine-041.webp":{"helmet":"horned helmet with crescent moon crest","pose":"elegant stance, crescent blade held low","theme":"purple-gold moon scimitar","weapon":"crescent scimitar","wings":"large white angel wings"},"divine-042.webp":{"helmet":"helmet with tall white feather plume","pose":"resting pose, longsword pointed down","theme":"white-gold noble longsword","weapon":"longsword","wings":"large white angel wings"},"divine-043.webp":{"helmet":"plain steel helmet with gold trim","pose":"two-handed ready guard, blade raised","theme":"blue-cape bastard sword guard","weapon":"bastard sword","wings":"large silver-white angel wings"},"divine-044.webp":{"helmet":"faceted blue crystal helmet","pose":"heroic stance, glowing rune blade lowered","theme":"teal-gold rune knight","weapon":"rune sword with glowing cyan runes","wings":"large white angel wings"},"divine-045.webp":{"helmet":"masked helmet, face covered, glowing eyes","pose":"crouching ready pose, one dagger in each hand","theme":"black-cape masked dagger assassin","weapon":"twin daggers","wings":"large white angel wings"},"divine-046.webp":{"helmet":"plumed helmet","pose":"sword raised high to the sky in salute, light rays shining down","theme":"white-gold sky salute","weapon":"longsword raised in salute","wings":"very large white angel wings spread wide"},"divine-047.webp":{"helmet":"helmet with deer antlers","pose":"kneeling on one knee, hands on sword hilt planted in stone","theme":"blue-cape kneeling oath knight","weapon":"longsword planted upright in stone","wings":"large white angel wings folded down"}},"reference":"workspace/user/files/1000723047_1_c832.webp","style":"16-bit pixel art, square 1600x1600, WebP, divine knight, halo + crown, gold frame, standing on stone, plain dark background"}
+{
+  "batch": "D2",
+  "family": "blade (swords)",
+  "files": {
+    "divine-032.webp": {
+      "helmet": "horned helmet",
+      "pose": "greatsword resting on shoulder, heroic stance",
+      "theme": "gold-blue greatsword guardian",
+      "weapon": "greatsword",
+      "wings": "faceted translucent crystal wings"
+    },
+    "divine-033.webp": {
+      "helmet": "crown helmet",
+      "pose": "dual-wield combat stance, one sword in each hand",
+      "theme": "white-gold dual-blade king",
+      "weapon": "dual swords",
+      "wings": "colossal glowing white-gold feathered wings"
+    },
+    "divine-034.webp": {
+      "helmet": "winged helmet",
+      "pose": "guard stance, sword and shield",
+      "theme": "red-cape sword and shield guardian",
+      "weapon": "longsword + round blue-gem shield",
+      "wings": "dark crimson feathered wings"
+    },
+    "divine-035.webp": {
+      "helmet": "horned helmet with flame crest",
+      "pose": "heroic stance, flaming blade lowered",
+      "theme": "red-gold fire knight",
+      "weapon": "flaming fire sword",
+      "wings": "blazing wings of living fire"
+    },
+    "divine-036.webp": {
+      "helmet": "horned ice-crowned helmet",
+      "pose": "heroic stance, ice blade lowered",
+      "theme": "ice-blue frost knight",
+      "weapon": "glowing ice sword",
+      "wings": "jagged frozen ice-crystal wings"
+    },
+    "divine-037.webp": {
+      "helmet": "samurai-divine helmet with golden crest and horns",
+      "pose": "katana held two-handed in ready stance",
+      "theme": "white-gold divine samurai",
+      "weapon": "katana",
+      "wings": "luminous silver-white feathered wings"
+    },
+    "divine-038.webp": {
+      "helmet": "laurel wreath helmet",
+      "pose": "fencing stance, rapier thrust forward",
+      "theme": "green-cape duelist",
+      "weapon": "thin rapier",
+      "wings": "glowing emerald green feathered wings"
+    },
+    "divine-039.webp": {
+      "helmet": "plumed helmet",
+      "pose": "claymore held upright two-handed in front",
+      "theme": "gold-winged claymore champion",
+      "weapon": "claymore",
+      "wings": "massive radiant golden feathered wings"
+    },
+    "divine-040.webp": {
+      "helmet": "cone-shaped pointed helmet",
+      "pose": "slashing pose, curved blade sweeping",
+      "theme": "green-cape falchion slasher",
+      "weapon": "curved falchion",
+      "wings": "leafy wings of green and gold leaves and vines"
+    },
+    "divine-041.webp": {
+      "helmet": "horned helmet with crescent moon crest",
+      "pose": "elegant stance, crescent blade held low",
+      "theme": "purple-gold moon scimitar",
+      "weapon": "crescent scimitar",
+      "wings": "deep midnight-blue wings scattered with glowing stars"
+    },
+    "divine-042.webp": {
+      "helmet": "helmet with tall white feather plume",
+      "pose": "resting pose, longsword pointed down",
+      "theme": "white-gold noble longsword",
+      "weapon": "longsword",
+      "wings": "luminous silver-white feathered wings"
+    },
+    "divine-043.webp": {
+      "helmet": "plain steel helmet with gold trim",
+      "pose": "two-handed ready guard, blade raised",
+      "theme": "blue-cape bastard sword guard",
+      "weapon": "bastard sword",
+      "wings": "storm wings of crackling lightning"
+    },
+    "divine-044.webp": {
+      "helmet": "faceted blue crystal helmet",
+      "pose": "heroic stance, glowing rune blade lowered",
+      "theme": "teal-gold rune knight",
+      "weapon": "rune sword with glowing cyan runes",
+      "wings": "faceted translucent crystal wings"
+    },
+    "divine-045.webp": {
+      "helmet": "masked helmet, face covered, glowing eyes",
+      "pose": "crouching ready pose, one dagger in each hand",
+      "theme": "black-cape masked dagger assassin",
+      "weapon": "twin daggers",
+      "wings": "dark shadow feathered wings, glowing violet edges"
+    },
+    "divine-046.webp": {
+      "helmet": "plumed helmet",
+      "pose": "sword raised high to the sky in salute, light rays shining down",
+      "theme": "white-gold sky salute",
+      "weapon": "longsword raised in salute",
+      "wings": "colossal glowing white-gold feathered wings"
+    },
+    "divine-047.webp": {
+      "helmet": "helmet with deer antlers",
+      "pose": "kneeling on one knee, hands on sword hilt planted in stone",
+      "theme": "blue-cape kneeling oath knight",
+      "weapon": "longsword planted upright in stone",
+      "wings": "radiant wings of pure blue holy light"
+    }
+  },
+  "reference": "workspace/user/files/1000723047_1_c832.webp",
+  "style": "16-bit pixel art, square 1600x1600, WebP, divine knight, halo + crown, gold frame, standing on stone, plain dark background"
+}
