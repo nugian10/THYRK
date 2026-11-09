@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deploy THYRK Contracts — Owner Tool</title>
+<meta name="description" content="Owner tool to deploy the THYRK token and NFT contracts to BNB Smart Chain from a browser wallet. Not a public page.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="style.css">
+<style>
+  .hidden { display: none !important; }
+  .owner-pill { background: #b3541e; color: #F6EFDC; }
+  .back-link { display: inline-block; margin: 16px 0 0; font-weight: 700; }
+  .step {
+    background: var(--card); border: 2px solid var(--line); border-radius: 18px;
+    padding: 18px; margin-top: 18px; max-width: 680px; margin-left: auto; margin-right: auto;
+  }
+  .step h2 { font-size: 18px; margin: 0 0 6px; color: var(--gold); }
+  .step.todo { opacity: 0.55; }
+  .step.active { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(245,197,66,.25); }
+  .step.blocked { border-color: var(--red); }
+  .step.done { border-color: var(--green); }
+  .step.done h2::after { content: " ✓"; color: var(--green); }
+  .btn {
+    display: block; width: 100%; min-height: 52px; margin: 12px 0 0;
+    padding: 14px 18px; font-size: 17px; font-weight: 800; font-family: inherit;
+    color: #080b18; background: var(--gold); border: 2px solid var(--gold); border-radius: 14px;
+    cursor: pointer; text-align: center;
+  }
+  .btn:hover:not(:disabled) { background: var(--gold-soft); }
+  .btn:disabled { opacity: 0.45; cursor: not-allowed; }
+  .btn.primary { background: #b3541e; border-color: #b3541e; color: #F6EFDC; }
+  .btn.primary:hover:not(:disabled) { background: #96431a; }
+  .btn.ghost { background: transparent; color: var(--text); border-color: var(--line); }
+  .btn.ghost:hover:not(:disabled) { background: var(--card2); }
+  .btn.small { width: auto; display: inline-block; min-height: 44px; font-size: 15px; padding: 10px 16px; margin-top: 8px; }
+  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13.5px; overflow-wrap: anywhere; word-break: break-word; }
+  .kv { width: 100%; border-collapse: collapse; margin: 10px 0; background: var(--card2); }
+  .kv th, .kv td { border: 1px solid var(--line); padding: 10px 12px; text-align: left; font-size: 15px; vertical-align: top; }
+  .kv th { background: var(--bg2); color: var(--gold); width: 34%; }
+  .badge2 { display: inline-block; font-weight: 800; font-size: 14px; padding: 6px 12px; border-radius: 999px; margin: 6px 0; }
+  .badge2.ok { background: #14331a; color: var(--green); }
+  .badge2.bad { background: #3d1212; color: var(--red); }
+  .note-box { max-width: 680px; margin: 16px auto 0; padding: 14px 16px; border-radius: 14px; border: 2px solid var(--line); font-size: 15px; }
+  .note-box.info { background: var(--card2); border-color: var(--blue); }
+  .note-box.warn { background: #2a1a08; border-color: #b3541e; }
+  .note-box.error { background: #2a0d0d; border-color: var(--red); }
+  .note-box.ok { background: #0f2a12; border-color: var(--green); }
+  .warn-box { background: #2a0d0d; border: 2px solid var(--red); border-radius: 14px; padding: 14px 16px; margin-top: 12px; }
+  .status-line { margin: 8px 0; }
+  .status-line strong { display: block; font-size: 15px; }
+  .cost { font-size: 26px; font-weight: 900; margin: 4px 0; color: var(--gold); }
+  input.addr {
+    width: 100%; min-height: 52px; padding: 12px 14px; font-size: 15px; font-family: inherit;
+    border: 2px solid var(--line); border-radius: 12px; background: var(--bg2); color: var(--text);
+  }
+  .done-box { background: #0f2a12; border: 2px solid var(--green); border-radius: 16px; padding: 18px; margin-top: 18px; max-width: 680px; margin-left: auto; margin-right: auto; }
+  .done-box h2 { margin-top: 0; }
+  .done-box ol { padding-left: 22px; }
+  .done-box li { margin: 8px 0; }
+  footer { text-align: center; color: var(--muted); font-size: 14px; padding: 32px 20px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a class="logo" href="index.html">THYRK</a>
+    <span class="badge">OWNER TOOL</span>
+  </div>
+</header>
+
+<main class="wrap">
+  <a class="back-link" href="index.html">&larr; Back to site</a>
+
+  <section class="hero" style="margin-top:24px">
+    <p class="tag">OWNER ONLY &mdash; NOT A PUBLIC PAGE</p>
+    <h1 style="font-size:clamp(24px,6vw,40px)">Deploy the Contracts</h1>
+    <p class="lead">Deploy the $THYRK token and the THYRK NFT contract to BNB Smart Chain from your own browser wallet. No private key, no seed phrase &mdash; ever. Your wallet signs each transaction after you click.</p>
+  </section>
+
+  <div class="note-box warn" style="margin-top:24px">
+    <strong>Safety first.</strong> This page will <strong>never</strong> ask for your seed phrase or private key.
+    Only connect your browser wallet (MetaMask). If any page or person asks for your seed phrase, it is a scam &mdash; stop immediately.
+    Deployment costs real BNB (see the estimate in step 3 before you sign anything).
+  </div>
+
+  <div class="note-box info">
+    <strong>Two contracts, in order.</strong> (1) <strong>ThyrkToken</strong> ($THYRK, ERC-20, cap 777,777) is deployed first.
+    (2) <strong>ThyrkNFT</strong> (ERC-721, 7,777 + 77 Divine) is deployed second and needs the token address.
+    The deployer wallet only pays gas &mdash; the <strong>owner of both contracts is the Binance Agentic Wallet</strong>
+    (<code class="mono">0x89c37649Ba3BAA9E1ce028612b7DE4e9c3a947B7</code>), set as a constructor argument.
+    Steps 6–7 (setMinter, activate) are owner-only: they can only be signed by the Agentic Wallet, via Bryan's Binance agent.
+  </div>
+
+  <div id="note" class="note-box info hidden" role="status"></div>
+
+  <!-- Step 1 -->
+  <section class="step todo" id="step-1">
+    <h2>Step 1 &mdash; Connect your wallet</h2>
+    <p>Connect the browser wallet on <strong>BNB Smart Chain (chain 56)</strong>. This wallet pays gas only &mdash; it does <strong>not</strong> become the owner. If you are on another network, the page will offer to switch.</p>
+    <p class="status-line"><strong>Wallet:</strong> <span id="wallet-status">Not connected.</span></p>
+    <p class="status-line hidden" id="wallet-address-row"><strong>Address:</strong> <code class="mono" id="wallet-address"></code></p>
+    <p class="status-line"><strong>Network:</strong> <span id="chain-status">—</span></p>
+    <p class="status-line"><strong>Contract files:</strong> <span id="artifact-status">Loading…</span></p>
+    <button class="btn" id="connect-btn" type="button">Connect Wallet</button>
+    <div id="switch-row" class="hidden">
+      <button class="btn ghost" id="switch-btn" type="button">Switch to BNB Smart Chain</button>
+    </div>
+  </section>
+
+  <!-- Step 2 -->
+  <section class="step todo" id="step-2">
+    <h2>Step 2 &mdash; What will be deployed</h2>
+    <p>These constructor values are locked. Check them against the contract source before deploying.</p>
+    <table class="kv">
+      <tr><th>Owner</th><td><code class="mono">0x89c37649Ba3BAA9E1ce028612b7DE4e9c3a947B7</code><br>Binance Agentic Wallet (owner of BOTH contracts)</td></tr>
+      <tr><th>Revenue wallet</th><td><code class="mono">0x89c37649Ba3BAA9E1ce028612b7DE4e9c3a947B7</code><br>Same Agentic Wallet — mint payments go here directly</td></tr>
+      <tr><th>Agent ID registry</th><td><code class="mono">0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F</code><br>SPACE ID (.ai Agent ID) — only Agent ID holders can mint</td></tr>
+      <tr><th>Base URI</th><td><code class="mono">https://raw.githubusercontent.com/nugian10/THYRK/main/collection/metadata/</code><br>Metadata folder (tokenURI = baseURI + tokenId + “.json”)</td></tr>
+      <tr><th>Deck hash</th><td><code class="mono">0x592a9180d7c57fa9c609176c204e8c4950ee20d7d13c5705c0227516e97e8233</code><br>keccak256 of the 7,777-entry deck (seed 0x544859524b = “THYRK”), verified off-chain</td></tr>
+      <tr><th>Rarity bitmap</th><td>61 words (2 bits per token) built from the published deck — lets the contract know each token's rarity for free-mint / burn / upgrade rules</td></tr>
+      <tr><th>Supply / ladder</th><td>7,777 mintable (Common 4,000 incl. 777 free, Rare 2,500, Epic 1,000, Legendary 277) + 77 Divine by redeem only. Ladder per wallet: #1–10: 0.0002 BNB, #11–20: 0.0004 BNB, #21–30: 0.0008 BNB, max 30/wallet. Minting starts OFF.</td></tr>
+      <tr><th>$THYRK token</th><td>ERC-20, cap 777,777. Paid mint +20, burn Common 20 / Rare 50 / Epic 120 / Legendary 300, Divine redeem 1,500, token mint 100 = 1 mint (max 3/wallet), upgrade 3+50/100/200, repost claim 100 (max 1/wallet).</td></tr>
+    </table>
+    <p class="status-line"><strong>Live gas price:</strong> <span id="gas-price">—</span></p>
+    <p class="status-line"><strong>Estimated gas (both deploys):</strong> <span id="gas-estimate">—</span></p>
+    <p class="cost" id="cost-bnb">— BNB</p>
+    <p class="status-line"><span id="cost-idr">—</span></p>
+    <p class="note" id="estimate-status">Connect a wallet first to get a live estimate.</p>
+    <button class="btn ghost" id="refresh-estimate-btn" type="button">Refresh estimate</button>
+  </section>
+
+  <!-- Step 3 -->
+  <section class="step todo" id="step-3">
+    <h2>Step 3 &mdash; Deploy $THYRK token</h2>
+    <p>First transaction, sent from the connected wallet. Your wallet will show the exact cost &mdash; check it matches the estimate above before you confirm. Owner is set to the Agentic Wallet.</p>
+    <button class="btn primary" id="deploy-token-btn" type="button" disabled>DEPLOY $THYRK TOKEN</button>
+    <p class="status-line" id="deploy-token-status">Waiting for steps 1–2.</p>
+    <p class="status-line hidden" id="deploy-token-tx-row"><strong>Transaction:</strong> <a id="deploy-token-tx-link" href="#" target="_blank" rel="noopener"><code class="mono" id="deploy-token-tx"></code></a></p>
+    <div id="token-deployed-row" class="hidden">
+      <p class="status-line"><strong>Token address:</strong><br><code class="mono" id="token-address"></code>
+        <button class="btn small ghost" id="copy-token-btn" type="button">Copy</button></p>
+      <p><a id="token-address-link" href="#" target="_blank" rel="noopener">View token on BscScan</a></p>
+    </div>
+  </section>
+
+  <!-- Step 4 -->
+  <section class="step todo" id="step-4">
+    <h2>Step 4 &mdash; Deploy ThyrkNFT</h2>
+    <p>Second transaction. The NFT constructor needs the token address from step 3 (filled in automatically), plus the deck hash and rarity bitmap. Minting stays <strong>off</strong> after deploy.</p>
+    <label for="nft-token-address"><strong>$THYRK token address</strong></label>
+    <input class="addr" id="nft-token-address" type="text" inputmode="text" autocomplete="off" spellcheck="false" placeholder="0x… (filled in automatically after step 3)">
+    <button class="btn primary" id="deploy-nft-btn" type="button" disabled>DEPLOY THYRKNFT</button>
+    <p class="status-line" id="deploy-nft-status">Waiting for step 3.</p>
+    <p class="status-line hidden" id="deploy-nft-tx-row"><strong>Transaction:</strong> <a id="deploy-nft-tx-link" href="#" target="_blank" rel="noopener"><code class="mono" id="deploy-nft-tx"></code></a></p>
+    <div id="nft-deployed-row" class="hidden">
+      <p class="status-line"><strong>NFT contract address:</strong><br><code class="mono" id="nft-address"></code>
+        <button class="btn small ghost" id="copy-nft-btn" type="button">Copy</button></p>
+      <p><a id="nft-address-link" href="#" target="_blank" rel="noopener">View contract on BscScan</a> &middot;
+         <a id="nft-verify-link" href="#" target="_blank" rel="noopener">Verify source on BscScan</a></p>
+    </div>
+  </section>
+
+  <!-- Step 5 -->
+  <section class="step todo" id="step-5">
+    <h2>Step 5 &mdash; setMinter (owner only)</h2>
+    <p>The NFT contract must be allowed to mint $THYRK (paid-mint bonus, burn rewards). This is the owner-only call <code>setMinter(nftAddress, true)</code> on the token. <strong>Until this is done, paid mints, burns and upgrades will revert.</strong></p>
+    <p><span class="badge2" id="minter-badge">Not checked yet</span></p>
+    <div id="minter-owner-row" class="hidden">
+      <p class="status-line">Connected wallet is the owner (Agentic). You can run this step here.</p>
+      <button class="btn primary" id="setminter-btn" type="button" disabled>SET MINTER (NFT)</button>
+      <p class="status-line" id="setminter-status">Waiting for deploy.</p>
+      <p class="status-line hidden" id="setminter-tx-row"><strong>Transaction:</strong> <a id="setminter-tx-link" href="#" target="_blank" rel="noopener"><code class="mono" id="setminter-tx"></code></a></p>
+    </div>
+    <div id="minter-agent-row" class="hidden">
+      <p class="status-line">The connected wallet is <strong>not</strong> the owner, so this step cannot be signed here. Run it from the Agentic Wallet via Bryan's Binance agent:</p>
+      <p class="status-line"><code class="mono" id="minter-call">ThyrkToken.setMinter(nftAddress, true)</code></p>
+      <button class="btn ghost small" id="copy-minter-call-btn" type="button">Copy the call</button>
+      <p class="status-line" id="minter-manual-status">After the Binance agent confirms the transaction, minting features will work.</p>
+    </div>
+  </section>
+
+  <!-- Step 6 -->
+  <section class="step todo" id="step-6">
+    <h2>Step 6 &mdash; Activate minting (owner only)</h2>
+    <p>After both contracts are deployed (and verified on BscScan) and the minter is set, turn minting on with <code>setMintActive(true)</code>. This is a second, small transaction from the owner wallet. <strong>Do this only when Bryan lifts the public launch hold and the site is ready to go live.</strong></p>
+    <label for="activate-address"><strong>NFT contract address</strong></label>
+    <input class="addr" id="activate-address" type="text" inputmode="text" autocomplete="off" spellcheck="false" placeholder="0x… (filled in automatically after deploy)">
+    <p class="status-line" id="activate-estimate">Enter the deployed contract address first.</p>
+    <button class="btn ghost small" id="refresh-activate-btn" type="button">Refresh activation estimate</button>
+    <button class="btn primary" id="activate-btn" type="button" disabled>ACTIVATE MINT</button>
+    <p class="status-line" id="activate-status">Waiting for deploy.</p>
+    <p class="status-line hidden" id="activate-tx-row"><strong>Transaction:</strong> <a id="activate-tx-link" href="#" target="_blank" rel="noopener"><code class="mono" id="activate-tx"></code></a></p>
+  </section>
+
+  <div id="done-box" class="done-box hidden">
+    <h2>Launch checklist</h2>
+    <ol>
+      <li><strong>Verify the source of BOTH contracts on BscScan</strong> — open each contract on BscScan &rarr; Contract &rarr; Verify and Publish, compiler 0.8.24, optimizer runs 200, license MIT.</li>
+      <li><strong>Confirm setMinter</strong> — on the token contract, <code>minters(nftAddress)</code> must read <code>true</code>.</li>
+      <li><strong>Update the site</strong> — replace the <code>0x0000…0000</code> placeholder with the new contract addresses in <code>index.html</code>, <code>llms.txt</code> and <code>agent-skill.md</code>, and flip COMING SOON to live.</li>
+      <li><strong>Announce the launch</strong> on X (@thyrk_) — only after Bryan lifts the public launch hold.</li>
+    </ol>
+  </div>
+
+  <footer>
+    <p>THYRK — owner deploy tool. Not a public page. Contract source is verifiable on BscScan; it is not an independent audit.</p>
+  </footer>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/ethers@6.13.4/dist/ethers.umd.min.js"></script>
+<script src="deploy.js"></script>
+</body>
+</html>
