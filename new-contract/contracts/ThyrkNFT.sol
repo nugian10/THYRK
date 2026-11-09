@@ -22,9 +22,14 @@ pragma solidity 0.8.24;
 //     no useFree argument: mint(uint256 quantity) only.
 //     There is NO total free-mint cap (v1 had 777) and NO
 //     free-mint reserve. 1 free per wallet, ever.
-//  2. FREE DRAW IS NOT Common-only. A free mint can draw
-//     Common, Rare or Epic — but NEVER Legendary. The free
-//     draw skips Legendary deck slots (see _drawFree).
+//  2. FREE DRAW USES THE FULL DECK. A free mint draws
+//     exactly like a paid mint — any rarity, INCLUDING
+//     Legendary. (Bryan, 23:30 WIB 9 Nov 2026: free
+//     Legendary is a lure — Divine sits above Legendary,
+//     so a free Legendary is a "pemikat", not a giveaway
+//     of the top tier. This reverses the earlier
+//     NEVER-Legendary rule; the _drawFree scan-forward
+//     exclusion was removed.)
 //  3. FREE MINT EARNS 20 $THYRK, like a paid mint
 //     (v1 free mints earned 0).
 //  4. PRICE LADDER starts at FREE: mint #1 FREE (automatic),
@@ -104,19 +109,15 @@ pragma solidity 0.8.24;
 //     There is no reserved free supply any more, so
 //     token-mints draw from the same shared pool as every
 //     other draw (spec: "draws from the full deck").
-//  F. END-OF-DECK EDGE CASE: the free draw NEVER yields a
-//     Legendary, by construction. If the pool ever holds
-//     ONLY Legendary tokens (i.e. all 7,500 non-Legendary
-//     tokens are drawn and only the 277 Legendary remain),
-//     a wallet that has not yet used its free mint cannot
-//     complete a mint() call — it reverts NoDrawableToken.
-//     Wallets that already used their free mint can still
-//     mint paid. This can only happen in the final ~277
-//     mints of the collection; it is accepted as the price
-//     of the strict NEVER-Legendary rule. No fallback that
-//     silently hands out a Legendary (or silently charges
-//     for the "free" mint) was added — either would break
-//     the stated rule without the minter knowing.
+//  F. END-OF-DECK EDGE CASE: GONE. The free draw uses the
+//     full deck (see point 2), so a free mint can draw
+//     whatever remains in the pool — including a Legendary
+//     when only Legendaries are left. There is no
+//     NoDrawableToken case for free mints any more; the
+//     only end-of-supply revert is SoldOut when the pool
+//     is empty. (The earlier edge case existed only under
+//     the reversed NEVER-Legendary rule; it disappeared
+//     with that rule on 23:30 WIB 9 Nov 2026.)
 //
 // THE DECK — hash-only design (cheap deploy), same as v1:
 //   The full 7,777-entry deck is NEVER stored on-chain.
@@ -157,11 +158,13 @@ pragma solidity 0.8.24;
 // THE RARITY BITMAP — why it exists:
 //   The deck is shuffled, so rarity is NOT a function of
 //   the token ID range. The contract still needs to know
-//   a token's rarity on-chain, for exactly three things:
-//   (a) the free draw must never yield a Legendary;
-//   (b) burn rewards differ per rarity;
-//   (c) upgrades must verify the three input NFTs share
-//   one tier. The bitmap packs rarity as 2 bits per
+//   a token's rarity on-chain, for exactly two things:
+//   (a) burn rewards differ per rarity;
+//   (b) upgrades must verify the three input NFTs share
+//   one tier. (A third use — keeping Legendary out of
+//   the free draw — was removed with the reversed
+//   NEVER-Legendary rule, 23:30 WIB 9 Nov 2026.)
+//   The bitmap packs rarity as 2 bits per
 //   token (61 uint256 words for 7,777 tokens), is built
 //   from the published deck by scripts/generate-bitmap.py
 //   (v1 folder), and is passed to the constructor. Anyone
@@ -597,58 +600,21 @@ contract ThyrkNFT is ERC721, ERC721Royalty, Ownable, ReentrancyGuard {
         return (0, false);
     }
 
-    /// @dev Scan the pool from `start` (wrapping) for the
-    /// first position whose token is NOT Legendary.
-    /// Returns (position, found). Bounded by _remaining
-    /// steps, so it always terminates. Only used by the
-    /// free draw.
-    function _findNonLegendaryFrom(uint256 start)
-        internal
-        view
-        returns (uint256 pos, bool found)
-    {
-        uint256 remaining = _remaining;
-        for (uint256 k = 0; k < remaining; k++) {
-            uint256 p = (start + k) % remaining;
-            if (rarityOf(_valueAt(p)) != RARITY_LEGENDARY) {
-                return (p, true);
-            }
-        }
-        return (0, false);
-    }
-
-    /// @dev Draw one token for a PAID / token mint: lazy
+    /// @dev Draw one token from the shared pool — used by
+    /// FREE, paid and token mints alike: lazy
     /// Fisher-Yates over the shared pool. No rarity
     /// restriction: any rarity (incl. Legendary) can be
     /// drawn. (v1 restricted paid draws to protect a
     /// 777-free-mint Common reserve; there is no reserved
-    /// free supply any more, so the restriction is gone.)
+    /// free supply any more, so the restriction is gone.
+    /// The free draw used to skip Legendary slots; that
+    /// exclusion was removed 23:30 WIB 9 Nov 2026 —
+    /// a free mint can now draw a Legendary, by design.)
     function _drawMain() internal returns (uint256) {
         if (_remaining == 0) revert SoldOut();
         uint256 j = uint256(keccak256(abi.encodePacked(deckHash, _drawIndex))) % _remaining;
         _drawIndex++;
         return _takeAt(j);
-    }
-
-    /// @dev Draw one token for a FREE mint: lazy Fisher-Yates
-    /// over the shared pool, but NEVER a Legendary. If the
-    /// pseudo-random position holds a Legendary, scan forward
-    /// for the next non-Legendary token and take that instead.
-    /// The free draw can therefore be Common, Rare or Epic.
-    /// Reverts NoDrawableToken only when the pool holds
-    /// nothing but Legendaries (see header, point F).
-    function _drawFree() internal returns (uint256) {
-        if (_remaining == 0) revert SoldOut();
-        uint256 j = uint256(keccak256(abi.encodePacked(deckHash, _drawIndex))) % _remaining;
-        _drawIndex++;
-        if (rarityOf(_valueAt(j)) != RARITY_LEGENDARY) {
-            freeMinted++;
-            return _takeAt(j);
-        }
-        (uint256 pos, bool found) = _findNonLegendaryFrom(j);
-        if (!found) revert NoDrawableToken();
-        freeMinted++;
-        return _takeAt(pos);
     }
 
     /// @dev Draw one token of a specific tier (for upgrades):
@@ -718,10 +684,14 @@ contract ThyrkNFT is ERC721, ERC721Royalty, Ownable, ReentrancyGuard {
 
         for (uint256 i = 0; i < quantity; i++) {
             bool isFree = (i == freeSlot);
-            uint256 tokenId = isFree ? _drawFree() : _drawMain();
+            // Free and paid draws are identical: one shared
+            // full-deck draw (_drawMain). A free mint can
+            // draw any rarity, including Legendary.
+            uint256 tokenId = _drawMain();
             mintCount[msg.sender]++;
             if (isFree) {
                 freeUsed[msg.sender] = true;
+                freeMinted++;
             }
             // Free AND paid mints both earn 20 $THYRK.
             thyrkToken.mint(msg.sender, MINT_BONUS);

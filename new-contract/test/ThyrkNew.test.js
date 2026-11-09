@@ -6,9 +6,10 @@ const { ethers } = require("hardhat");
 // Replacement THYRK contract tests.
 // Same deck/bitmap as v1 (collection/manifest.json + rarity-bitmap.json),
 // new rules: automatic free first mint (no useFree flag, no 777 cap),
-// free draw Common/Rare/Epic NEVER Legendary, 20 $THYRK bonus on
-// free AND paid mints, bulk 30 = 0.0138 BNB, owner = My Wallet,
-// revenue/royalty = Agentic Wallet, no repost logic.
+// free draw uses the FULL deck incl. Legendary (Bryan, 23:30 WIB
+// 9 Nov 2026 — free Legendary is a lure; Divine sits above it),
+// 20 $THYRK bonus on free AND paid mints, bulk 30 = 0.0138 BNB,
+// owner = My Wallet, revenue/royalty = Agentic Wallet, no repost logic.
 const COLLECTION = path.join(__dirname, "..", "..", "collection");
 const MANIFEST = JSON.parse(fs.readFileSync(path.join(COLLECTION, "manifest.json"), "utf8"));
 const BITMAP = JSON.parse(fs.readFileSync(path.join(COLLECTION, "rarity-bitmap.json"), "utf8"));
@@ -457,14 +458,14 @@ describe("ThyrkNFT automatic free mint", function () {
     // No cap: freeMintsRemaining / FREE_TOTAL do not exist any more.
   });
 
-  it("free draw NEVER yields Legendary (60 free draws across wallets)", async function () {
+  it("free draw CAN yield Legendary (300 free draws across wallets)", async function () {
     const { nft, mock, owner } = await deployFixture();
     const signers = await ethers.getSigners();
     await activate(nft, owner);
     const wallets = [];
-    // 18 funded signers + 42 fresh random wallets (funded for gas).
+    // 18 funded signers + 282 fresh random wallets (funded for gas).
     for (const w of signers.slice(2, 20)) wallets.push(w);
-    for (let i = 0; i < 42; i++) {
+    for (let i = 0; i < 282; i++) {
       const w = ethers.Wallet.createRandom().connect(ethers.provider);
       wallets.push(w);
       await ethers.provider.send("hardhat_setBalance", [w.address, "0x8ac7230489e80000"]); // 10 ETH
@@ -475,26 +476,27 @@ describe("ThyrkNFT automatic free mint", function () {
       const tx = await nft.connect(w).mint(1, { value: 0 });
       const ids = await mintedIds(nft, await tx.wait());
       expect(ids.length).to.equal(1);
-      const r = Number(await nft.rarityOf(ids[0]));
-      counts[r]++;
-      expect(r, `free draw token ${ids[0]} must never be Legendary`).to.not.equal(3);
+      counts[Number(await nft.rarityOf(ids[0]))]++;
     }
-    expect(await nft.freeMinted()).to.equal(60);
-    expect(counts[3]).to.equal(0);
-    // Free draws are NOT Common-only: at least one Rare/Epic must appear
-    // in 60 draws (deterministic deck order — verified by this run).
+    expect(await nft.freeMinted()).to.equal(300);
+    // The draw is deterministic (deckHash-seeded), so this count is
+    // fixed per run — Legendary appears at ~277/7777 per draw, so
+    // ~10 expected in 300 draws. A free Legendary is a lure by
+    // design (Bryan, 23:30 WIB 9 Nov 2026): it MUST be possible.
+    expect(counts[3], `expected >=1 Legendary in 300 free draws, got ${JSON.stringify(counts)}`).to.be.greaterThan(0);
+    // Free draws still cover the other tiers too.
+    expect(counts[0]).to.be.greaterThan(0);
     expect(counts[1] + counts[2]).to.be.greaterThan(0);
   });
 
-  it("the free slot inside a bulk-30 is the FIRST token and is never Legendary", async function () {
+  it("the free slot inside a bulk-30 is the FIRST token", async function () {
     const { nft, mock, owner, alice } = await deployFixture();
     await giveAgentId(mock, alice);
     await activate(nft, owner);
     const tx = await mintPaid(nft, alice, 30);
     const ids = await mintedIds(nft, await tx.wait());
     expect(ids.length).to.equal(30);
-    // Batch slot 0 = the free mint.
-    expect(await nft.rarityOf(ids[0])).to.not.equal(3);
+    // Batch slot 0 = the free mint (any rarity incl. Legendary).
     expect(await nft.freeUsed(alice.address)).to.equal(true);
   });
 });

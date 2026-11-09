@@ -14,7 +14,7 @@ My Wallet.
 | Rule | v1 | This contract |
 |---|---|---|
 | Free mint | Choice (`useFree` flag), Common only, 777 total | **Automatic**: first `mint()` call per wallet includes 1 free mint; no flag, no total cap |
-| Free draw | Common only | Common / Rare / Epic — **never Legendary** |
+| Free draw | Common only | **Full deck incl. Legendary** — same draw as paid (Bryan, 23:30 WIB 9 Nov 2026: free Legendary is a lure; Divine sits above Legendary) |
 | Free-mint bonus | 0 $THYRK | **20 $THYRK**, like a paid mint |
 | Price ladder | #1–10: 0.0002, #11–20: 0.0004, #21–30: 0.0008 | #1 **FREE** (automatic), #2–10: 0.0002, #11–20: 0.0004, #21–30: 0.0008 |
 | Bulk 30 cost | 0.014 BNB (0.0132 with free on the most expensive slot) | **0.0138 BNB** (1 free + 29 paid; free is the FIRST slot) |
@@ -49,13 +49,13 @@ false, royalty 5% (ERC-2981) to Agentic, direct payment forwarding.
   (`freeSlot = 0`, or `type(uint256).max` once used).
 - **The free slot is the FIRST slot of the batch**, never the most
   expensive one — that is what makes bulk-30 cost 0.0138 BNB.
-- **End-of-deck edge case:** the free draw never yields a Legendary
-  by construction. If the pool ever holds only Legendary tokens
-  (all 7,500 non-Legendary drawn), a wallet that hasn't used its
-  free mint yet cannot complete a `mint()` call (reverts
-  `NoDrawableToken`); wallets that already used it can still mint
-  paid. Only possible in the final ~277 mints; accepted as the
-  price of the strict NEVER-Legendary rule. No silent fallback.
+- **End-of-deck edge case: GONE.** The free draw uses the full
+  deck, so a free mint can draw whatever remains — including a
+  Legendary when only Legendaries are left. No `NoDrawableToken`
+  case for free mints; the only end-of-supply revert is `SoldOut`.
+  (The earlier edge case existed only under the reversed
+  NEVER-Legendary rule; it disappeared with that rule on
+  23:30 WIB 9 Nov 2026.)
 
 ## Files
 
@@ -87,8 +87,9 @@ npx hardhat run scripts/deploy.js   # prints the plan only
 ```
 
 Test coverage includes: automatic free first mint (1/wallet,
-unlimited total), free draw never Legendary (60 free draws across
-wallets, zero Legendary), bulk-30 pricing = 0.0138 BNB exactly,
+unlimited total), free draw CAN yield Legendary (300 free draws
+across wallets: Common 162 / Rare 100 / Epic 29 / Legendary 9 —
+deterministic deck order), bulk-30 pricing = 0.0138 BNB exactly,
 20 $THYRK bonus on free AND paid mints, Agent ID gate (reverts
 without, works with), NoContracts, max 30/wallet (31st reverts),
 burn table (all four tiers + Divine reverts + free Common burns
@@ -104,12 +105,12 @@ logic on the contract.
 
 | Step | gasUsed | @ 0.05 gwei | @ 0.1 gwei | @ 1 gwei |
 |---|---|---|---|---|
-| ThyrkNFT deploy | 4,889,891 | 0.0002445 BNB | 0.0004890 BNB | 0.0048899 BNB |
+| ThyrkNFT deploy | 4,809,915 | 0.0002405 BNB | 0.0004810 BNB | 0.0048099 BNB |
 | `setMinter(nft, true)` (on existing token) | 47,810 | 0.0000024 BNB | 0.0000048 BNB | 0.0000478 BNB |
 | `setMintActive(true)` activation | 29,921 | 0.0000015 BNB | 0.0000030 BNB | 0.0000299 BNB |
-| **Total (no token deploy)** | **4,967,622** | **0.0002484 BNB** | **0.0004968 BNB** | **0.0049676 BNB** |
+| **Total (no token deploy)** | **4,887,646** | **0.0002444 BNB** | **0.0004888 BNB** | **0.0048876 BNB** |
 
-Creation bytecode 16,042 bytes; runtime 14,262 bytes. Top-up
+Creation bytecode 15,664 bytes; runtime 13,891 bytes. Top-up
 recommendation: ~0.001 BNB in the deployer (My Wallet).
 
 ## How to deploy (manual, by Bryan from My Wallet)
