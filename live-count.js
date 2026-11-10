@@ -1,17 +1,22 @@
-/* THYRK live counters — totalSupply + divineRemaining, read from the
-   NFT contract, and $THYRK totalSupply from the token contract, with
-   client-side eth_call calls to a public BSC RPC. Also reads
-   mintActive() to label the mint status.
+/* THYRK live counters — totalSupply + burnedCount (total ever minted),
+   divineRemaining, read from the NFT contract, and $THYRK totalSupply
+   from the token contract, with client-side eth_call calls to a public
+   BSC RPC. Also reads mintActive() to label the mint status.
    The new NFT contract is deployed at
    0x4D90fFC3075FB8897EDFf6d7c6269c906664a20e and minting is LIVE
    (mintActive is true, activated 10 Nov 2026). The counters read
    live from the contract; the status reads MINT IS LIVE. The
    $THYRK token is already deployed, so its supply keeps reading
-   live. The minted counter is TRULY LIVE: totalSupply() is polled
-   every 3 seconds (one BSC block) so a new mint shows up within
-   ~3-5 seconds. The slow-changing values (divine remaining, mint
+   live. The minted counter is TRULY LIVE: it is polled every 3
+   seconds (one BSC block) so a new mint shows up within ~3-5
+   seconds. The slow-changing values (divine remaining, mint
    status, $THYRK supply) still refresh every 30 seconds.
-   Counts only; never shows prices. Fails soft: shows a dash and retries. */
+   "Minted" means total ever minted: totalSupply() + burnedCount().
+   A burn removes an NFT from existence, so totalSupply() alone
+   drops when someone burns — that is not a mint count. Adding
+   burnedCount() back keeps the minted number live and never
+   decreasing. Counts only; never shows prices. Fails soft: shows
+   a dash and retries. */
 (function () {
   /* t(): translated string via i18n.js when loaded, else the English
      fallback passed inline (fb). Vars like {n} are substituted. */
@@ -30,6 +35,7 @@
     "https://bsc-dataseed1.ninicoin.io/"
   ];
   var SEL_MINTED = "0x18160ddd"; // totalSupply()
+  var SEL_BURNED = "0x7cefcc52"; // burnedCount() — added back so "Minted" never drops on a burn
   var SEL_DIVINE = "0x739f6b19"; // divineRemaining()
   var SEL_ACTIVE = "0x25fd90f3"; // mintActive()
   var SEL_THYRK = "0x18160ddd"; // totalSupply() on the token (18 decimals)
@@ -56,10 +62,17 @@
     for (var i = 0; i < els.length; i++) els[i].textContent = value;
   }
   function refreshMinted() {
-    // Fast live poll: only totalSupply(), every 3s, so the minted
-    // counter moves within ~one block of a new mint landing.
+    // Fast live poll: totalSupply() + burnedCount() every 3s, so the
+    // minted counter moves within ~one block of a new mint landing
+    // and never drops when someone burns (a burn only lowers
+    // totalSupply; adding burnedCount back gives total ever minted).
+    // If the burnedCount read fails, fall back to totalSupply alone.
     if (NOT_DEPLOYED) { setText("minted", "–"); return; }
-    callFirstRpc(NFT, SEL_MINTED).then(function (v) { setText("minted", v.toString()); }).catch(function () { /* keep dash, retry next round */ });
+    callFirstRpc(NFT, SEL_MINTED).then(function (supply) {
+      callFirstRpc(NFT, SEL_BURNED).then(function (burned) {
+        setText("minted", (supply + burned).toString());
+      }).catch(function () { setText("minted", supply.toString()); });
+    }).catch(function () { /* keep dash, retry next round */ });
   }
   function refresh() {
     if (NOT_DEPLOYED) {
